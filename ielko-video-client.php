@@ -8,7 +8,7 @@ Author: Ioannis Kokkinis
 Author URI: http://upg.gr
 License: Commercial
 */
- 
+  
 add_action( 'init', 'github_plugin_updater_test_init' );
 function github_plugin_updater_test_init() {
 	include_once 'updater.php';
