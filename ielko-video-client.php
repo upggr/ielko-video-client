@@ -3,7 +3,7 @@
 Plugin Name: Ielko Video Client
 Plugin URI: http://ielko.com
 Description: Media manager for roku and tvOS clients
-Version: 1.0
+Version: 1.4
 Author: Ioannis Kokkinis
 Author URI: http://upg.gr
 License: Commercial
