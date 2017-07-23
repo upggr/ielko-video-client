@@ -8,7 +8,7 @@ Author: Ioannis Kokkinis
 Author URI: http://upg.gr
 License: Commercial
 */
-  
+
 add_action( 'init', 'github_plugin_updater_test_init' );
 function github_plugin_updater_test_init() {
 	include_once 'updater.php';
@@ -20,7 +20,7 @@ function github_plugin_updater_test_init() {
 			'api_url' => 'https://api.github.com/repos/upggr/ielko-video-client', // the GitHub API url of your GitHub repo
 			'raw_url' => 'https://raw.github.com/upggr/ielko-video-client/master', // the GitHub raw url of your GitHub repo
 			'github_url' => 'https://github.com/upggr/ielko-video-client', // the GitHub url of your GitHub repo
-			'zip_url' => 'https://github.com/username/repository-name/archive/master.zip', // the zip url of the GitHub repo
+			'zip_url' => 'https://github.com/upggr/ielko-video-client/archive/master.zip', // the zip url of the GitHub repo
 			'sslverify' => true,
 			'requires' => '3.0',
 			'tested' => '3.3',
