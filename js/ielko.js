@@ -34,10 +34,7 @@
           url: "http://factory.upg.gr/",
           username: 'user',
           password: 'pass',
-          crossDomain: true,
-          xhrFields: {
-            withCredentials: true
-          }
+          crossDomain: true
         })
         .done(function(data) {
           console.log("done");
