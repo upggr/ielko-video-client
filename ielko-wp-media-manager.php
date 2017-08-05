@@ -428,7 +428,7 @@ register_activation_hook( __FILE__, array('WC_CPInstallCheck', 'install') );
 
 
 function ivc_add_admin_menu(  ) {
-
+add_submenu_page('edit.php?post_type=media_item', __('Test Settings','menu-test'), __('Test Settings','menu-test'), 'Ielko Settings', 'Ielko Settings', 'ivc_options_page');
 	add_menu_page( 'Ielko Settings', 'Ielko Settings', 'manage_options', 'ielko_wp_media_manager', 'ivc_options_page' );
 
 }
