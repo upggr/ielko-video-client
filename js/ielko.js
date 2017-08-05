@@ -37,7 +37,7 @@
           crossDomain: true
         })
         .done(function(data) {
-          console.log("done");
+          console.log(data);
         })
         .fail(function(xhr, textStatus, errorThrown) {
           alert(xhr.responseText);
