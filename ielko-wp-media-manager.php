@@ -607,8 +607,6 @@ function ivc_settings_section_intro(  ) {
 		<input type="hidden" name="testname" value="testvalue" />
   <button id="d_roku">Download Roku App</button>
 </form>
-
-<span id="droku">Download Roku App</span>
     ', 'wordpress' );
 
 
