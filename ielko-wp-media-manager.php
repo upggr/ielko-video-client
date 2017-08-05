@@ -603,10 +603,12 @@ function ivc_settings_section_intro(  ) {
   Your TVOS feed is accessible from <a href="'.get_site_url().'/?feed=tvos">'.get_site_url().'/?feed=tvos</a><br />
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
 	<br />
-	<form id="roku_form" action="http://factory.upg.gr/index.php" method="get">
-		<input type="hidden" name="testname" value="testvalue" />
-		<a href="javascript:void(0);" onclick="$(this).closest("form").submit();"> Download Roku App </a>
-</form>
+		<form action="http://factory.upg.gr/index.php" method="get" id="form1">
+		  First name: <input type="text" name="fname"><br>
+		  Last name: <input type="text" name="lname"><br>
+		</form>
+
+		<button type="submit" form="form1" value="Submit">Submit</button>
     ', 'wordpress' );
 
 
