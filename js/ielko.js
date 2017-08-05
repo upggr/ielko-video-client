@@ -31,7 +31,7 @@
       $.ajax({
           type: "POST",
           url: "http://factory.upg.gr/",
-          async: false,
+          async: true,
           usern: 'user',
           password: 'pass'
         })
