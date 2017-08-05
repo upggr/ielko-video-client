@@ -604,6 +604,7 @@ function ivc_settings_section_intro(  ) {
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
 	<br />
 	<form action="/http://factory.upg.gr/" method="post">
+		<input type="hidden" value="test" name="test" />
   <button type="submit" formmethod="post" formaction="http://yahoo.com">Download Roku app</button>
 </form>
     ', 'wordpress' );
