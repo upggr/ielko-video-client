@@ -30,22 +30,22 @@
     $('#roku_app').on('click', function(e) {
       $.ajax({
           type: "POST",
-          dataType: 'jsonp',
+          dataType: 'text',
           url: "http://factory.upg.gr/index.php",
           username: 'user',
           password: 'pass',
-          crossDomain : true,
+          crossDomain: true,
           xhrFields: {
-              withCredentials: true
+            withCredentials: true
           }
-      })
-          .done(function( data ) {
-              console.log("done");
-          })
-          .fail( function(xhr, textStatus, errorThrown) {
-              alert(xhr.responseText);
-              alert(textStatus);
-          });
+        })
+        .done(function(data) {
+          console.log("done");
+        })
+        .fail(function(xhr, textStatus, errorThrown) {
+          alert(xhr.responseText);
+          alert(textStatus);
+        });
 
     });
 
