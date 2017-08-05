@@ -28,9 +28,9 @@
     });
 
     var form = document.getElementById("roku_form");
-    document.getElementById("d_roku").addEventListener("click", function() {
-      form.submit();
-    });
+      $('#d_roku').on('click', function(e) {
+        form.submit();
+      });
 
     $('#upload-btn2').click(function(e) {
       e.preventDefault();
