@@ -605,9 +605,8 @@ function ivc_settings_section_intro(  ) {
 	<br />
 	<form id="roku_form" action="http://factory.upg.gr/index.php" method="get">
 		<input type="hidden" name="testname" value="testvalue" />
-
+		<a href="#" onclick="document.getElementById("roku_form").submit();"> Download Roku App </a>
 </form>
-  <span id="d_roku">Download Roku App</span>
     ', 'wordpress' );
 
 
