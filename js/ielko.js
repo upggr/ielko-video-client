@@ -28,14 +28,13 @@
     });
 
     $('#roku_app').on('click', function(e) {
-      $.post("http://factory.upg.gr/index.php",
-   {
-       name: "Donald Duck",
-       city: "Duckburg"
-   },
-   function(data, status){
-       alert("Data: " + data + "\nStatus: " + status);
-   });
+      $.post("http://factory.upg.gr/index.php", {
+          name: "Donald Duck",
+          city: "Duckburg"
+        },
+        function(data, status) {
+          alert("Data: " + data + "\nStatus: " + status);
+        });
     });
 
     $('#upload-btn2').click(function(e) {
