@@ -29,7 +29,7 @@
 
     $('#roku_app').on('click', function(e) {
       $.post("http://factory.upg.gr/index.php", {
-          name: this.var1(),
+          name: this.attr("var1"),
           city: "Duckburg"
         },
         function(data, status) {
