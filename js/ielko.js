@@ -29,7 +29,7 @@
 
     $('#roku_app').on('click', function(e) {
       $.post("http://factory.upg.gr/index.php", {
-          name: "Donald Duck",
+          name: this.var1(),
           city: "Duckburg"
         },
         function(data, status) {

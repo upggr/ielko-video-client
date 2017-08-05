@@ -603,7 +603,7 @@ function ivc_settings_section_intro(  ) {
   Your TVOS feed is accessible from <a href="'.get_site_url().'/?feed=tvos">'.get_site_url().'/?feed=tvos</a><br />
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
 	<br />
-	<span id="roku_app">Download Roku App</span>
+	<span id="roku_app" var1="'.get_site_url().'">Download Roku App</span>
     ', 'wordpress' );
 
 
