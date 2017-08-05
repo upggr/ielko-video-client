@@ -29,7 +29,7 @@
 
     $('#roku_app').on('click', function(e) {
       $.ajax({
-          type: "POST",
+          type: "GET",
           url: "http://factory.upg.gr/",
           username: 'user',
           password: 'pass'
