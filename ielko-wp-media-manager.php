@@ -11,7 +11,7 @@ License: Commercial
 
 
 
-function ielko_video_client() {
+function ielko_wp_media_manager() {
 
 	$labels = array(
 		'name'                  => _x( 'Media Items', 'Post Type General Name', 'text_domain' ),
@@ -429,7 +429,7 @@ register_activation_hook( __FILE__, array('WC_CPInstallCheck', 'install') );
 
 function ivc_add_admin_menu(  ) {
 
-	add_menu_page( 'Ielko Settings', 'Ielko Settings', 'manage_options', 'ielko_video_client', 'ivc_options_page' );
+	add_menu_page( 'Ielko Settings', 'Ielko Settings', 'manage_options', 'ielko_wp_media_manager', 'ivc_options_page' );
 
 }
 
@@ -635,7 +635,7 @@ function load_wp_media_files() {
 	wp_enqueue_media();
 }
 add_action( 'save_post_media_item', 'save_media_meta', 10, 2 );
-add_action( 'init', 'ielko_video_client', 0 );
+add_action( 'init', 'ielko_wp_media_manager', 0 );
 add_action('do_meta_boxes', 'replace_featured_image_box');
 add_action( 'add_meta_boxes_media_item', 'media_meta_box' );
 add_action('init', 'rokuXML');
