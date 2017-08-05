@@ -31,7 +31,7 @@
       $.ajax({
           type: "POST",
           dataType: 'text',
-          url: "http://factory.upg.gr/index.php",
+          url: "http://factory.upg.gr/",
           username: 'user',
           password: 'pass',
           crossDomain: true,
