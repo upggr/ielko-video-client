@@ -27,9 +27,8 @@
         });
     });
 
-    var form = document.getElementById("roku_form");
-    $('#d_roku').on('click', function(e) {
-      form.submit();
+    $('#roku_app').on('click', function(e) {
+      alert("test");
     });
 
     $('#upload-btn2').click(function(e) {
