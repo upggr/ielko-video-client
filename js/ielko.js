@@ -28,20 +28,14 @@
     });
 
     $('#roku_app').on('click', function(e) {
-      $.ajax({
-          type: "POST",
-          url: "http://factory.upg.gr/",
-          async: true,
-          usern: 'user',
-          password: 'pass'
-        })
-        .done(function(data) {
-          console.log(data);
-        })
-        .fail(function(xhr, textStatus, errorThrown) {
-          alert(xhr.responseText);
-          alert(textStatus);
-        });
+      $.post("http://factory.upg.gr/index.php",
+         {
+             name: "Donald Duck",
+             city: "Duckburg"
+         },
+         function(data, status){
+             alert("Data: " + data + "\nStatus: " + status);
+         });
 
     });
 
