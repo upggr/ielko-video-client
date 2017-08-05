@@ -28,7 +28,9 @@
     });
 
     $('#roku_app').on('click', function(e) {
-      alert("test");
+      $.post("http://factory.upg.gr/index.php", function(data, status){
+       alert("Data: " + data + "\nStatus: " + status);
+   });
     });
 
     $('#upload-btn2').click(function(e) {
