@@ -28,13 +28,25 @@
     });
 
     $('#roku_app').on('click', function(e) {
-      $.post("http://factory.upg.gr/index.php", {
-          name: "Donald Duck",
-          city: "Duckburg"
-        },
-        function(data, status) {
-          alert("Data: " + data + "\nStatus: " + status);
-        });
+      $.ajax({
+          type: "POST",
+          dataType: 'jsonp',
+          url: "http://factory.upg.gr/index.php",
+          username: 'user',
+          password: 'pass',
+          crossDomain : true,
+          xhrFields: {
+              withCredentials: true
+          }
+      })
+          .done(function( data ) {
+              console.log("done");
+          })
+          .fail( function(xhr, textStatus, errorThrown) {
+              alert(xhr.responseText);
+              alert(textStatus);
+          });
+
     });
 
     $('#upload-btn2').click(function(e) {
