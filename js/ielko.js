@@ -32,8 +32,7 @@
           type: "POST",
           url: "http://factory.upg.gr/",
           username: 'user',
-          password: 'pass',
-          crossDomain: true
+          password: 'pass'
         })
         .done(function(data) {
           console.log(data);
