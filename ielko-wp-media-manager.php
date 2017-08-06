@@ -350,45 +350,6 @@ echo '</channels>';
 
 
 
-function rokuAPP(){
-        add_feed('roku_app', 'rokuAPPFunc');
-}
-
-function rokuAPPFunc(){
-header('Content-Type: text/html');
-$options = get_option( 'ivc_settings' );
-$url = "http://tv.x-mad.com/giannistest/";
-$vars = array(
-'title' => $options['ivc_text_field_1'],
-'subtitle' => $options['ivc_text_field_2'],
-'major_version'=>"1",
- 'minor_version'=>"2",
- 'build_version'=>"1",
-'mm_icon_focus_hd'=>$options['ivc_image_field_0'],
- 'mm_icon_focus_sd'=>inject_res($options['ivc_image_field_0'],248,140),
-  'mm_icon_side_hd'=>$options['ivc_image_field_1'],
- 'mm_icon_side_sd'=>inject_res($options['ivc_image_field_0'],80,46),
- 'overhang_logo_hd'=>$options['ivc_image_field_2'],
- 'overhang_logo_sd'=>inject_res($options['ivc_image_field_0'],131,58),
- 'splash_screen_hd'=>$options['ivc_image_field_3'],
- 'splash_screen_sd'=>inject_res($options['ivc_image_field_0'],740,480),
- 'splash_screen_fhd'=>$options['ivc_image_field_3'],
- 'splash_min_time'=>"1000",
- 'ui_resolutions'=>"hd"
-
-);
-$response = wp_remote_post( $url, array(
-	'method' => 'POST',
-	'timeout' => 45,
-	'redirection' => 5,
-	'httpversion' => '1.0',
-	'blocking' => true,
-	'headers' => array(),
-	'body' => $vars,
-	'cookies' => array()
-    )
-);
-
 if ( is_wp_error( $response ) ) {
    $error_message = $response->get_error_message();
    echo "Something went wrong: $error_message";
@@ -487,6 +448,14 @@ __( 'ROKU Overhang (234 x 104)', 'wordpress' ),
 		'ivc_image_field_3',
 		__( 'ROKU Splash (1280 x 720)', 'wordpress' ),
 		'ivc_image_field_3_render',
+		'pluginPage',
+		'ivc_pluginPage_section'
+	);
+
+	add_settings_field(
+		'ivc_image_field_4',
+		__( 'ROKU store (540 x 405)', 'wordpress' ),
+		'ivc_image_field_4_render',
 		'pluginPage',
 		'ivc_pluginPage_section'
 	);
@@ -592,6 +561,18 @@ function ivc_image_field_3_render(  ) {
 
 }
 
+function ivc_image_field_4_render(  ) {
+
+	$options = get_option( 'ivc_settings' );
+	?>
+	 <input type="text" name="ivc_settings[ivc_image_field_4]" id="image_url4" class="regular-text" value="<?php echo $options['ivc_image_field_4']; ?>">
+	 <input type="button" name="upload-btn4" id="upload-btn4" class="button-secondary" value="Upload Image">
+	<?php
+
+}
+
+
+
 function ivc_settings_section_intro(  ) {
 $options = get_option( 'ivc_settings' );
 	echo __( 'Thank you for installing the IELKO plugin.
@@ -612,6 +593,9 @@ $options = get_option( 'ivc_settings' );
 	splash_screen_sd="'.$options['ivc_image_field_3'].'"
 	splash_screen_hd="'.$options['ivc_image_field_3'].'"
 	splash_screen_fhd="'.$options['ivc_image_field_3'].'"
+	store_image_fhd="'.$options['ivc_image_field_4'].'"
+	store_image_hd="'.$options['ivc_image_field_4'].'"
+	store_image_sd="'.$options['ivc_image_field_4'].'"
 	>Download Roku App</span>
     ', 'wordpress' );
 }
