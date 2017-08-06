@@ -76,9 +76,4 @@
         });
     });
 
-  });
-  $('#image_url3').val(image_url);
-  });
-  });
-
-  });
+  });  //last line
