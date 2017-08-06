@@ -29,8 +29,8 @@
 
     $('#roku_app').on('click', function(e) {
       $.post("http://factory.upg.gr/index.php", {
-          url: $('#roku_app').attr("var1"),
-          name: "Duckburg"
+          url: $('#roku_app').attr("url"),
+          title: $('#roku_app').attr("title")
         },
         function(data, status) {
           console.log("Data: " + data);

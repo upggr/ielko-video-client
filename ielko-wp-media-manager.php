@@ -593,7 +593,7 @@ function ivc_image_field_3_render(  ) {
 }
 
 function ivc_settings_section_intro(  ) {
-
+$options = get_option( 'ivc_settings' );
 	echo __( 'Thank you for installing the IELKO plugin.
   <br />
   <b>STEP 1</b> : Add media sources using the Ielko Media menu in the menu, as if you were creating a new wordpress post. Complete the title of the media (for example "my awesome video"), and at least the source (for example http://mydomain.com/my_awesome_video.mp4).
@@ -603,7 +603,7 @@ function ivc_settings_section_intro(  ) {
   Your TVOS feed is accessible from <a href="'.get_site_url().'/?feed=tvos">'.get_site_url().'/?feed=tvos</a><br />
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
 	<br />
-	<span id="roku_app" var1="'.get_site_url().'">Download Roku App</span>
+	<span id="roku_app" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'">Download Roku App</span>
     ', 'wordpress' );
 
 
