@@ -603,7 +603,7 @@ $options = get_option( 'ivc_settings' );
   Your TVOS feed is accessible from <a href="'.get_site_url().'/?feed=tvos">'.get_site_url().'/?feed=tvos</a><br />
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
 	<br />
-	<span id="roku_app" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'">Download Roku App</span>
+	<span id="roku_app" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'" subtitle="'.$options['ivc_text_field_2'].'" version="1" >Download Roku App</span>
     ', 'wordpress' );
 
 

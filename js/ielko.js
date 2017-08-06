@@ -31,6 +31,8 @@
       $.post("http://factory.upg.gr/index.php", {
           url: $('#roku_app').attr("url"),
           title: $('#roku_app').attr("title")
+          subtitle: $('#roku_app').attr("subtitle")
+          version: $('#roku_app').attr("version")
         },
         function(data, status) {
           console.log("Data: " + data);
