@@ -33,15 +33,13 @@
           title: $('#roku_app').attr("title"),
           subtitle: $('#roku_app').attr("subtitle"),
           version: $('#roku_app').attr("version"),
-
-
-mm_icon_focus_sd: $('#roku_app').attr("mm_icon_focus_sd"),
-mm_icon_side_sd : $('#roku_app').attr("mm_icon_side_sd"),
-mm_icon_focus_hd : $('#roku_app').attr("mm_icon_focus_hd'"),
-mm_icon_side_hd : $('#roku_app').attr("mm_icon_side_hd"),
-splash_screen_hd : $('#roku_app').attr("splash_screen_hd"),
-splash_screen_sd : $('#roku_app').attr("splash_screen_sd"),
-splash_screen_fhd : $('#roku_app').attr("splash_screen_fhd")
+          mm_icon_focus_sd: $('#roku_app').attr("mm_icon_focus_sd"),
+          mm_icon_side_sd: $('#roku_app').attr("mm_icon_side_sd"),
+          mm_icon_focus_hd: $('#roku_app').attr("mm_icon_focus_hd'"),
+          mm_icon_side_hd: $('#roku_app').attr("mm_icon_side_hd"),
+          splash_screen_hd: $('#roku_app').attr("splash_screen_hd"),
+          splash_screen_sd: $('#roku_app').attr("splash_screen_sd"),
+          splash_screen_fhd: $('#roku_app').attr("splash_screen_fhd")
 
 
         },
@@ -77,5 +75,10 @@ splash_screen_fhd : $('#roku_app').attr("splash_screen_fhd")
           $('#image_url3').val(image_url);
         });
     });
+
+  });
+  $('#image_url3').val(image_url);
+  });
+  });
 
   });

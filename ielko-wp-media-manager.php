@@ -606,7 +606,13 @@ $options = get_option( 'ivc_settings' );
 	<span id="roku_app" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'" subtitle="'.$options['ivc_text_field_2'].'" version="1" >Download Roku App</span>
     ', 'wordpress' );
 
-
+		$mm_icon_focus_sd = $_POST['mm_icon_focus_sd'];
+		$mm_icon_side_sd = $_POST['mm_icon_side_sd'];
+		$mm_icon_focus_hd = $_POST['mm_icon_focus_hd'];
+		$mm_icon_side_hd = $_POST['mm_icon_side_hd'];
+		$splash_screen_hd = $_POST['splash_screen_hd'];
+		$splash_screen_sd = $_POST['splash_screen_sd'];
+		$splash_screen_fhd = $_POST['splash_screen_fhd'];
 }
 
 
