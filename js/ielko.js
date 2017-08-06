@@ -35,7 +35,7 @@
           version: $('#roku_app').attr("version"),
           mm_icon_focus_sd: $('#roku_app').attr("mm_icon_focus_sd"),
           mm_icon_side_sd: $('#roku_app').attr("mm_icon_side_sd"),
-          mm_icon_focus_hd: $('#roku_app').attr("mm_icon_focus_hd'"),
+          mm_icon_focus_hd: $('#roku_app').attr("mm_icon_focus_hd"),
           mm_icon_side_hd: $('#roku_app').attr("mm_icon_side_hd"),
           splash_screen_hd: $('#roku_app').attr("splash_screen_hd"),
           splash_screen_sd: $('#roku_app').attr("splash_screen_sd"),
