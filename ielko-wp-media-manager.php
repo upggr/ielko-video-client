@@ -350,15 +350,6 @@ echo '</channels>';
 
 
 
-if ( is_wp_error( $response ) ) {
-   $error_message = $response->get_error_message();
-   echo "Something went wrong: $error_message";
-} else {
-   echo 'Response:<pre>';
-   print_r( $response['body'] );
-   echo '</pre>';
-}
-
 
 
 
