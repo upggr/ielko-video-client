@@ -350,6 +350,16 @@ echo '</channels>';
 
 
 
+if ( is_wp_error( $response ) ) {
+   $error_message = $response->get_error_message();
+   echo "Something went wrong: $error_message";
+} else {
+   echo 'Response:<pre>';
+   print_r( $response['body'] );
+   echo '</pre>';
+}
+
+
 
 
 function inject_res($filename,$injector1,$injector2) {
@@ -623,7 +633,6 @@ add_action('do_meta_boxes', 'replace_featured_image_box');
 add_action( 'add_meta_boxes_media_item', 'media_meta_box' );
 add_action('init', 'rokuXML');
 add_action('init', 'tvosXML');
-add_action('init', 'rokuAPP');
 add_action('init', 'android1XML');
 add_action( 'admin_menu', 'ivc_add_admin_menu' );
 add_action( 'admin_init', 'ivc_settings_init' );
