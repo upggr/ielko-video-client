@@ -593,9 +593,9 @@ $options = get_option( 'ivc_settings' );
 	splash_screen_sd="'.$options['ivc_image_field_3'].'"
 	splash_screen_hd="'.$options['ivc_image_field_3'].'"
 	splash_screen_fhd="'.$options['ivc_image_field_3'].'"
-	store_image_fhd="'.$options['ivc_image_field_4'].'"
-	store_image_hd="'.$options['ivc_image_field_4'].'"
-	store_image_sd="'.$options['ivc_image_field_4'].'"
+	store_fhd="'.$options['ivc_image_field_4'].'"
+	store_hd="'.$options['ivc_image_field_4'].'"
+	store_sd="'.$options['ivc_image_field_4'].'"
 	>Download Roku App</span>
     ', 'wordpress' );
 }
