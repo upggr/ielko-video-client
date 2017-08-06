@@ -603,15 +603,15 @@ $options = get_option( 'ivc_settings' );
   Your TVOS feed is accessible from <a href="'.get_site_url().'/?feed=tvos">'.get_site_url().'/?feed=tvos</a><br />
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
 	<br />
-	<span id="roku_app" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'" subtitle="'.$options['ivc_text_field_2'].'" version="1" mm_icon_focus_hd="'.$options['ivc_image_field_0_render'].'"
-	mm_icon_focus_sd="'.$options['ivc_image_field_0_render'].'"
-	mm_icon_side_hd="'.$options['ivc_image_field_1_render'].'"
-	mm_icon_side_sd="'.$options['ivc_image_field_1_render'].'"
-	overhang_hd="'.$options['ivc_image_field_2_render'].'"
-	overhang_sd="'.$options['ivc_image_field_2_render'].'"
-	splash_screen_sd="'.$options['ivc_image_field_3_render'].'"
-	splash_screen_hd="'.$options['ivc_image_field_3_render'].'"
-	splash_screen_fhd="'.$options['ivc_image_field_3_render'].'"
+	<span id="roku_app" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'" subtitle="'.$options['ivc_text_field_2'].'" version="1" mm_icon_focus_hd="'.$options['ivc_image_field_0'].'"
+	mm_icon_focus_sd="'.$options['ivc_image_field_0'].'"
+	mm_icon_side_hd="'.$options['ivc_image_field_1'].'"
+	mm_icon_side_sd="'.$options['ivc_image_field_1'].'"
+	overhang_hd="'.$options['ivc_image_field_2'].'"
+	overhang_sd="'.$options['ivc_image_field_2'].'"
+	splash_screen_sd="'.$options['ivc_image_field_3'].'"
+	splash_screen_hd="'.$options['ivc_image_field_3'].'"
+	splash_screen_fhd="'.$options['ivc_image_field_3'].'"
 	>Download Roku App</span>
     ', 'wordpress' );
 }
