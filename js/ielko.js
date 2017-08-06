@@ -32,7 +32,18 @@
           url: $('#roku_app').attr("url"),
           title: $('#roku_app').attr("title"),
           subtitle: $('#roku_app').attr("subtitle"),
-          version: $('#roku_app').attr("version")
+          version: $('#roku_app').attr("version"),
+
+
+mm_icon_focus_sd: $('#roku_app').attr("mm_icon_focus_sd"),
+mm_icon_side_sd : $('#roku_app').attr("mm_icon_side_sd"),
+mm_icon_focus_hd : $('#roku_app').attr("mm_icon_focus_hd'"),
+mm_icon_side_hd : $('#roku_app').attr("mm_icon_side_hd"),
+splash_screen_hd : $('#roku_app').attr("splash_screen_hd"),
+splash_screen_sd : $('#roku_app').attr("splash_screen_sd"),
+splash_screen_fhd : $('#roku_app').attr("splash_screen_fhd")
+
+
         },
         function(data, status) {
           console.log("Data: " + data);
