@@ -40,6 +40,8 @@
           splash_screen_hd: $('#roku_app').attr("splash_screen_hd"),
           splash_screen_sd: $('#roku_app').attr("splash_screen_sd"),
           splash_screen_fhd: $('#roku_app').attr("splash_screen_fhd")
+          overhang_sd: $('#roku_app').attr("overhang_sd")
+          overhang_hd: $('#roku_app').attr("overhang_hd")
 
 
         },
