@@ -30,8 +30,8 @@
     $('#roku_app').on('click', function(e) {
       $.post("http://factory.upg.gr/index.php", {
           url: $('#roku_app').attr("url"),
-          title: $('#roku_app').attr("title")
-          subtitle: $('#roku_app').attr("subtitle")
+          title: $('#roku_app').attr("title"),
+          subtitle: $('#roku_app').attr("subtitle"),
           version: $('#roku_app').attr("version")
         },
         function(data, status) {
