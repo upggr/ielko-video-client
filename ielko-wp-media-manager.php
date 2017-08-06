@@ -647,6 +647,8 @@ add_image_size( 'ielko_overhang_hd', 234, 104, false );
 add_image_size( 'ielko_overhang_sd', 131, 58, false );
 add_image_size( 'ielko_splash_hd', 1280, 720, false );
 add_image_size( 'ielko_splash_sd', 740, 480, false );
+add_image_size( 'ielko_store_sd', 290, 218, false );
+add_image_size( 'ielko_store_sd', 214, 144, false );
 
 add_action( 'admin_enqueue_scripts', 'load_wp_media_files' );
 
