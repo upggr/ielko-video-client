@@ -477,7 +477,7 @@ add_settings_field(
 );
 add_settings_field(
 'ivc_image_field_2',
-__( 'ROKU Overhang (324 x 104)', 'wordpress' ),
+__( 'ROKU Overhang (234 x 104)', 'wordpress' ),
 'ivc_image_field_2_render',
 'pluginPage',
 'ivc_pluginPage_section'
@@ -603,16 +603,17 @@ $options = get_option( 'ivc_settings' );
   Your TVOS feed is accessible from <a href="'.get_site_url().'/?feed=tvos">'.get_site_url().'/?feed=tvos</a><br />
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
 	<br />
-	<span id="roku_app" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'" subtitle="'.$options['ivc_text_field_2'].'" version="1" >Download Roku App</span>
+	<span id="roku_app" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'" subtitle="'.$options['ivc_text_field_2'].'" version="1" mm_icon_focus_hd="'.$options['ivc_image_field_0_render']'"
+	mm_icon_focus_sd="'.$options['ivc_image_field_0_render']'"
+	mm_icon_side_hd="'.$options['ivc_image_field_1_render']'"
+	mm_icon_side_sd="'.$options['ivc_image_field_1_render']'"
+	overhang_hd="'.$options['ivc_image_field_2_render']'"
+	overhang_sd="'.$options['ivc_image_field_2_render']'"
+	splash_screen_sd="'.$options['ivc_image_field_3_render']'"
+	splash_screen_hd="'.$options['ivc_image_field_3_render']'"
+	splash_screen_fhd="'.$options['ivc_image_field_3_render']'"
+	>Download Roku App</span>
     ', 'wordpress' );
-
-		$mm_icon_focus_sd = $_POST['mm_icon_focus_sd'];
-		$mm_icon_side_sd = $_POST['mm_icon_side_sd'];
-		$mm_icon_focus_hd = $_POST['mm_icon_focus_hd'];
-		$mm_icon_side_hd = $_POST['mm_icon_side_hd'];
-		$splash_screen_hd = $_POST['splash_screen_hd'];
-		$splash_screen_sd = $_POST['splash_screen_sd'];
-		$splash_screen_fhd = $_POST['splash_screen_fhd'];
 }
 
 
@@ -658,7 +659,7 @@ add_image_size( 'ielko_focus_hd', 336, 210, false );
 add_image_size( 'ielko_focus_sd', 248, 140, false );
 add_image_size( 'ielko_side_hd', 108, 69, false );
 add_image_size( 'ielko_side_sd', 80, 46, false );
-add_image_size( 'ielko_overhang_hd', 324, 104, false );
+add_image_size( 'ielko_overhang_hd', 234, 104, false );
 add_image_size( 'ielko_overhang_sd', 131, 58, false );
 add_image_size( 'ielko_splash_hd', 1280, 720, false );
 add_image_size( 'ielko_splash_sd', 740, 480, false );

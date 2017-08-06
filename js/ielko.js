@@ -76,4 +76,4 @@
         });
     });
 
-  });  //last line
+  }); //last line
