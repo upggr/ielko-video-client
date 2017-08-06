@@ -586,7 +586,7 @@ $options = get_option( 'ivc_settings' );
 	store_fhd="'.$options['ivc_image_field_4'].'"
 	store_hd="'.$options['ivc_image_field_4'].'"
 	store_sd="'.$options['ivc_image_field_4'].'"
-	>If you have completed all the things bellow click here to your Roku App</span>
+	>If you have completed all the things bellow, click here to download your Roku App</span>
     ', 'wordpress' );
 }
 
