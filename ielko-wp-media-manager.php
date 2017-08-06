@@ -359,7 +359,6 @@ if ( is_wp_error( $response ) ) {
    echo '</pre>';
 }
 
-}
 
 
 
