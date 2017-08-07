@@ -48,7 +48,8 @@
           store_sd: $('#roku_app').attr("store_sd")
         },
         function(data, status) {
-        //  console.log("Data: " + data);
+          //  console.log("Data: " + data);
+          alert('test');
           window.open('http://factory.upg.gr/out/' + fname);
         });
 
