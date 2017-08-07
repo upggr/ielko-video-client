@@ -14,7 +14,7 @@ App.onLaunch = function(options) {
       // 3
       resourceLoader = new ResourceLoader(options.BASEURL);
       resourceLoader.loadResource(window.location.protocol + "//" + window.location.host + "/?feed=tvos", function(resource) {
-
+        console.log('9999999999');
         var doc = Presenter.makeDocument(resource);
         doc.addEventListener("select", Presenter.load.bind(Presenter)); //add this line
         Presenter.pushDocument(doc);
@@ -38,5 +38,4 @@ var createAlert = function(title, description) {
   </document>`
   var parser = new DOMParser();
   var alertDoc = parser.parseFromString(alertString, "application/xml");
-  return alertDoc
-}
+  return al
