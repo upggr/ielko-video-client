@@ -9,7 +9,7 @@ Author URI: http://ielko.com
 License: Commercial
 */
 
-
+/* You can steal this, but note that the client generators are in a different server and have lot more proprietary code than here :p  */
 
 function ielko_wp_media_manager() {
 
