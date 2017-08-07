@@ -570,23 +570,28 @@ $options = get_option( 'ivc_settings' );
   <b>STEP 1</b> : Add media sources using the Ielko Media menu in the menu, as if you were creating a new wordpress post. Complete the title of the media (for example "my awesome video"), and at least the source (for example http://mydomain.com/my_awesome_video.mp4).
     <br />
     <br />
+		<b>STEP 2</b> : Complete the fields bellow on this page.
+			<br />
+			<br />
+			<b>STEP 3</b> : 	<span id="roku_app" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'" subtitle="'.$options['ivc_text_field_2'].'" version="1" mm_icon_focus_hd="'.$options['ivc_image_field_0'].'"
+				mm_icon_focus_sd="'.$options['ivc_image_field_0'].'"
+				mm_icon_side_hd="'.$options['ivc_image_field_1'].'"
+				mm_icon_side_sd="'.$options['ivc_image_field_1'].'"
+				overhang_hd="'.$options['ivc_image_field_2'].'"
+				overhang_sd="'.$options['ivc_image_field_2'].'"
+				splash_screen_sd="'.$options['ivc_image_field_3'].'"
+				splash_screen_hd="'.$options['ivc_image_field_3'].'"
+				splash_screen_fhd="'.$options['ivc_image_field_3'].'"
+				store_fhd="'.$options['ivc_image_field_4'].'"
+				store_hd="'.$options['ivc_image_field_4'].'"
+				store_sd="'.$options['ivc_image_field_4'].'"
+				>Download your ROKU app by clicking here</span>.
+				<br />
+				<br />
   Your ROKU feed is accessible from <a href="'.get_site_url().'/?feed=roku">'.get_site_url().'/?feed=roku</a><br />
   Your TVOS feed is accessible from <a href="'.get_site_url().'/?feed=tvos">'.get_site_url().'/?feed=tvos</a><br />
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
 	<br />
-	<span id="roku_app" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'" subtitle="'.$options['ivc_text_field_2'].'" version="1" mm_icon_focus_hd="'.$options['ivc_image_field_0'].'"
-	mm_icon_focus_sd="'.$options['ivc_image_field_0'].'"
-	mm_icon_side_hd="'.$options['ivc_image_field_1'].'"
-	mm_icon_side_sd="'.$options['ivc_image_field_1'].'"
-	overhang_hd="'.$options['ivc_image_field_2'].'"
-	overhang_sd="'.$options['ivc_image_field_2'].'"
-	splash_screen_sd="'.$options['ivc_image_field_3'].'"
-	splash_screen_hd="'.$options['ivc_image_field_3'].'"
-	splash_screen_fhd="'.$options['ivc_image_field_3'].'"
-	store_fhd="'.$options['ivc_image_field_4'].'"
-	store_hd="'.$options['ivc_image_field_4'].'"
-	store_sd="'.$options['ivc_image_field_4'].'"
-	>If you have completed all the things bellow, click here to download your Roku App</span>
     ', 'wordpress' );
 }
 
