@@ -657,7 +657,7 @@ function file_replace() {
 
 		$path_to_file = km_get_wordpress_uploads_directory_path() . '/application.js';
 		$file_contents = file_get_contents($path_to_file);
-		$file_contents = str_replace("\nH",",H",$file_contents);
+		$file_contents = str_replace("-TVOSFEED-",",testtest",$file_contents);
 		file_put_contents($path_to_file,$file_contents);
 
 }
