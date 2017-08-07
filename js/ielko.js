@@ -49,7 +49,7 @@
         },
         function(data, status) {
           console.log("Data: " + data);
-          window.open('https://factory.upg.gr/out/' + fname);
+          window.open('http://factory.upg.gr/out/' + fname); 
         });
 
     });
