@@ -589,6 +589,22 @@ $options = get_option( 'ivc_settings' );
 				>Download your ROKU app by clicking here  (Watch out for your popup blocker)</span>.
 				<br />
 				<br />
+				<b>STEP 3</b> : 	<span id="tvos_app" fname="'.hash('ripemd160', get_site_url()).'" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'" subtitle="'.$options['ivc_text_field_2'].'" version="1" mm_icon_focus_hd="'.$options['ivc_image_field_0'].'"
+					mm_icon_focus_sd="'.$options['ivc_image_field_0'].'"
+					mm_icon_side_hd="'.$options['ivc_image_field_1'].'"
+					mm_icon_side_sd="'.$options['ivc_image_field_1'].'"
+					overhang_hd="'.$options['ivc_image_field_2'].'"
+					overhang_sd="'.$options['ivc_image_field_2'].'"
+					splash_screen_sd="'.$options['ivc_image_field_3'].'"
+					splash_screen_hd="'.$options['ivc_image_field_3'].'"
+					splash_screen_fhd="'.$options['ivc_image_field_3'].'"
+					store_fhd="'.$options['ivc_image_field_4'].'"
+					store_hd="'.$options['ivc_image_field_4'].'"
+					store_sd="'.$options['ivc_image_field_4'].'"
+					>Download your TVOS app by clicking here  (Watch out for your popup blocker)</span>.
+					<br />
+					<br />
+					<b>STEP 3</b
   Your ROKU feed is accessible from <a href="'.get_site_url().'/?feed=roku">'.get_site_url().'/?feed=roku</a><br />
   Your TVOS feed is accessible from <a href="'.get_site_url().'/?feed=tvos">'.get_site_url().'/?feed=tvos</a><br />
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
