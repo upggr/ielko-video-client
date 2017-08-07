@@ -13,7 +13,7 @@ App.onLaunch = function(options) {
     if (success) {
       // 3
       resourceLoader = new ResourceLoader(options.BASEURL);
-      resourceLoader.loadResource("http://ielko-video-client.upg.gr/?feed=tvos", function(resource) {
+      resourceLoader.loadResource(window.location.protocol + "//" + window.location.host + "/?feed=tvos", function(resource) {
 
         var doc = Presenter.makeDocument(resource);
         doc.addEventListener("select", Presenter.load.bind(Presenter)); //add this line
