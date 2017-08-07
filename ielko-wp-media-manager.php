@@ -642,6 +642,19 @@ function file_replace() {
     if (!copy($plugin_dir, $uploads_dir)) {
         echo "failed to copy $plugin_dir to $uploads_dir...\n";
     }
+
+		$plugin_dir = plugin_dir_path( __FILE__ ) . 'js/Presenter.js';
+		$uploads_dir = km_get_wordpress_uploads_directory_path() . '/Presenter.js';
+    if (!copy($plugin_dir, $uploads_dir)) {
+        echo "failed to copy $plugin_dir to $uploads_dir...\n";
+    }
+
+		$plugin_dir = plugin_dir_path( __FILE__ ) . 'js/ResourceLoader.js';
+		$uploads_dir = km_get_wordpress_uploads_directory_path() . '/ResourceLoader.js';
+    if (!copy($plugin_dir, $uploads_dir)) {
+        echo "failed to copy $plugin_dir to $uploads_dir...\n";
+    }
+
 }
 
 function km_get_wordpress_uploads_directory_path() {
