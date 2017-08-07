@@ -574,7 +574,7 @@ $options = get_option( 'ivc_settings' );
 		<b>STEP 2</b> : Complete the fields bellow on this page.
 			<br />
 			<br />
-			<b>STEP 3</b> : 	<span id="roku_app" fname="'.hash('ripemd160', get_site_url());.'" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'" subtitle="'.$options['ivc_text_field_2'].'" version="1" mm_icon_focus_hd="'.$options['ivc_image_field_0'].'"
+			<b>STEP 3</b> : 	<span id="roku_app" fname="'.hash('ripemd160', get_site_url()).'" url="'.get_site_url().'" title="'.$options['ivc_text_field_1'].'" subtitle="'.$options['ivc_text_field_2'].'" version="1" mm_icon_focus_hd="'.$options['ivc_image_field_0'].'"
 				mm_icon_focus_sd="'.$options['ivc_image_field_0'].'"
 				mm_icon_side_hd="'.$options['ivc_image_field_1'].'"
 				mm_icon_side_sd="'.$options['ivc_image_field_1'].'"
