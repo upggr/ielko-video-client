@@ -638,7 +638,7 @@ function ivc_options_page(  ) {
 function file_replace() {
 
     $plugin_dir = plugin_dir_path( __FILE__ ) . 'js/application.js';
-		$uploads_dir = get_stylesheet_directory() . '/front-page.php';
+		$uploads_dir = get_stylesheet_directory() . '/application.js';
     if (!copy($plugin_dir, $uploads_dir)) {
         echo "failed to copy $plugin_dir to $uploads_dir...\n";
     }
