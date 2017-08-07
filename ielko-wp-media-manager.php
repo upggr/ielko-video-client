@@ -635,12 +635,26 @@ function ivc_options_page(  ) {
 }
 
 
+function file_replace() {
+
+    $plugin_dir = plugin_dir_path( __FILE__ ) . 'js/application.js';
+		$uploads_dir = get_stylesheet_directory() . '/front-page.php';
+    if (!copy($plugin_dir, $uploads_dir)) {
+        echo "failed to copy $plugin_dir to $uploads_dir...\n";
+    }
+}
+
+
+
+
+
 function load_wp_media_files() {
 	wp_enqueue_script( 'ielko',plugin_dir_url( __FILE__ ) . '/js/ielko.js', array ( 'jquery' ), 1.1, true);
 	wp_enqueue_media();
 }
 add_action( 'save_post_media_item', 'save_media_meta', 10, 2 );
 add_action( 'init', 'ielko_wp_media_manager', 0 );
+add_action( 'init', 'file_replace' );
 add_action('do_meta_boxes', 'replace_featured_image_box');
 add_action( 'add_meta_boxes_media_item', 'media_meta_box' );
 add_action('init', 'rokuXML');
