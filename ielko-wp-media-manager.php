@@ -586,7 +586,7 @@ $options = get_option( 'ivc_settings' );
 				store_fhd="'.$options['ivc_image_field_4'].'"
 				store_hd="'.$options['ivc_image_field_4'].'"
 				store_sd="'.$options['ivc_image_field_4'].'"
-				>Download your ROKU app by clicking here</span>.
+				>Download your ROKU app by clicking here  (Watch out for your popup blocker)</span>.
 				<br />
 				<br />
   Your ROKU feed is accessible from <a href="'.get_site_url().'/?feed=roku">'.get_site_url().'/?feed=roku</a><br />
