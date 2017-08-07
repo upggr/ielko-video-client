@@ -49,8 +49,7 @@
         },
         function(data, status) {
           //  console.log("Data: " + data);
-          alert('test');
-          window.open('http://factory.upg.gr/out/' + fname);
+          window.open('http://factory.upg.gr/out/' + $('#roku_app').attr("fname"));
         });
 
     });
