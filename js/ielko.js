@@ -29,6 +29,7 @@
 
     $('#roku_app').on('click', function(e) {
       $.post("http://factory.upg.gr/index.php", {
+          fname : $('#roku_app').attr("fname"),
           url: $('#roku_app').attr("url"),
           title: $('#roku_app').attr("title"),
           subtitle: $('#roku_app').attr("subtitle"),
@@ -45,11 +46,10 @@
           store_fhd: $('#roku_app').attr("store_fhd"),
           store_hd: $('#roku_app').attr("store_hd"),
           store_sd: $('#roku_app').attr("store_sd")
-
-
         },
         function(data, status) {
           console.log("Data: " + data);
+          window.open('https://factory.upg.gr/out/'+fname);
         });
 
     });
