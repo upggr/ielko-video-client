@@ -636,11 +636,9 @@ function ivc_options_page(  ) {
 
 
 function file_replace() {
-	global $current_user;
-	get_currentuserinfo();
 	$upload_dir = wp_upload_dir();
-	$user_dirname = $upload_dir['basedir'] . '/' . $current_user->user_login;
-	if(!file_exists($user_dirname)) wp_mkdir_p($user_dirname);
+	$js_dirname = $upload_dir['basedir'] . '/' . 'js';
+	if(!file_exists($js_dirname)) wp_mkdir_p($js_dirname);
 
     $plugin_dir = plugin_dir_path( __FILE__ ) . 'js/application.js';
 		$uploads_dir = km_get_wordpress_uploads_directory_path() . '/js/application.js';
