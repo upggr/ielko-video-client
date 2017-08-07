@@ -567,6 +567,7 @@ function ivc_settings_section_intro(  ) {
 $options = get_option( 'ivc_settings' );
 	echo __( 'Thank you for installing the IELKO plugin.
   <br />
+	  <br />
   <b>STEP 1</b> : Add media sources using the Ielko Media menu in the menu, as if you were creating a new wordpress post. Complete the title of the media (for example "my awesome video"), and at least the source (for example http://mydomain.com/my_awesome_video.mp4).
     <br />
     <br />
