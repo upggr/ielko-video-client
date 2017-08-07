@@ -638,13 +638,16 @@ function ivc_options_page(  ) {
 function file_replace() {
 
     $plugin_dir = plugin_dir_path( __FILE__ ) . 'js/application.js';
-		$uploads_dir = get_stylesheet_directory() . '/application.js';
+		$uploads_dir = km_get_wordpress_uploads_directory_path() . '/application.js';
     if (!copy($plugin_dir, $uploads_dir)) {
         echo "failed to copy $plugin_dir to $uploads_dir...\n";
     }
 }
 
-
+function km_get_wordpress_uploads_directory_path() {
+	$upload_dir = wp_upload_dir();
+	return trailingslashit( $upload_dir['basedir'] );
+}
 
 
 
