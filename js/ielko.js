@@ -75,7 +75,7 @@
           store_sd: $('#roku_app').attr("store_sd")
         },
         function(data, status) {
-          window.open('http://factory.upg.gr/out/' + $('#roku_app').attr("fname") + '.zip');
+          window.open('http://factory.upg.gr/out/' + $('#tvos_app').attr("fname") + '.zip');
         });
 
     });
