@@ -638,24 +638,24 @@ function ivc_options_page(  ) {
 function file_replace() {
 
     $plugin_dir = plugin_dir_path( __FILE__ ) . 'js/application.js';
-		$uploads_dir = km_get_wordpress_uploads_directory_path() . '/application.js';
+		$uploads_dir = km_get_wordpress_uploads_directory_path() . 'js/application.js';
     if (!copy($plugin_dir, $uploads_dir)) {
         echo "failed to copy $plugin_dir to $uploads_dir...\n";
     }
 
 		$plugin_dir = plugin_dir_path( __FILE__ ) . 'js/Presenter.js';
-		$uploads_dir = km_get_wordpress_uploads_directory_path() . '/Presenter.js';
+		$uploads_dir = km_get_wordpress_uploads_directory_path() . 'js/Presenter.js';
     if (!copy($plugin_dir, $uploads_dir)) {
         echo "failed to copy $plugin_dir to $uploads_dir...\n";
     }
 
 		$plugin_dir = plugin_dir_path( __FILE__ ) . 'js/ResourceLoader.js';
-		$uploads_dir = km_get_wordpress_uploads_directory_path() . '/ResourceLoader.js';
+		$uploads_dir = km_get_wordpress_uploads_directory_path() . 'js/ResourceLoader.js';
     if (!copy($plugin_dir, $uploads_dir)) {
         echo "failed to copy $plugin_dir to $uploads_dir...\n";
     }
 
-		$path_to_file = km_get_wordpress_uploads_directory_path() . '/application.js';
+		$path_to_file = km_get_wordpress_uploads_directory_path() . 'js/application.js';
 		$file_contents = file_get_contents($path_to_file);
 		$file_contents = str_replace("-TVOSFEED-",get_site_url().'/?feed=tvos',$file_contents);
 		file_put_contents($path_to_file,$file_contents);
