@@ -569,12 +569,12 @@ $options = get_option( 'ivc_settings' );
   <br />
 	  <br />
 		<p>
-		Note that this is still in beta mode. The roku app should work ok provided you complete the fields bellow. the tvos app, will compile fine on your mac and will run fine on the simulator, but I have not created the logic to incorporate the media assets yet, so you will just see some images (splash screens, icons) from an existing app I am using.
-		
+		Note that this is still in beta mode. The roku app should work ok provided you complete the fields bellow. the tvos app, will compile fine on your mac and will run fine on the simulator or your tvos device as soon as you press play, but I have not created the logic to incorporate the media assets yet, so you will just see some images (splash screens, icons) from an existing app I am using.
+
 		</p>
 		<br />
 		  <br />
-  <b>STEP 1</b> : Add media sources using the Ielko Media menu in the menu, as if you were creating a new wordpress post. Complete the title of the media (for example "my awesome video"), and at least the source (for example http://mydomain.com/my_awesome_video.mp4).
+  <b>STEP 1</b> : Add media sources using the Ielko Media menu in the menu, as if you were creating a new wordpress post. Complete the title of the media (for example "my awesome video"), and at least the source (for example http://mydomain.com/my_awesome_video.mp4). You will need to define a category for each item you create, and you can upload an image for the categories using the interface.
     <br />
     <br />
 		<b>STEP 2</b> : Complete the fields bellow on this page.
