@@ -322,9 +322,10 @@ foreach ($cats as $cat) {
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
 if ($thecategory == $_GET['cat']) {
 
+					$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type='media_item");
 					query_posts("cat=$thecatid&posts_per_page=100&post_type='media_item");
-					echo '<resultLength>4</resultLength>';
-					echo '<endIndex>4</endIndex>';
+					echo '<resultLength>'.$thePosts ->found_posts;.'</resultLength>';
+					echo '<endIndex>'.$thePosts ->found_posts;.'</endIndex>';
 
 					if (have_posts()) : while (have_posts()) : the_post();
           $thetitle = get_the_title();
