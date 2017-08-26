@@ -322,12 +322,14 @@ foreach ($cats as $cat) {
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
 if ($thecategory == $_GET['cat']) {
 
-					$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type='media_item");
-					query_posts("cat=$thecatid&posts_per_page=100&post_type='media_item");
-					echo '<resultLength>'.$thePosts ->found_posts.'</resultLength>';
-					echo '<endIndex>'.$thePosts ->found_posts.'</endIndex>';
-
-					if (have_posts()) : while (have_posts()) : the_post();
+					query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
+					if (have_posts()) :
+						$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item&s=m3u8");
+						global $wp_query;
+						$noposts= $wp_query->found_posts;
+						echo '<resultLength>'.$noposts.'</resultLength>';
+						echo '<endIndex>'.$noposts.'</endIndex>';
+					while (have_posts()) : the_post();
           $thetitle = get_the_title();
           $theurl = get_post_meta(get_the_ID(), 'media_url', true);
           $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
