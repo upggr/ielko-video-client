@@ -293,7 +293,7 @@ if ($thecategory != 'Uncategorized') {
 					query_posts("cat=$thecatid&posts_per_page=100&post_type='media_item");
 
           echo '<category title="'.$thecategory.'" description="'.$thecategorydesc.'" sd_img="'.$thecategoryimg.'" hd_img="'.$thecategoryimg.'">';
-					echo '<categoryLeaf title="'.$thecategory.'" description="'.$thecategorydesc.'" feed="'.get_site_url().'/?feed=roku_by_cat%26cat='.$thecategory.'"/>';
+					echo '<categoryLeaf title="'.$thecategory.'" description="'.$thecategorydesc.'" feed="'.get_site_url().'/?feed=roku_by_cat&amp;cat='.$thecategory.'"/>';
           echo '</category>';
         }
          }
