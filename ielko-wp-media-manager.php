@@ -346,15 +346,20 @@ if ($thecategory == $_GET['cat']) {
           if (strpos($theurl, 'm3u8') !== false) {
           echo '<item sdImg="'.$theimg.'" hdImg="'.$theimg.'">
           <title>'.$thetitle.'</title>
+					<contentId>'.$theimg.'</contentId>
+					<contentType>Live TV</contentType>
+					<contentQuality>'.$thequality_.'</contentQuality>
           <description>'.$thedescription.'</description>
           <streamFormat>'.$thefrmt.'</streamFormat>
-          <switchingStrategy>'.$thestrg.'</switchingStrategy>
           <media>
           <streamFormat>'.$thefrmt.'</streamFormat>
           <streamQuality>'.$thequality_.'</streamQuality>
           <streamBitrate>'.$thebitrate.'</streamBitrate>
           <streamUrl>'.$theurl.'</streamUrl>
           </media>
+					<synopsis>'.$thedescription.'</synopsis>
+					<genres>Live TV</genres>
+					<runtime>Live</runtime>
           </item>';
           }
           endwhile;
