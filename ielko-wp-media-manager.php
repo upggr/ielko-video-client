@@ -322,10 +322,10 @@ foreach ($cats as $cat) {
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
 if ($thecategory == $_GET['cat']) {
 
-					query_posts("cat=$thecatid&posts_per_page=100&post_type='media_item");
+					query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
 
 					if (have_posts()) :
-						$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type='media_item");
+						$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
 						global $wp_query;
 						$noposts= $wp_query->found_posts;
 						echo '<resultLength>'.$noposts.'</resultLength>';
