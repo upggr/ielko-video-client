@@ -314,14 +314,13 @@ $posts = query_posts('showposts=' . $postCount);
 header('Content-Type: text/xml');
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 echo '<categories>';
-echo $_GET['cat'];
 $cats = get_categories();
 foreach ($cats as $cat) {
           $thecatid = $cat->term_id;
           $thecategory = $cat->name;
           $thecategorydesc = $cat->description;
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
-if ($thecategory != 'Uncategorized') {
+if ($thecategory == $_GET['cat']) {
 
 					query_posts("cat=$thecatid&posts_per_page=100&post_type='media_item");
 
