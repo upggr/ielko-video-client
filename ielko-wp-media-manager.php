@@ -326,6 +326,23 @@ if ($thecategory == $_GET['cat']) {
 					echo '<resultLength>4</resultLength>';
 					echo '<endIndex>4</endIndex>';
 
+					if (have_posts()) : while (have_posts()) : the_post();
+          $thetitle = get_the_title();
+          $theurl = get_post_meta(get_the_ID(), 'media_url', true);
+          $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
+          $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
+					$theimg =  $theimg[0];
+          $thefrmt = 'hls';
+          $thestrg = 'full-adaptation';
+          $thequality = get_post_meta(get_the_ID(), 'media_qty', true);
+          if ($thequality == 1) {
+            $thequality_ = 'SD';
+          }
+          else if ($thequality == 0) {
+            $thequality_ = 'HD';
+          }
+          $thebitrate = '0';
+
           if (strpos($theurl, 'm3u8') !== false) {
           echo '<item sdImg="'.$theimg.'" hdImg="'.$theimg.'">
           <title>'.$thetitle.'</title>
@@ -340,7 +357,9 @@ if ($thecategory == $_GET['cat']) {
           </media>
           </item>';
           }
+          endwhile;
           endif;
+
         }
          }
 echo '</feed>';
