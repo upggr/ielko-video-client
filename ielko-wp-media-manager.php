@@ -437,13 +437,22 @@ query_posts("post_type='media_item");
 if (have_posts()) : while (have_posts()) : the_post();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $thestatus = get_post_meta(get_the_ID(), 'media_active', true);
-echo $theurl.' is '.$thestatus.' ('.if (fopen($theurl)) { print "valid"; }.')<br />';
+echo $theurl.' is '.$thestatus.' ('.checkurl($theurl).')<br />';
 endwhile;
 endif;
 
 }
 
-
+function checkurl($url) {
+	if (fopen($theurl))
+	{
+		return "valid";
+	}
+	else
+	{
+		return "down" ;
+	}
+}
 
 function android1XML(){
         add_feed('android1', 'android1XMLFunc');
