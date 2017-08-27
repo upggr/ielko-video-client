@@ -776,6 +776,7 @@ $options = get_option( 'ivc_settings' );
   Your TVOS feed is accessible from <a href="'.get_site_url().'/?feed=tvos">'.get_site_url().'/?feed=tvos</a><br />
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
 	The dead link checker is at :  <a href="'.get_site_url().'/?feed=checkdead">'.get_site_url().'/?feed=checkdead</a><br />
+		The remote updater is at :  <a href="'.get_site_url().'/?feed=remoteupdate">'.get_site_url().'/?feed=remoteupdate</a><br />
 	<br />
     ', 'wordpress' );
 }
