@@ -455,7 +455,8 @@ if (have_posts()) : while (have_posts()) : the_post();
 $thetitle = get_the_title();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 if (return_url_from_media_title($thetitle,$data)) {
-	echo 'found one match for '.$thetitle;
+	echo 'found one match for '.$thetitle.'<br />';
+	echo 'comparing our url ('.$theurl.') with remote url ('.return_url_from_media_title($thetitle,$data).') for '.$thetitle.'<br />';
 }
 
 //if ($thestatus != checkurl_($theurl)) {
