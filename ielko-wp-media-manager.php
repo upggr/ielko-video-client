@@ -426,6 +426,16 @@ echo '</list></catalogTemplate></document>`}';
 
 }
 
+function check_dead_links(){
+        add_feed('checkdead', 'checkDeadFunc');
+}
+
+
+function checkDeadFunc(){
+echo 'hello';
+
+}
+
 
 
 function android1XML(){
@@ -796,18 +806,19 @@ function load_wp_media_files() {
 	wp_enqueue_script( 'ielko',plugin_dir_url( __FILE__ ) . '/js/ielko.js', array ( 'jquery' ), 1.1, true);
 	wp_enqueue_media();
 }
-add_action( 'save_post_media_item', 'save_media_meta', 10, 2 );
-add_action( 'init', 'ielko_wp_media_manager', 0 );
-add_action( 'init', 'file_replace' );
+add_action('save_post_media_item', 'save_media_meta', 10, 2 );
+add_action('init', 'ielko_wp_media_manager', 0 );
+add_action('init', 'file_replace' );
 add_action('do_meta_boxes', 'replace_featured_image_box');
-add_action( 'add_meta_boxes_media_item', 'media_meta_box' );
+add_action('add_meta_boxes_media_item', 'media_meta_box' );
+add_action('init','check_dead_links');
 add_action('init', 'rokuXML');
 add_action('init', 'rokuXMLcats');
 add_action('init', 'rokuXMLbycat');
 add_action('init', 'tvosXML');
 add_action('init', 'android1XML');
-add_action( 'admin_menu', 'ivc_add_admin_menu' );
-add_action( 'admin_init', 'ivc_settings_init' );
+add_action('admin_menu', 'ivc_add_admin_menu' );
+add_action('admin_init', 'ivc_settings_init' );
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'ielko_focus_hd', 336, 210, false );
 add_image_size( 'ielko_focus_sd', 248, 140, false );
