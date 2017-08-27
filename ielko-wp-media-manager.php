@@ -136,6 +136,8 @@ function create_work_meta( $post ){
     $media_active = get_post_meta( $post->ID, 'media_active', true );
     $media_type = get_post_meta( $post->ID, 'media_type', true );
     $media_qty = get_post_meta( $post->ID, 'media_qty', true );
+		$media_excl_check = get_post_meta( $post->ID, 'media_excl_check', true );
+		$media_excl_lists = get_post_meta( $post->ID, 'media_excl_lists', true );
     echo '<div>
         <p>
             <label for=\'media_url\'>Media URL (could be the url of a  video you uploaded in the media library, a youtube link, an m3u8 link etc..):</label>
@@ -163,11 +165,24 @@ function create_work_meta( $post ){
             <input type=\'radio\' name=\'media_type\' value=\'0\' '.checkactive($media_type,0).'> AUDIO<br>
         </p>
         <p>
-            <label for=\'media_type\'>Media Quality (for video) :</label>
+            <label for=\'media_qty\'>Media Quality (for video) :</label>
             <br />
             <input type=\'radio\' name=\'media_qty\' value=\'1\' '.checkactive($media_qty,1).'> SD <br>
             <input type=\'radio\' name=\'media_qty\' value=\'0\' '.checkactive($media_qty,0).'> HD <br>
         </p>
+				<p>
+						<label for=\'media_excl_check\'>Exclude from dead link checks :</label>
+						<br />
+						<input type=\'radio\' name=\'media_excl_check\' value=\'1\' '.checkactive($media_excl_check,1).'> Yes <br>
+						<input type=\'radio\' name=\'media_excl_check\' value=\'0\' '.checkactive($media_excl_check,0).'> No <br>
+				</p>
+
+				<p>
+						<label for=\'media_excl_lists\'>Exclude from update lists :</label>
+						<br />
+						<input type=\'radio\' name=\'media_excl_lists\' value=\'1\' '.checkactive($media_excl_lists,1).'> Yes <br>
+						<input type=\'radio\' name=\'media_excl_lists\' value=\'0\' '.checkactive($media_excl_lists,0).'> No <br>
+				</p>
 
     </div>';
 }
