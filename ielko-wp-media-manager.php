@@ -511,6 +511,7 @@ if (strpos($rfeed, '.xml') !== false) {
 echo 'this is xml<br />';
 }
 //echo return_url_from_media_title('CARTOON TV',$data);
+if ($data) {
 query_posts("post_type='media_item&posts_per_page=10");
 if (have_posts()) : while (have_posts()) : the_post();
 $thetitle = get_the_title();
@@ -546,7 +547,10 @@ endwhile;
 endif;
 
 
-
+}
+else {
+	echo 'problems parsing data for '.$rfeed.'<br />';
+}
 }
 
 function return_url_from_media_title($searchterm,$data_array) {
