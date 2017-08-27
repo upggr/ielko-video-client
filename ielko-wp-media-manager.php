@@ -288,6 +288,7 @@ $args = array(
   );
 $categories = get_categories( $args );
 $first = true;
+print_r($categories);
   foreach ($categories as $category) {
     if ( $first )
     {
