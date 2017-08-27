@@ -444,7 +444,7 @@ foreach($rawData as $line) {
   }
   else {
     $data[] = array(
-      'title'       => $matches[1],
+      'title'  => $matches[1],
       'url'    => trim($line)
     );
   }
