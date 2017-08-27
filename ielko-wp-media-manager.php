@@ -449,7 +449,27 @@ foreach($rawData as $line) {
     );
   }
 }
-echo return_url_from_media_title('CARTOON TV',$data);
+//echo return_url_from_media_title('CARTOON TV',$data);
+query_posts("post_type='media_item");
+if (have_posts()) : while (have_posts()) : the_post();
+$thetitle = get_the_title();
+$theurl = get_post_meta(get_the_ID(), 'media_url', true);
+if (return_url_from_media_title($thetitle,$data)) {
+	echo 'found one match for '.$thetitle;
+}
+
+//if ($thestatus != checkurl_($theurl)) {
+//echo 'there will be some updating from '.$thestatus.' to '.$thecurrentstatus.' for '.$theurl.'<br />';
+//update_post_meta(get_the_ID(), 'media_active', $thecurrentstatus, $thestatus );
+//}
+//else {
+//	echo 'the '.$theurl.' is up to date ! ('.$thestatus.' = '.$thecurrentstatus.')<br />';
+//}
+
+endwhile;
+endif;
+
+
 
 }
 
