@@ -483,18 +483,19 @@ if (return_url_from_media_title($thetitle,$data)) {
 		echo 'url is the same, exiting<br />';
 	}
 	else {
-		if ($isexcluded != 0) {
-			echo 'I am updating this<br />';
-			update_post_meta(get_the_ID(), 'media_url', return_url_from_media_title($thetitle,$data), $theurl);
+		if ($isexcluded = 1) {
+			echo 'I am not updating this as it is excluded<br />';
+
 		}
 		else {
-			echo 'I am not updating this as it is excluded<br />';
+			echo 'I am updating this<br />';
+			update_post_meta(get_the_ID(), 'media_url', return_url_from_media_title($thetitle,$data), $theurl);
 		}
 
 	}
 }
 
-echo '----<br />----<br />---'
+echo '----<br />----<br />---';
 endwhile;
 endif;
 
