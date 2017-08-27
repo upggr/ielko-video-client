@@ -512,8 +512,7 @@ echo 'this is xml<br />';
 $context  = stream_context_create(array('http' => array('header' => 'Accept: application/xml')));
 $xml = file_get_contents($rfeed, false, $context);
 $xml = simplexml_load_string($xml);
-$array = json_decode(json_encode((array)simplexml_load_string($xml)),1);
-print_r($array);
+print_r($xml);
 
 }
 //echo return_url_from_media_title('CARTOON TV',$data);
