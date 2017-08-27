@@ -509,7 +509,8 @@ $thetitle = get_the_title();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $isexcluded = get_post_meta(get_the_ID(), 'media_excl_lists', true);
 $r_url = return_url_from_media_title($thetitle,$data);
-if (return_url_from_media_title($thetitle,$data)) {
+if ($r_url) {
+	if ($r_url != 'nomatch') {
 	echo 'found one match for '.$thetitle.'<br />';
 	echo 'comparing our url ('.$theurl.') with remote url ('.$r_url.') for '.$thetitle.'<br />';
 	if ($theurl == $r_url) {
@@ -518,21 +519,16 @@ if (return_url_from_media_title($thetitle,$data)) {
 	else {
 		if ($isexcluded == 1) {
 			echo 'I am not updating this as it is excluded<br />';
-
 		}
 		else {
-
-			if ($r_url == 'nomatch') {
-				echo 'No match found on the remote file<br />';
-			}
-			else {
 				echo 'I am updating this ('.$r_url.' vs '.$theurl.')<br />';
 		//		update_post_meta(get_the_ID(), 'media_url',$r_url, $theurl);
-			}
-
 		}
 
 	}
+}
+
+
 }
 
 echo '----<br />----<br />---';
