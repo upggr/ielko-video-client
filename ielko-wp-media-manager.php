@@ -245,17 +245,17 @@ function channel_list(){
 
 if ( have_posts() ) {
 while ( have_posts() ) {
-	the_post();
-	    //      $thetitle = get_the_title();
-	    //      $theurl = get_post_meta(get_the_ID(), 'media_url', true);
-	   //       $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
-	   //       $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
-			//			$theimg =  $theimg[0];
-	   //       echo '
-	  //        title : '.$thetitle.'<br />
-		//				img : '.$theimg.'<br />
-	 //         url : '.$theurl.'<br />
-		//				description : '.$thedescription.'<br />';
+	//the_post();
+	          $thetitle = get_the_title();
+	          $theurl = get_post_meta(get_the_ID(), 'media_url', true);
+	          $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
+	          $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
+						$theimg =  $theimg[0];
+	          echo '
+	          title : '.$thetitle.'<br />
+						img : '.$theimg.'<br />
+	          url : '.$theurl.'<br />
+						description : '.$thedescription.'<br />';
 	}
 }
 
