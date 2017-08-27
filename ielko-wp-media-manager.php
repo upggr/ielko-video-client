@@ -489,6 +489,7 @@ header('Content-Type: text/html');
 
 $rfeed = $_GET['remotefeed'];
 if (strpos($rfeed, '.m3u') !== false) {
+	echo 'this is m3u<br />';
 $rawData = file($rfeed, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 $data = array();
 foreach($rawData as $line) {
@@ -507,10 +508,10 @@ foreach($rawData as $line) {
 }
 }
 if (strpos($rfeed, '.xml') !== false) {
-
+echo 'this is xml<br />';
 }
 //echo return_url_from_media_title('CARTOON TV',$data);
-query_posts("post_type='media_item&posts_per_page=1000");
+query_posts("post_type='media_item&posts_per_page=10");
 if (have_posts()) : while (have_posts()) : the_post();
 $thetitle = get_the_title();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
