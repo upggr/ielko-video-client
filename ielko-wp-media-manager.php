@@ -582,7 +582,7 @@ function check_dead_links(){
 
 function checkDeadFunc(){
 header('Content-Type: text/html');
-query_posts("post_type='media_item&posts_per_page=300");
+query_posts("post_type='media_item&posts_per_page=400");
 if (have_posts()) : while (have_posts()) : the_post();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $thestatus = get_post_meta(get_the_ID(), 'media_active', true);
@@ -597,7 +597,7 @@ if ($isexcluded == 1) {
 }
 else {
 	echo 'I am updating this ('.$thecurrentstatus.' vs '.$thestatus.')<br />';
-//	update_post_meta(get_the_ID(), 'media_active', $thecurrentstatus, $thestatus );
+	update_post_meta(get_the_ID(), 'media_active', $thecurrentstatus, $thestatus );
 }
 }
 else {
