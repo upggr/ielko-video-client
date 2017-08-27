@@ -240,21 +240,27 @@ function save_media_meta( $post_id ){
 
 function channel_list(){
 					query_posts("post_type=media_item");
+					$wpb_all_query = new WP_Query(array('post_type'=>'media_item', 'post_status'=>'publish', 'posts_per_page'=>-1));
+ 				if ( $wpb_all_query->have_posts() ) :
+while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post();
 
-	//the_post();
-	          $thetitle = get_the_title();
-	          $theurl = get_post_meta(get_the_ID(), 'media_url', true);
-	          $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
-	          $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
-						$theimg =  $theimg[0];
-	          echo '
-	          title : '.$thetitle.'<br />
-						img : '.$theimg.'<br />
-	          url : '.$theurl.'<br />
-						description : '.$thedescription.'<br />';
+$thetitle = get_the_title();
+$theurl = get_post_meta(get_the_ID(), 'media_url', true);
+$thedescription = get_post_meta(get_the_ID(), 'media_description', true);
+$theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
+$theimg =  $theimg[0];
+echo '
+title : '.$thetitle.'<br />
+img : '.$theimg.'<br />
+url : '.$theurl.'<br />
+description : '.$thedescription.'<br />';
+			endwhile;
+ wp_reset_postdata();
+	else :
+	_e( 'Sorry, no posts matched your criteria.' );
+	endif;
 
-
-
+	        
 }
 
 add_shortcode('ielko_channels', 'channel_list');
