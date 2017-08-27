@@ -283,32 +283,41 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 echo '<categories>';
 
 
-
-
-$cats = get_terms(
-   'category',
-   array('parent' => 0)
-);
-foreach ($cats as $cat) {
-          $thecatid = $cat->term_id;
-          $thecategory = $cat->name;
-          $thecategorydesc = $cat->description;
-          $thecategoryimg = z_taxonomy_image_url($cat->term_id);
-if ($thecategory != 'Uncategorized') {
-echo '<category title="'.$thecategory.'" description="'.$thecategorydesc.'" sd_img="'.$thecategoryimg.'"  hd_img="'.$thecategoryimg.'"  >';
-
-$categories=get_categories(
-	array( 'parent' => $cat->cat_ID )
-);
-foreach ($categories as $c) {
-	print_r($categories);
-	echo '<categoryLeaf title="'.$c->cat_name.'" description="'.$c->cat_description.'" feed="'.get_site_url().'/?feed=roku_by_cat&amp;cat='.$c->cat_name.'"/>';
-}
-
-
-echo '</category>';
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+$first = true;
+  foreach ($categories as $category) {
+    if ( $first )
+    {
+			echo '<category title="'.$category->cat_name.'" description="'.$category->description.'" sd_img="'.z_taxonomy_image_url($category->term_id).'"  hd_img="'.z_taxonomy_image_url($category->term_id).'"  >';
+        $first = false;
+    }
+    else
+    {
+        echo '<li class="title"><a href="acatalog/abovegroundpools.html">'.$category->cat_name.'</a>';
+    }
+    $theid = $category->term_id;
+    $children = $wpdb->get_results( "SELECT term_id FROM $wpdb->term_taxonomy WHERE parent=$theid" );
+        $no_children = count($children);
+    if ($no_children > 0) {
+        $args2 = array(
+         'orderby' => 'name',
+         'parent' => 2
+         );
+        $args2["parent"]=$category->term_id;
+        $categories2 = get_categories( $args2 );
+         foreach ($categories2 as $category2) {
+	echo '<categoryLeaf title="'.$category2->cat_name.'" description="'.$category2->cat_description.'" feed="'.get_site_url().'/?feed=roku_by_cat&amp;cat='.$category2->cat_name.'"/>';
         }
-         }
+    } else {
+    echo '</category>';
+    }
+
+  }
+
 
 echo '</categories>';
 
