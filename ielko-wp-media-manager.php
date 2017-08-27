@@ -434,6 +434,7 @@ function remote_updater(){
 function remoteUpdateFunc(){
 header('Content-Type: text/html');
 echo 'ok';
+echo $_GET['remotefeed'];
 }
 
 
