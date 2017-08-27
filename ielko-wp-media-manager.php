@@ -509,6 +509,11 @@ foreach($rawData as $line) {
 }
 if (strpos($rfeed, '.xml') !== false) {
 echo 'this is xml<br />';
+$context  = stream_context_create(array('http' => array('header' => 'Accept: application/xml')));
+$xml = file_get_contents($rfeed, false, $context);
+$xml = simplexml_load_string($xml);
+print_r($xml);
+
 }
 //echo return_url_from_media_title('CARTOON TV',$data);
 if ($data) {
