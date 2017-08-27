@@ -112,7 +112,7 @@ function wpse_98269_script() {
 function media_meta_box( $post ){
     $id = 'media_info';
     $title = 'Media Information';
-    $callback = create_work_meta();
+    $callback = create_work_meta($post);
     $screen = 'media_item';
     $context = 'normal';
     $priority = 'low';
