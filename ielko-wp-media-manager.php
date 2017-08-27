@@ -503,7 +503,7 @@ foreach($rawData as $line) {
   }
 }
 //echo return_url_from_media_title('CARTOON TV',$data);
-query_posts("post_type='media_item&posts_per_page=1000");
+query_posts("post_type='media_item&posts_per_page=10");
 if (have_posts()) : while (have_posts()) : the_post();
 $thetitle = get_the_title();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
@@ -512,7 +512,7 @@ if (return_url_from_media_title($thetitle,$data)) {
 	echo 'found one match for '.$thetitle.'<br />';
 	echo 'comparing our url ('.$theurl.') with remote url ('.return_url_from_media_title($thetitle,$data).') for '.$thetitle.'<br />';
 	if ($theurl == return_url_from_media_title($thetitle,$data)) {
-		echo 'url is the same, exiting<br />';
+		echo 'url is the same, exiting ('.return_url_from_media_title($thetitle,$data).' vs '.$theurl.')<br />';
 	}
 	else {
 		if ($isexcluded == 1) {
@@ -520,8 +520,8 @@ if (return_url_from_media_title($thetitle,$data)) {
 
 		}
 		else {
-			echo 'I am updating this<br />';
-			update_post_meta(get_the_ID(), 'media_url', return_url_from_media_title($thetitle,$data), $theurl);
+			echo 'I am updating this ('.return_url_from_media_title($thetitle,$data).' vs '.$theurl.')<br />';
+	//		update_post_meta(get_the_ID(), 'media_url', return_url_from_media_title($thetitle,$data), $theurl);
 		}
 
 	}
@@ -548,7 +548,7 @@ function check_dead_links(){
 
 function checkDeadFunc(){
 header('Content-Type: text/html');
-query_posts("post_type='media_item&posts_per_page=1000");
+query_posts("post_type='media_item&posts_per_page=5");
 if (have_posts()) : while (have_posts()) : the_post();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $thestatus = get_post_meta(get_the_ID(), 'media_active', true);
@@ -562,8 +562,9 @@ if ($isexcluded == 1) {
 	echo 'I am not updating this as it is excluded<br />';
 }
 else {
-	echo 'I am updating this<br />';
-	update_post_meta(get_the_ID(), 'media_active', $thecurrentstatus, $thestatus );
+	echo 'I am updating this ('.$thecurrentstatus.' vs '.$thestatus.')<br />';
+
+//	update_post_meta(get_the_ID(), 'media_active', $thecurrentstatus, $thestatus );
 }
 }
 else {
