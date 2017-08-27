@@ -521,8 +521,15 @@ if (return_url_from_media_title($thetitle,$data)) {
 
 		}
 		else {
-			echo 'I am updating this ('.$r_url.' vs '.$theurl.')<br />';
-	//		update_post_meta(get_the_ID(), 'media_url',$r_url, $theurl);
+
+			if ($r_url == 'nomatch') {
+				echo 'No match found on the remote file<br />'
+			}
+			else {
+				echo 'I am updating this ('.$r_url.' vs '.$theurl.')<br />';
+		//		update_post_meta(get_the_ID(), 'media_url',$r_url, $theurl);
+			}
+
 		}
 
 	}
@@ -538,15 +545,12 @@ endif;
 
 function return_url_from_media_title($searchterm,$data_array) {
 	$key = array_search($searchterm, array_column($data_array, 'title'));
-	echo '+++++'.$key.'++++<br>';
 	if ($key) {
-		echo 'key was found';
+		return $data_array[$key]['url'];
 	}
 	else {
-		echo 'key was not found';
+		return 'nomatch';
 	}
-	return $data_array[$key]['url'];
-//	return $key.' <br />';
 }
 
 function check_dead_links(){
