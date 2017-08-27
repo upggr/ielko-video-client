@@ -437,19 +437,13 @@ echo 'ok';
 echo $_GET['remotefeed'];
 
 $text = <<<EOD
-#EXTM3U
-#EXTINF:419,Alice in Chains - Rotten Apple
-Alice in Chains_Jar of Flies_01_Rotten Apple.mp3
-#EXTINF:260,Alice in Chains - Nutshell
-Alice in Chains_Jar of Flies_02_Nutshell.mp3
-#EXTINF:255,Alice in Chains - I Stay Away
-Alice in Chains_Jar of Flies_03_I Stay Away.mp3
-#EXTINF:256,Alice in Chains - No Excuses
-Alice in Chains_Jar of Flies_04_No Excuses.mp3
-#EXTINF:157,Alice in Chains - Whale And Wasp
-Alice in Chains_Jar of Flies_05_Whale And Wasp.mp3
-#EXTINF:245,Alice in Chains - Swing On This
-Alice in Chains_Jar of Flies_07_Swing On This.mp3
+#EXTM3U url-tvg="http://tv.x-mad.com/EPG/rytecxmltv-Greece.gz"
+#EXTINF:-1 group-title="ΠΑΝΕΛΛΑΔΙΚΑ" tvg-name="ΕΡΤ1" tvg-logo="http://greektv.pbworks.com/f/1433976522/ERT1.png",ERT1
+https://www.youtube.com/watch?v=GAser_IkADU
+#EXTINF:-1 group-title="ΠΑΝΕΛΛΑΔΙΚΑ" tvg-name="ΕΡΤ1" tvg-logo="http://greektv.pbworks.com/f/1433976522/ERT1.png",ERT1 WORLDWIDE
+https://www.youtube.com/watch?v=Zx98moCvkpU
+#EXTINF:-1 group-title="ΠΑΝΕΛΛΑΔΙΚΑ" tvg-name="ΕΡΤ2" tvg-logo="http://greektv.pbworks.com/f/1433976520/ERT2.png",ERT2
+https://www.youtube.com/watch?v=AOVVjaLbGEk
 EOD;
 file_put_contents('test.m3u', $text);
 $rawData = file('test.m3u', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -461,8 +455,8 @@ foreach($rawData as $line) {
     continue;
   }
   if(strpos(trim($line), '#EXTINF') === 0) {
-  //  preg_match('/(http:.*ng).*,\s*(.*)\n(.*)/', $line, $matches);
-		preg_match('/#EXTINF:(\d+),(.*) - (.*)/', $line, $matches);
+    preg_match('/(http:.*ng).*,\s*(.*)\n(.*)/', $line, $matches);
+	//	preg_match('/#EXTINF:(\d+),(.*) - (.*)/', $line, $matches);
   }
   else {
     $data[] = array(
