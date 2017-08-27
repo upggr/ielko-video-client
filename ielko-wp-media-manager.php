@@ -282,7 +282,6 @@ header('Content-Type: text/xml');
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 echo '<categories>';
 
-
 $args = array(
   'orderby' => 'name',
   'parent' => 0
@@ -317,8 +316,6 @@ $first = true;
     }
 
   }
-
-
 echo '</categories>';
 
 }
