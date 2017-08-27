@@ -239,10 +239,7 @@ function save_media_meta( $post_id ){
 
 
 function channel_list(){
-	$postCount = 1000;
-	$posts = query_posts('showposts=' . $postCount);
-
-						query_posts("posts_per_page=100&post_type=media_item");
+query_posts("posts_per_page=100&post_type=media_item");
 						if (have_posts()) :
 						while (have_posts()) : the_post();
 	          $thetitle = get_the_title();
@@ -250,24 +247,11 @@ function channel_list(){
 	          $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
 	          $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
 						$theimg =  $theimg[0];
-	          $thefrmt = 'hls';
-	          $thestrg = 'full-adaptation';
-	          $thequality = get_post_meta(get_the_ID(), 'media_qty', true);
-	          if ($thequality == 1) {
-	            $thequality_ = 'SD';
-	          }
-	          else if ($thequality == 0) {
-	            $thequality_ = 'HD';
-	          }
-	          $thebitrate = '0';
-
-	          if (strpos($theurl, 'm3u8') !== false) {
 	          echo '
 	          title : '.$thetitle.'<br />
 						img : '.$theimg.'<br />
 	          url : '.$theurl.'<br />
 						description : '.$thedescription.'<br />';
-	          }
 	          endwhile;
 	          endif;
 
