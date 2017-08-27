@@ -677,7 +677,7 @@ if ( ! class_exists( 'WC_CPInstallCheck' ) ) {
 		static function install() {
 			if ( !in_array( 'categories-images/categories-images.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ){
 				deactivate_plugins(__FILE__);
-				$error_message = __('This plugin requires <a target="_blank" href="https://wordpress.org/plugins/categories-images/">Categories Images</a> &amp; plugin to be active!', 'categories-images');
+				$error_message = __('This plugin requires <a target="_blank" href="https://wordpress.org/plugins/categories-images/">Categories Images</a> &amp; plugin to be active! Install it, activate it and come back here :) ', 'categories-images');
 				die($error_message);
 
 			}
