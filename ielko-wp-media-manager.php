@@ -1000,7 +1000,14 @@ function custom_media_item_column( $column, $post_id ) {
     switch ( $column ) {
 
         case 'Type' :
-            echo get_post_meta( $post_id , 'media_type' , true );
+				$typ = get_post_meta( $post_id , 'media_type' , true );
+				if ( $typ == 1 ) {
+					echo 'VIDEO ';
+				}
+				else if ( $typ == 0 ) {
+					echo 'RADIO ';
+				};
+				break;
 
         case 'Active' :
 				$act = get_post_meta( $post_id , 'media_active' , true );
