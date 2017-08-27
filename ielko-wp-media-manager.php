@@ -990,8 +990,12 @@ function km_get_wordpress_uploads_directory_path() {
 	return trailingslashit( $upload_dir['basedir'] );
 }
 
-
-
+set_custom_media_item_columns
+function set_custom_media_item_columns($columns) {
+    $columns['Type'] = __( 'Type', 'your_text_domain' );
+    $columns['Active'] = __( 'Active', 'your_text_domain' );
+    return $columns;
+}
 function load_wp_media_files() {
 	wp_enqueue_script( 'ielko',plugin_dir_url( __FILE__ ) . '/js/ielko.js', array ( 'jquery' ), 1.1, true);
 	wp_enqueue_media();
@@ -1010,6 +1014,7 @@ add_action('init', 'tvosXML');
 add_action('init', 'android1XML');
 add_action('admin_menu', 'ivc_add_admin_menu' );
 add_action('admin_init', 'ivc_settings_init' );
+add_filter( 'manage_media_item_columns', 'set_custom_media_item_columns' );
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'ielko_focus_hd', 336, 210, false );
 add_image_size( 'ielko_focus_sd', 248, 140, false );
