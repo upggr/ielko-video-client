@@ -291,8 +291,6 @@ foreach ($cats as $cat) {
 if ($thecategory != 'Uncategorized') {
 
 					query_posts("cat=$thecatid&posts_per_page=100&post_type='media_item");
-
-
 					echo '<categoryLeaf title="'.$thecategory.'" description="'.$thecategorydesc.'" feed="'.get_site_url().'/?feed=roku_by_cat&amp;cat='.$thecategory.'"/>';
 
         }
