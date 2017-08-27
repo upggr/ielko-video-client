@@ -446,9 +446,9 @@ foreach($rawData as $line) {
   }
   else {
     $data[] = array(
-      'artist'       => $matches[2],
-      'title'        => $matches[3],
-      'time_seconds' => $matches[1],
+      'title'       => $matches[2],
+      'source'        => $matches[3],
+      'image' => $matches[1],
       'file_path'    => trim($line)
     );
   }
