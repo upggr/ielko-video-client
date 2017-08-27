@@ -587,11 +587,11 @@ if (have_posts()) : while (have_posts()) : the_post();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $thestatus = get_post_meta(get_the_ID(), 'media_active', true);
 $isexcluded = get_post_meta(get_the_ID(), 'media_excl_check', true);
-
 $thecurrentstatus = checkurl_($theurl);
+
+if (strpos($theurl, 'm3u8') !== false) {
 if ($thestatus != checkurl_($theurl)) {
 echo 'there will be some updating from '.$thestatus.' to '.$thecurrentstatus.' for '.$theurl.'<br />';
-
 if ($isexcluded == 1) {
 	echo 'I am not updating this as it is excluded<br />';
 }
@@ -603,7 +603,10 @@ else {
 else {
 	echo 'the '.$theurl.' is up to date ! ('.$thestatus.' = '.$thecurrentstatus.')<br />';
 }
-
+}
+else {
+	echo 'this is not an m3u8 link, will skip ('.$theurl.')<br />';
+}
 endwhile;
 endif;
 
