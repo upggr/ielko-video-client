@@ -218,6 +218,12 @@ function save_media_meta( $post_id ){
     if( isset( $_REQUEST['media_qty'] ) ){
         update_post_meta( $post_id, 'media_qty', sanitize_text_field( $_POST['media_qty'] ) );
     }
+		if( isset( $_REQUEST['media_excl_check'] ) ){
+				update_post_meta( $post_id, 'media_excl_check', sanitize_text_field( $_POST['media_excl_check'] ) );
+		}
+		if( isset( $_REQUEST['media_excl_lists'] ) ){
+				update_post_meta( $post_id, 'media_excl_lists', sanitize_text_field( $_POST['media_excl_lists'] ) );
+		}
 }
 
 
