@@ -281,7 +281,7 @@ $posts = query_posts('showposts=' . $postCount);
 header('Content-Type: text/xml');
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 echo '<categories>';
-
+global $wpdb;
 $args = array(
   'orderby' => 'name',
   'parent' => 0
