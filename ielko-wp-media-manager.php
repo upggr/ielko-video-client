@@ -249,18 +249,12 @@ $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
 $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
 $theimg =  $theimg[0];
-echo '
-title : '.$thetitle.'<br />
-img : '.$theimg.'<br />
-url : '.$theurl.'<br />
-description : '.$thedescription.'<br />';
-			endwhile;
+echo '<a target="_blank" href="greektv.upg.gr/upg_player.html?play='.$theurl.'">'.$thetitle.'</a><br />';
+endwhile;
  wp_reset_postdata();
 	else :
-	_e( 'Sorry, no posts matched your criteria.' );
+	_e( 'Nothing to display.' );
 	endif;
-
-	        
 }
 
 add_shortcode('ielko_channels', 'channel_list');
