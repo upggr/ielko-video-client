@@ -436,7 +436,8 @@ header('Content-Type: text/html');
 query_posts("post_type='media_item");
 if (have_posts()) : while (have_posts()) : the_post();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
-echo $theurl.'<br />';
+$thestatus = get_post_meta(get_the_ID(), 'media_active', true);
+echo $theurl.' is '.$thestatus.'<br />';
 endwhile;
 endif;
 
