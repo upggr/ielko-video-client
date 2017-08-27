@@ -503,7 +503,7 @@ foreach($rawData as $line) {
   }
 }
 //echo return_url_from_media_title('CARTOON TV',$data);
-query_posts("post_type='media_item&posts_per_page=10");
+query_posts("post_type='media_item&posts_per_page=1000");
 if (have_posts()) : while (have_posts()) : the_post();
 $thetitle = get_the_title();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
