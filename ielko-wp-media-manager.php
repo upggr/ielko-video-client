@@ -443,7 +443,7 @@ foreach($rawData as $line) {
   }
   if(strpos(trim($line), '#EXTINF') === 0) {
     preg_match('/(http:.*ng).*,\s*(.*)\n(.*)/', $line, $matches);
-  }
+  } 
   else {
     $data[] = array(
       'title'       => $matches[2],
