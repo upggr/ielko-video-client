@@ -475,7 +475,7 @@ endif;
 }
 
 function return_url_from_media_title($searchterm,$data_array) {
-	$key = array_search('CARTOON TV', array_column($data_array, 'title'));
+	$key = array_search($searchterm, array_column($data_array, 'title'));
 	return $data_array[$key]['url'];
 //	return $key.' <br />';
 }
