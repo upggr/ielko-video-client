@@ -290,10 +290,7 @@ $categories = get_categories( $args );
 $first = true;
 print_r($categories);
   foreach ($categories as $category) {
-
 			echo '<category title="'.$category->cat_name.'" description="'.$category->description.'" sd_img="'.z_taxonomy_image_url($category->term_id).'"  hd_img="'.z_taxonomy_image_url($category->term_id).'"  >';
-        $first = false;
-
     $theid = $category->term_id;
     $children = $wpdb->get_results( "SELECT term_id FROM $wpdb->term_taxonomy WHERE parent=$theid" );
         $no_children = count($children);
