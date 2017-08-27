@@ -238,7 +238,13 @@ function save_media_meta( $post_id ){
 }
 
 
-// meta box
+function channel_list(){
+echo 'malakies';
+}
+
+add_shortcode('ielko_channels', 'channel_list');
+
+
 
 function rokuXML(){
         add_feed('roku', 'rokuXMLFunc');
