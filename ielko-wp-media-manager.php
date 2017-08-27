@@ -435,36 +435,18 @@ function remoteUpdateFunc(){
 header('Content-Type: text/html');
 echo 'ok';
 echo $_GET['remotefeed'];
-// create some test data:
-$text = <<<EOD
-#EXTM3U
-#EXTINF:419,Alice in Chains - Rotten Apple
-Alice in Chains_Jar of Flies_01_Rotten Apple.mp3
-#EXTINF:260,Alice in Chains - Nutshell
-Alice in Chains_Jar of Flies_02_Nutshell.mp3
-#EXTINF:255,Alice in Chains - I Stay Away
-Alice in Chains_Jar of Flies_03_I Stay Away.mp3
-#EXTINF:256,Alice in Chains - No Excuses
-Alice in Chains_Jar of Flies_04_No Excuses.mp3
-#EXTINF:157,Alice in Chains - Whale And Wasp
-Alice in Chains_Jar of Flies_05_Whale And Wasp.mp3
-#EXTINF:245,Alice in Chains - Swing On This
-Alice in Chains_Jar of Flies_07_Swing On This.mp3
-EOD;
-file_put_contents('test.m3u', $text);
-$rawData = file('test.m3u', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-//$rawData = file($_GET['remotefeed'], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+$rawData = file($_GET['remotefeed'], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 $data = array();
 foreach($rawData as $line) {
   if(strpos(trim($line), '#EXTM3U') === 0) {
     continue;
   }
   if(strpos(trim($line), '#EXTINF') === 0) {
-  //    preg_match('/#EXTINF:.*,\s*(.*)\n(.*)/', $line, $matches);
-
-		preg_match('/#EXTINF:(\d+),(.*) - (.*)/', $line, $matches);
-	print_r($matches);
+      preg_match('/#EXTINF:.*,\s*(.*)\n(.*)/', $line, $matches);
+			print_r($matches);
+	//	preg_match('/#EXTINF:(\d+),(.*) - (.*)/', $line, $matches);
   }
   else {
     $data[] = array(
@@ -477,7 +459,6 @@ foreach($rawData as $line) {
 
 print_r($data);
 
-unlink('test.m3u');
 }
 
 
