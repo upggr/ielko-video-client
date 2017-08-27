@@ -281,7 +281,7 @@ $posts = query_posts('showposts=' . $postCount);
 header('Content-Type: text/xml');
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 echo '<categories>';
-  echo '<category title="LIVE TV" description="LIVE TV STATIONS" sd_img="'.$thecategoryimg.'" hd_img="'.$thecategoryimg.'">';
+  echo '<category title="LIVE TV" description="LIVE TV STATIONS" sd_img="" hd_img="">';
 $cats = get_categories();
 foreach ($cats as $cat) {
           $thecatid = $cat->term_id;
