@@ -523,7 +523,7 @@ if (return_url_from_media_title($thetitle,$data)) {
 		else {
 
 			if ($r_url == 'nomatch') {
-				echo 'No match found on the remote file<br />'
+				echo 'No match found on the remote file<br />';
 			}
 			else {
 				echo 'I am updating this ('.$r_url.' vs '.$theurl.')<br />';
