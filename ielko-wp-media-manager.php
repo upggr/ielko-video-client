@@ -239,7 +239,7 @@ function save_media_meta( $post_id ){
 
 
 function channel_list(){
-					query_posts("posts_per_page=100&post_type=media_item");
+					query_posts("post_type=media_item");
 
 	//the_post();
 	          $thetitle = get_the_title();
