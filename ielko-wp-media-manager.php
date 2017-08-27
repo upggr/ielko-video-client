@@ -582,15 +582,14 @@ function check_dead_links(){
 
 function checkDeadFunc(){
 header('Content-Type: text/html');
-query_posts("post_type='media_item&posts_per_page=1000");
+query_posts("post_type='media_item&posts_per_page=100");
 if (have_posts()) : while (have_posts()) : the_post();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $thestatus = get_post_meta(get_the_ID(), 'media_active', true);
 $isexcluded = get_post_meta(get_the_ID(), 'media_excl_check', true);
 
-
 if (strpos($theurl, 'm3u8') !== false) {
-	$thecurrentstatus = checkurl_($theurl);
+$thecurrentstatus = checkurl_($theurl);
 if ($thestatus != checkurl_($theurl)) {
 echo 'there will be some updating from '.$thestatus.' to '.$thecurrentstatus.' for '.$theurl.'<br />';
 if ($isexcluded == 1) {
