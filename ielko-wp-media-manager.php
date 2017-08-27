@@ -455,15 +455,13 @@ foreach($rawData as $line) {
     continue;
   }
   if(strpos(trim($line), '#EXTINF') === 0) {
-    preg_match('/#EXTINF:.*,\s*(.*)\n(.*)/', $line, $matches);
-		print_r($matches);
+      preg_match('/#EXTINF:.*,\s*(.*)\n(.*)/', $line, $matches);
 	//	preg_match('/#EXTINF:(\d+),(.*) - (.*)/', $line, $matches);
   }
   else {
     $data[] = array(
-      'title'       => $matches[2],
-      'source'        => $matches[3],
-      'image' => $matches[1],
+      'title'       => $matches[1],
+      'url' => $matches[2],
       'file_path'    => trim($line)
     );
   }
