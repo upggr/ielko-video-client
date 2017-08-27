@@ -245,6 +245,7 @@ function channel_list(){
 
 if ( have_posts() ) {
 while ( have_posts() ) {
+	the_post();
 	    //      $thetitle = get_the_title();
 	    //      $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 	   //       $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
@@ -257,8 +258,7 @@ while ( have_posts() ) {
 		//				description : '.$thedescription.'<br />';
 	}
 }
-	          endwhile;
-	          endif;
+
 
 }
 
