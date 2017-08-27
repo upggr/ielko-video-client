@@ -461,7 +461,7 @@ if (return_url_from_media_title($thetitle,$data)) {
 		echo 'url is the same, exiting<br />';
 	}
 	else {
-		update_post_meta(get_the_ID(), 'media_url', $theurl, return_url_from_media_title($thetitle,$data) );
+		update_post_meta(get_the_ID(), 'media_url', return_url_from_media_title($thetitle,$data), $theurl);
 	}
 }
 
