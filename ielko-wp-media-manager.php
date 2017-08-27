@@ -241,10 +241,6 @@ function save_media_meta( $post_id ){
 function channel_list(){
 					query_posts("posts_per_page=100&post_type=media_item");
 
-
-
-if ( have_posts() ) {
-while ( have_posts() ) {
 	//the_post();
 	          $thetitle = get_the_title();
 	          $theurl = get_post_meta(get_the_ID(), 'media_url', true);
@@ -256,8 +252,7 @@ while ( have_posts() ) {
 						img : '.$theimg.'<br />
 	          url : '.$theurl.'<br />
 						description : '.$thedescription.'<br />';
-	}
-}
+
 
 
 }
