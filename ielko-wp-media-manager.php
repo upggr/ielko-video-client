@@ -1003,7 +1003,9 @@ function custom_media_item_column( $column, $post_id ) {
             echo get_post_meta( $post_id , 'media_type' , true );
 
         case 'Active' :
-            echo get_post_meta( $post_id , 'media_active' , true );
+            if ( get_post_meta( $post_id , 'media_active' , true ) == 1 ) {
+							return 'YES';
+						};
             break;
 
     }
