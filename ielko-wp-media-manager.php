@@ -287,8 +287,7 @@ echo '<categories>';
 
 $cats = get_terms(
    'category',
-   array('parent' => 0,
- 				 'hide_empty'=0)
+   array('parent' => 0)
 );
 foreach ($cats as $cat) {
           $thecatid = $cat->term_id;
