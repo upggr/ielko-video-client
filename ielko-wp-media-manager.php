@@ -587,9 +587,10 @@ if (have_posts()) : while (have_posts()) : the_post();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $thestatus = get_post_meta(get_the_ID(), 'media_active', true);
 $isexcluded = get_post_meta(get_the_ID(), 'media_excl_check', true);
-$thecurrentstatus = checkurl_($theurl);
+
 
 if (strpos($theurl, 'm3u8') !== false) {
+	$thecurrentstatus = checkurl_($theurl);
 if ($thestatus != checkurl_($theurl)) {
 echo 'there will be some updating from '.$thestatus.' to '.$thecurrentstatus.' for '.$theurl.'<br />';
 if ($isexcluded == 1) {
