@@ -288,7 +288,7 @@ $args = array(
   );
 $categories = get_categories( $args );
 $first = true;
-print_r($categories);
+
   foreach ($categories as $category) {
 			echo '<category title="'.$category->cat_name.'" description="'.$category->description.'" sd_img="'.z_taxonomy_image_url($category->term_id).'"  hd_img="'.z_taxonomy_image_url($category->term_id).'"  >';
     $theid = $category->term_id;
