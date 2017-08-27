@@ -522,7 +522,7 @@ if ($r_url) {
 		}
 		else {
 				echo 'I am updating this ('.$r_url.' vs '.$theurl.')<br />';
-		//		update_post_meta(get_the_ID(), 'media_url',$r_url, $theurl);
+				update_post_meta(get_the_ID(), 'media_url',$r_url, $theurl);
 		}
 
 	}
