@@ -508,6 +508,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 $thetitle = get_the_title();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $isexcluded = get_post_meta(get_the_ID(), 'media_excl_lists', true);
+print_r($data);
 $r_url = return_url_from_media_title($thetitle,$data);
 if (return_url_from_media_title($thetitle,$data)) {
 	echo 'found one match for '.$thetitle.'<br />';
