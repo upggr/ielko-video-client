@@ -432,6 +432,7 @@ function check_dead_links(){
 
 
 function checkDeadFunc(){
+header('Content-Type: text/html');
 echo 'hello';
 
 }
