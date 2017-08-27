@@ -539,6 +539,12 @@ endif;
 function return_url_from_media_title($searchterm,$data_array) {
 	$key = array_search($searchterm, array_column($data_array, 'title'));
 	echo '+++++'.$key.'++++<br>';
+	if ($key) {
+		echo 'key was found';
+	}
+	else {
+		echo 'key was not found';
+	}
 	return $data_array[$key]['url'];
 //	return $key.' <br />';
 }
