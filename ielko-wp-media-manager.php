@@ -449,7 +449,7 @@ foreach($rawData as $line) {
     );
   }
 }
-$key = array_search('CARTOON TV', $data); // $key = 2;
+$key = array_search('CARTOON TV', array_column($data, 'title')); // $key = 2;
 echo $key.'<br />';
 print_r($data);
 
