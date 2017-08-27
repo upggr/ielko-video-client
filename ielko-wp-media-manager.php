@@ -281,7 +281,7 @@ $posts = query_posts('showposts=' . $postCount);
 header('Content-Type: text/xml');
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 echo '<categories>';
-  echo '<category title="LIVE TV" description="LIVE TV STATIONS" sd_img="" hd_img="">';
+  echo '<category title="LIVE TV" description="LIVE TV STATIONS" sd_img="http://ielko-video-client.upg.gr/wp-content/uploads/2017/07/19243227-Fist-in-color-national-flag-of-greece-punching-world-map-as-symbol-of-export-economic-growth-power-a-Stock-Photo.jpg" hd_img="http://ielko-video-client.upg.gr/wp-content/uploads/2017/07/19243227-Fist-in-color-national-flag-of-greece-punching-world-map-as-symbol-of-export-economic-growth-power-a-Stock-Photo.jpg">';
 $cats = get_categories();
 foreach ($cats as $cat) {
           $thecatid = $cat->term_id;
