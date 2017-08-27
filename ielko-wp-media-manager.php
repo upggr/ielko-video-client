@@ -305,9 +305,9 @@ $first = true;
 	echo '<categoryLeaf title="'.$category2->cat_name.'" description="'.$category2->cat_description.'" feed="'.get_site_url().'/?feed=roku_by_cat&amp;cat='.$category2->cat_name.'"/>';
         }
     } else {
-    echo '</category>';
+  //  echo '</category>';
     }
-
+echo '</category>';
   }
 echo '</categories>';
 
