@@ -437,21 +437,23 @@ query_posts("post_type='media_item");
 if (have_posts()) : while (have_posts()) : the_post();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $thestatus = get_post_meta(get_the_ID(), 'media_active', true);
-echo $theurl.' is '.$thestatus.' ('.checkurl($theurl).')<br />';
+echo $theurl.' is '.$thestatus.' ('.checkurl_($theurl).')<br />';
 endwhile;
 endif;
 
 }
 
 function checkurl($url) {
-	if (fopen($theurl))
-	{
-		return "valid";
-	}
+	$headers = @get_headers( $url);
+	$headers = (is_array($headers)) ? implode( "\n ", $headers) : $headers;
+	return (bool)preg_match('#^HTTP/.*\s+[(200|301|302)]+\s#i', $headers);
+}
+
+function checkurl_($url) {
+	if (checkurl($url))
+	   return "ok";
 	else
-	{
-		return "down" ;
-	}
+	   return "nok";
 }
 
 function android1XML(){
