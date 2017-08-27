@@ -445,7 +445,7 @@ foreach($rawData as $line) {
     continue;
   }
   if(strpos(trim($line), '#EXTINF') === 0) {
-      preg_match('/#EXTINF:.*,\s*(.*)\n(.*)/', $line, $matches);
+      preg_match_all('/#EXTINF:.*,\s*(.*)\n(.*)/', $line, $matches);
 			echo $line.'<br />';
 			print_r($matches).'<br />';
 echo 'tirggered 2 <br />';
