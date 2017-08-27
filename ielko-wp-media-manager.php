@@ -255,6 +255,8 @@ while ( have_posts() ) {
 		//				img : '.$theimg.'<br />
 	 //         url : '.$theurl.'<br />
 		//				description : '.$thedescription.'<br />';
+	}
+}
 	          endwhile;
 	          endif;
 
