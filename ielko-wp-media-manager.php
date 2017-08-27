@@ -271,10 +271,10 @@ function channel_list(){
 
 	          if (strpos($theurl, 'm3u8') !== false) {
 	          echo '
-	          <title>'.$thetitle.'</title>
-						<contentId>'.$theimg.'</contentId>
-	          <streamUrl>'.$theurl.'</streamUrl>
-						<synopsis>'.$thedescription.'</synopsis>';
+	          title : '.$thetitle.'<br />
+						img : '.$theimg.'<br />
+	          url : '.$theurl.'<br />
+						description : '.$thedescription.'<br />';
 	          }
 	          endwhile;
 	          endif;
