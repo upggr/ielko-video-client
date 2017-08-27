@@ -445,7 +445,7 @@ foreach($rawData as $line) {
   else {
     $data[] = array(
       'title'       => $matches[1],
-      'file_path'    => trim($line)
+      'url'    => trim($line)
     );
   }
 }
