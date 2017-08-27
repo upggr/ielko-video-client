@@ -512,8 +512,12 @@ echo 'this is xml<br />';
 $context  = stream_context_create(array('http' => array('header' => 'Accept: application/xml')));
 $xml = file_get_contents($rfeed, false, $context);
 $xml = simplexml_load_string($xml);
-print_r($xml);
-
+//print_r($xml);
+foreach($xml->channels->channel as $item)
+{
+    echo (string)$item->name;
+    echo (string)$item->url;
+}
 }
 //echo return_url_from_media_title('CARTOON TV',$data);
 if ($data) {
