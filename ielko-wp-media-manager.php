@@ -528,7 +528,7 @@ if ($r_url) {
 	}
 }
 else {
-	echo 'there was no match found in the remote file, skipping <br />';
+	echo 'there was no match found in the remote file, skipping ('.$thetitle.')<br />';
 }
 
 }
