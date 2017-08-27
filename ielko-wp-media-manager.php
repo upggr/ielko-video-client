@@ -476,6 +476,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 $thetitle = get_the_title();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $isexcluded = get_post_meta(get_the_ID(), 'media_excl_lists', true);
+echo $isexcluded;
 if (return_url_from_media_title($thetitle,$data) & $isexcluded != 1) {
 	//echo 'found one match for '.$thetitle.'<br />';
 	//echo 'comparing our url ('.$theurl.') with remote url ('.return_url_from_media_title($thetitle,$data).') for '.$thetitle.'<br />';
