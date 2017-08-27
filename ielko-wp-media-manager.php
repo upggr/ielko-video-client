@@ -455,23 +455,16 @@ if (have_posts()) : while (have_posts()) : the_post();
 $thetitle = get_the_title();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 if (return_url_from_media_title($thetitle,$data)) {
-	echo 'found one match for '.$thetitle.'<br />';
-	echo 'comparing our url ('.$theurl.') with remote url ('.return_url_from_media_title($thetitle,$data).') for '.$thetitle.'<br />';
+	//echo 'found one match for '.$thetitle.'<br />';
+	//echo 'comparing our url ('.$theurl.') with remote url ('.return_url_from_media_title($thetitle,$data).') for '.$thetitle.'<br />';
 	if ($theurl == return_url_from_media_title($thetitle,$data)) {
-		echo 'url is the same, exiting<br />';
+	//	echo 'url is the same, exiting<br />';
 	}
 	else {
 		update_post_meta(get_the_ID(), 'media_url', return_url_from_media_title($thetitle,$data), $theurl);
 	}
 }
 
-//if ($thestatus != checkurl_($theurl)) {
-//echo 'there will be some updating from '.$thestatus.' to '.$thecurrentstatus.' for '.$theurl.'<br />';
-//update_post_meta(get_the_ID(), 'media_active', $thecurrentstatus, $thestatus );
-//}
-//else {
-//	echo 'the '.$theurl.' is up to date ! ('.$thestatus.' = '.$thecurrentstatus.')<br />';
-//}
 
 endwhile;
 endif;
