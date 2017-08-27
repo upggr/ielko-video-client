@@ -761,8 +761,10 @@ $options = get_option( 'ivc_settings' );
 					<br />
 					<br />
   Your ROKU feed is accessible from <a href="'.get_site_url().'/?feed=roku">'.get_site_url().'/?feed=roku</a><br />
+	Your new ROKU feed is accessible from <a href="'.get_site_url().'/?feed=roku_cats">'.get_site_url().'/?feed=roku_cats</a><br />
   Your TVOS feed is accessible from <a href="'.get_site_url().'/?feed=tvos">'.get_site_url().'/?feed=tvos</a><br />
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
+	The dead link checker is at :  <a href="'.get_site_url().'/?feed=checkdead">'.get_site_url().'/?feed=checkdead</a><br />
 	<br />
     ', 'wordpress' );
 }
