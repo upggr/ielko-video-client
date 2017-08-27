@@ -41,3 +41,9 @@ Add more feed types for compatibility with kodi, plex channels, vlc etc
 Create a matching template so that there is a full website using the links in the same wordpress installation
 
 Download the plugin : here
+
+
+here are some feeds that are compatible with the checker functions (/?feed=remoteupdate&remotefeed=):
+
+http://alivegr.net/raw/alivegr.
+https://raw.githubusercontent.com/free-greek-iptv/greek-iptv/master/android.m3u
