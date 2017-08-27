@@ -241,12 +241,7 @@ function save_media_meta( $post_id ){
 function channel_list(){
 	$postCount = 1000;
 	$posts = query_posts('showposts=' . $postCount);
-	$cats = get_categories();
-	foreach ($cats as $cat) {
-	          $thecatid = $cat->term_id;
-	          $thecategory = $cat->name;
-	          $thecategorydesc = $cat->description;
-	          $thecategoryimg = z_taxonomy_image_url($cat->term_id);
+
 						query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
 						if (have_posts()) :
 							$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
@@ -278,7 +273,7 @@ function channel_list(){
 	          }
 	          endwhile;
 	          endif;
-	         }
+
 }
 
 add_shortcode('ielko_channels', 'channel_list');
