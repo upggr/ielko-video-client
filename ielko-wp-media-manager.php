@@ -515,8 +515,9 @@ $xml = simplexml_load_string($xml);
 //print_r($xml);
 foreach($xml->channel as $item)
 {
+	$data['title'] = $item->name;
+	$data['url'] = $item->url;
     echo (string)$item->name;
-    echo (string)$item->url;
 }
 }
 //echo return_url_from_media_title('CARTOON TV',$data);
