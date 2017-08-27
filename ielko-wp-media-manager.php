@@ -455,7 +455,7 @@ foreach($rawData as $line) {
     continue;
   }
   if(strpos(trim($line), '#EXTINF') === 0) {
-    preg_match('/(http:.*ng).*,\s*(.*)\n(.*)/', $line, $matches);
+  //  preg_match('/(http:.*ng).*,\s*(.*)\n(.*)/', $line, $matches);
 	//	preg_match('/#EXTINF:(\d+),(.*) - (.*)/', $line, $matches);
   }
   else {
