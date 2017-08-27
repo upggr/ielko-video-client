@@ -449,12 +449,15 @@ foreach($rawData as $line) {
     );
   }
 }
-$key = array_search('CARTOON TV', array_column($data, 'title')); // $key = 2;
-echo $key.'<br />';
+echo return_url_from_array('CARTOON TV',$data);
 print_r($data);
 
 }
 
+function return_url_from_array($searchterm,$data_array) {
+	$key = array_search('CARTOON TV', array_column($data, 'title')); // $key = 2;
+	return $key.' is <br />';
+}
 
 function check_dead_links(){
         add_feed('checkdead', 'checkDeadFunc');
