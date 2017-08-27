@@ -458,7 +458,7 @@ if (return_url_from_media_title($thetitle,$data)) {
 	echo 'found one match for '.$thetitle.'<br />';
 	echo 'comparing our url ('.$theurl.') with remote url ('.return_url_from_media_title($thetitle,$data).') for '.$thetitle.'<br />';
 	if ($theurl == return_url_from_media_title($thetitle,$data)) {
-		echo 'url is the same, exiting<br />'
+		echo 'url is the same, exiting<br />';
 	}
 	else {
 		update_post_meta(get_the_ID(), 'media_url', $theurl, return_url_from_media_title($thetitle,$data) );
