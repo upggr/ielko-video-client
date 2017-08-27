@@ -433,30 +433,18 @@ function remote_updater(){
 
 function remoteUpdateFunc(){
 header('Content-Type: text/html');
-//echo 'ok';
-//echo $_GET['remotefeed'];
-
-
 $rawData = file($_GET['remotefeed'], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 $data = array();
 foreach($rawData as $line) {
   if(strpos(trim($line), '#EXTM3U') === 0) {
-		echo 'tirggered 1 <br />';
     continue;
   }
   if(strpos(trim($line), '#EXTINF') === 0) {
       preg_match('/#EXTINF:.*,\s*(.*)/', $line, $matches);
-			echo $line.'<br />';
-			print_r($matches).'<br />';
-echo 'tirggered 2 <br />';
-	//	preg_match('/#EXTINF:(\d+),(.*) - (.*)/', $line, $matches);
   }
   else {
-		echo 'tirggered 3 <br />';
-
     $data[] = array(
       'title'       => $matches[1],
-      'url' => $matches[2],
       'file_path'    => trim($line)
     );
   }
