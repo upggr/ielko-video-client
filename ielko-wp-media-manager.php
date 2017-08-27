@@ -437,13 +437,15 @@ query_posts("post_type='media_item");
 if (have_posts()) : while (have_posts()) : the_post();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $thestatus = get_post_meta(get_the_ID(), 'media_active', true);
+$thecurrentstatus = checkurl_($theurl);
 if ($thestatus != checkurl_($theurl)) {
-echo 'there will be some updating from '.$thestatus.' to '.checkurl_($theurl).' for '.$theurl.'<br />';
+echo 'there will be some updating from '.$thestatus.' to '.$thecurrentstatus.' for '.$theurl.'<br />';
+update_post_meta(get_the_ID(), 'media_active', $thecurrentstatus, $thestatus );
 }
 else {
 	echo 'the '.$theurl.' is fine!<br />';
 }
-//update_post_meta(get_the_ID(), $meta_key, $meta_value, $prev_value );
+
 endwhile;
 endif;
 
