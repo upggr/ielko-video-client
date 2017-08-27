@@ -476,14 +476,14 @@ if (have_posts()) : while (have_posts()) : the_post();
 $thetitle = get_the_title();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $isexcluded = get_post_meta(get_the_ID(), 'media_excl_lists', true);
-echo $isexcluded;
-if (return_url_from_media_title($thetitle,$data) & $isexcluded != 1) {
-	//echo 'found one match for '.$thetitle.'<br />';
-	//echo 'comparing our url ('.$theurl.') with remote url ('.return_url_from_media_title($thetitle,$data).') for '.$thetitle.'<br />';
+if (return_url_from_media_title($thetitle,$data)) {
+	echo 'found one match for '.$thetitle.'<br />';
+	echo 'comparing our url ('.$theurl.') with remote url ('.return_url_from_media_title($thetitle,$data).') for '.$thetitle.'<br />';
 	if ($theurl == return_url_from_media_title($thetitle,$data)) {
-	//	echo 'url is the same, exiting<br />';
+		echo 'url is the same, exiting<br />';
 	}
 	else {
+		echo 'I am updating this<br />';
 		update_post_meta(get_the_ID(), 'media_url', return_url_from_media_title($thetitle,$data), $theurl);
 	}
 }
