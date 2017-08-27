@@ -239,7 +239,46 @@ function save_media_meta( $post_id ){
 
 
 function channel_list(){
-echo 'malakies';
+	$postCount = 1000;
+	$posts = query_posts('showposts=' . $postCount);
+	$cats = get_categories();
+	foreach ($cats as $cat) {
+	          $thecatid = $cat->term_id;
+	          $thecategory = $cat->name;
+	          $thecategorydesc = $cat->description;
+	          $thecategoryimg = z_taxonomy_image_url($cat->term_id);
+						query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
+						if (have_posts()) :
+							$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
+							global $wp_query;
+							$noposts= $wp_query->found_posts;
+						while (have_posts()) : the_post();
+	          $thetitle = get_the_title();
+	          $theurl = get_post_meta(get_the_ID(), 'media_url', true);
+	          $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
+	          $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
+						$theimg =  $theimg[0];
+	          $thefrmt = 'hls';
+	          $thestrg = 'full-adaptation';
+	          $thequality = get_post_meta(get_the_ID(), 'media_qty', true);
+	          if ($thequality == 1) {
+	            $thequality_ = 'SD';
+	          }
+	          else if ($thequality == 0) {
+	            $thequality_ = 'HD';
+	          }
+	          $thebitrate = '0';
+
+	          if (strpos($theurl, 'm3u8') !== false) {
+	          echo '
+	          <title>'.$thetitle.'</title>
+						<contentId>'.$theimg.'</contentId>
+	          <streamUrl>'.$theurl.'</streamUrl>
+						<synopsis>'.$thedescription.'</synopsis>';
+	          }
+	          endwhile;
+	          endif;
+	         }
 }
 
 add_shortcode('ielko_channels', 'channel_list');
