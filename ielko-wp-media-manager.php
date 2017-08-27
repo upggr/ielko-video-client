@@ -281,7 +281,10 @@ $posts = query_posts('showposts=' . $postCount);
 header('Content-Type: text/xml');
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 echo '<categories>';
-  echo '<category title="LIVE TV" description="LIVE TV STATIONS" sd_img="http://ielko-video-client.upg.gr/wp-content/uploads/2017/07/19243227-Fist-in-color-national-flag-of-greece-punching-world-map-as-symbol-of-export-economic-growth-power-a-Stock-Photo.jpg" hd_img="http://ielko-video-client.upg.gr/wp-content/uploads/2017/07/19243227-Fist-in-color-national-flag-of-greece-punching-world-map-as-symbol-of-export-economic-growth-power-a-Stock-Photo.jpg">';
+
+
+
+
 $cats = get_categories();
 foreach ($cats as $cat) {
           $thecatid = $cat->term_id;
@@ -289,13 +292,14 @@ foreach ($cats as $cat) {
           $thecategorydesc = $cat->description;
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
 if ($thecategory != 'Uncategorized') {
+  echo '<category title="LIVE TV" description="LIVE TV STATIONS" sd_img="http://ielko-video-client.upg.gr/wp-content/uploads/2017/07/19243227-Fist-in-color-national-flag-of-greece-punching-world-map-as-symbol-of-export-economic-growth-power-a-Stock-Photo.jpg" hd_img="http://ielko-video-client.upg.gr/wp-content/uploads/2017/07/19243227-Fist-in-color-national-flag-of-greece-punching-world-map-as-symbol-of-export-economic-growth-power-a-Stock-Photo.jpg">';
 
 					query_posts("cat=$thecatid&posts_per_page=100&post_type='media_item");
 					echo '<categoryLeaf title="'.$thecategory.'" description="'.$thecategorydesc.'" feed="'.get_site_url().'/?feed=roku_by_cat&amp;cat='.$thecategory.'"/>';
-
+echo '</category>';
         }
          }
-				 echo '</category>';
+
 echo '</categories>';
 
 }
