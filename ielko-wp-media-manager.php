@@ -432,9 +432,12 @@ function remote_updater(){
 }
 
 function remoteUpdateFunc(){
+	include('m3u.class.php');
 header('Content-Type: text/html');
 echo 'ok';
 echo $_GET['remotefeed'];
+$m3uParser = new m3uParser($_GET['remotefeed']);
+echo $m3uParser -> prettyOutput("songLength", "desc", true, "100%", 5, 5, 1, "center", "style=\"border: 1px solid #000;border-collapse: collapse;\"");
 }
 
 
