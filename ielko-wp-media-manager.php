@@ -445,10 +445,11 @@ foreach($rawData as $line) {
   }
   if(strpos(trim($line), '#EXTINF') === 0) {
       preg_match('/#EXTINF:.*,\s*(.*)\n(.*)/', $line, $matches);
-			print_r($matches);
+
 	//	preg_match('/#EXTINF:(\d+),(.*) - (.*)/', $line, $matches);
   }
   else {
+					print_r($matches);
     $data[] = array(
       'title'       => $matches[1],
       'url' => $matches[2],
