@@ -1002,10 +1002,17 @@ function custom_media_item_column( $column, $post_id ) {
         case 'Type' :
 				$typ = get_post_meta( $post_id , 'media_type' , true );
 				if ( $typ == 1 ) {
-					echo 'VIDEO ';
+					$ur = get_post_meta( $post_id , 'media_url' , true );
+					if (strpos($ur, 'm3u8') !== false) {
+								echo 'M3U8 VIDEO';
+						}
+						else {
+							echo 'VIDEO';
+						}
+
 				}
 				else if ( $typ == 0 ) {
-					echo 'RADIO ';
+					echo 'RADIO';
 				};
 				break;
 
