@@ -445,7 +445,7 @@ foreach($rawData as $line) {
   }
   if(strpos(trim($line), '#EXTINF') === 0) {
       preg_match('/#EXTINF:.*,\s*(.*)\n(.*)/', $line, $matches);
-
+echo 'here';
 	//	preg_match('/#EXTINF:(\d+),(.*) - (.*)/', $line, $matches);
   }
   else {
