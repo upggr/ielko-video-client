@@ -455,7 +455,7 @@ print_r($data);
 }
 
 function return_url_from_array($searchterm,$data_array) {
-	$key = array_search('CARTOON TV', array_column($data, 'title')); // $key = 2;
+	$key = array_search('CARTOON TV', array_column($data_array, 'title')); // $key = 2;
 	return $key.' is <br />';
 }
 
