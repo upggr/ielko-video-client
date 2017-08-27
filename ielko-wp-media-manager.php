@@ -249,7 +249,7 @@ $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
 $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
 $theimg =  $theimg[0];
-echo '<a target="_blank" href="greektv.upg.gr/upg_player.html?play='.$theurl.'">'.$thetitle.'</a><br />';
+echo '<a target="_blank" href="http://greektv.upg.gr/upg_player.html?play='.$theurl.'">'.$thetitle.'</a><br />';
 endwhile;
  wp_reset_postdata();
 	else :
