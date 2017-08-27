@@ -483,7 +483,7 @@ if (return_url_from_media_title($thetitle,$data)) {
 		echo 'url is the same, exiting<br />';
 	}
 	else {
-		if ($isexcluded = 1) {
+		if ($isexcluded == 1) {
 			echo 'I am not updating this as it is excluded<br />';
 
 		}
@@ -525,7 +525,7 @@ $thecurrentstatus = checkurl_($theurl);
 if ($thestatus != checkurl_($theurl)) {
 echo 'there will be some updating from '.$thestatus.' to '.$thecurrentstatus.' for '.$theurl.'<br />';
 
-if ($isexcluded = 1) {
+if ($isexcluded == 1) {
 	echo 'I am not updating this as it is excluded<br />';
 }
 else {
