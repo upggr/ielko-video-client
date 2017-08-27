@@ -990,7 +990,7 @@ function km_get_wordpress_uploads_directory_path() {
 	return trailingslashit( $upload_dir['basedir'] );
 }
 
-set_custom_media_item_columns
+
 function set_custom_media_item_columns($columns) {
     $columns['Type'] = __( 'Type', 'your_text_domain' );
     $columns['Active'] = __( 'Active', 'your_text_domain' );
