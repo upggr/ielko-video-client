@@ -426,6 +426,17 @@ echo '</list></catalogTemplate></document>`}';
 
 }
 
+
+function remote_updater(){
+        add_feed('remoteupdate', 'remoteUpdateFunc');
+}
+
+function remoteUpdateFunc(){
+header('Content-Type: text/html');
+echo 'ok';
+}
+
+
 function check_dead_links(){
         add_feed('checkdead', 'checkDeadFunc');
 }
@@ -840,6 +851,7 @@ add_action('init', 'file_replace' );
 add_action('do_meta_boxes', 'replace_featured_image_box');
 add_action('add_meta_boxes_media_item', 'media_meta_box' );
 add_action('init','check_dead_links');
+add_action('init','remote_updater');
 add_action('init', 'rokuXML');
 add_action('init', 'rokuXMLcats');
 add_action('init', 'rokuXMLbycat');
