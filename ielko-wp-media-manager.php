@@ -432,7 +432,7 @@ function remote_updater(){
 }
 
 function remoteUpdateFunc(){
-	include('m3u.class.php');
+include( plugin_dir_path( __FILE__ ) . 'm3u.class.php');
 header('Content-Type: text/html');
 echo 'ok';
 echo $_GET['remotefeed'];
