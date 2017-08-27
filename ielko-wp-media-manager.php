@@ -443,7 +443,7 @@ echo 'there will be some updating from '.$thestatus.' to '.$thecurrentstatus.' f
 update_post_meta(get_the_ID(), 'media_active', $thecurrentstatus, $thestatus );
 }
 else {
-	echo 'the '.$theurl.' is fine!<br />';
+	echo 'the '.$theurl.' is up to date ! ('.$thestatus.' = '.$thecurrentstatus.')<br />';
 }
 
 endwhile;
