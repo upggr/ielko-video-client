@@ -441,14 +441,16 @@ $rawData = file($_GET['remotefeed'], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LIN
 $data = array();
 foreach($rawData as $line) {
   if(strpos(trim($line), '#EXTM3U') === 0) {
+		echo 'tirggered 1 <br />';
     continue;
   }
   if(strpos(trim($line), '#EXTINF') === 0) {
       preg_match('/#EXTINF:.*,\s*(.*)\n(.*)/', $line, $matches);
-echo 'here';
+echo 'tirggered 2 <br />';
 	//	preg_match('/#EXTINF:(\d+),(.*) - (.*)/', $line, $matches);
   }
   else {
+		echo 'tirggered 3 <br />';
 					print_r($matches);
     $data[] = array(
       'title'       => $matches[1],
