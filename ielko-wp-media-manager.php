@@ -573,7 +573,6 @@ if ($isexcluded == 1) {
 }
 else {
 	echo 'I am updating this ('.$thecurrentstatus.' vs '.$thestatus.')<br />';
-
 //	update_post_meta(get_the_ID(), 'media_active', $thecurrentstatus, $thestatus );
 }
 }
