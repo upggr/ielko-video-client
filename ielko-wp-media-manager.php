@@ -1000,15 +1000,10 @@ function custom_media_item_column( $column, $post_id ) {
     switch ( $column ) {
 
         case 'Type' :
-            $terms = get_the_term_list( $post_id , 'Type' , '' , ',' , '' );
-            if ( is_string( $terms ) )
-                echo $terms;
-            else
-                _e( 'Unable to get type(s)', 'your_text_domain' );
-            break;
+            echo get_post_meta( $post_id , 'media_type' , true );
 
         case 'Active' :
-            echo get_post_meta( $post_id , 'Active' , true );
+            echo get_post_meta( $post_id , 'media_active' , true );
             break;
 
     }
