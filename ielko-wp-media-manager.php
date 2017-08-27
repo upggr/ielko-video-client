@@ -515,8 +515,8 @@ $xml = simplexml_load_string($xml);
 //print_r($xml);
 foreach($xml->channel as $item)
 {
-	$data['title'] = (string)$item->name;
-	$data['url'] = (string)$item->url;
+	$data['title'][] = (string)$item->name;
+	$data['url'][] = (string)$item->url;
 }
 }
 print_r($data);
