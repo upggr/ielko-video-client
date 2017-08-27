@@ -527,11 +527,13 @@ if ($r_url) {
 
 	}
 }
-
+else {
+	echo 'there was no match found in he remote file, skipping <br />';
+}
 
 }
 
-echo '----<br />----<br />---';
+echo '<br />';
 endwhile;
 endif;
 
