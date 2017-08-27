@@ -508,11 +508,12 @@ if (have_posts()) : while (have_posts()) : the_post();
 $thetitle = get_the_title();
 $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 $isexcluded = get_post_meta(get_the_ID(), 'media_excl_lists', true);
+$r_url = return_url_from_media_title($thetitle,$data);
 if (return_url_from_media_title($thetitle,$data)) {
 	echo 'found one match for '.$thetitle.'<br />';
-	echo 'comparing our url ('.$theurl.') with remote url ('.return_url_from_media_title($thetitle,$data).') for '.$thetitle.'<br />';
-	if ($theurl == return_url_from_media_title($thetitle,$data)) {
-		echo 'url is the same, exiting ('.return_url_from_media_title($thetitle,$data).' vs '.$theurl.')<br />';
+	echo 'comparing our url ('.$theurl.') with remote url ('.$r_url.') for '.$thetitle.'<br />';
+	if ($theurl == $r_url) {
+		echo 'url is the same, exiting ('.$r_url.' vs '.$theurl.')<br />';
 	}
 	else {
 		if ($isexcluded == 1) {
@@ -520,8 +521,8 @@ if (return_url_from_media_title($thetitle,$data)) {
 
 		}
 		else {
-			echo 'I am updating this ('.return_url_from_media_title($thetitle,$data).' vs '.$theurl.')<br />';
-	//		update_post_meta(get_the_ID(), 'media_url', return_url_from_media_title($thetitle,$data), $theurl);
+			echo 'I am updating this ('.$r_url.' vs '.$theurl.')<br />';
+	//		update_post_meta(get_the_ID(), 'media_url',$r_url, $theurl);
 		}
 
 	}
