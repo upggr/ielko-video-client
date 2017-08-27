@@ -486,7 +486,10 @@ function remote_updater(){
 
 function remoteUpdateFunc(){
 header('Content-Type: text/html');
-$rawData = file($_GET['remotefeed'], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+$rfeed = $_GET['remotefeed'];
+if (strpos($rfeed, '.m3u') !== false) {
+$rawData = file($rfeed, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 $data = array();
 foreach($rawData as $line) {
   if(strpos(trim($line), '#EXTM3U') === 0) {
@@ -501,6 +504,10 @@ foreach($rawData as $line) {
       'url'    => trim($line)
     );
   }
+}
+}
+if (strpos($rfeed, '.xml') !== false) {
+
 }
 //echo return_url_from_media_title('CARTOON TV',$data);
 query_posts("post_type='media_item&posts_per_page=1000");
