@@ -449,12 +449,11 @@ foreach($rawData as $line) {
     );
   }
 }
-echo return_url_from_array('CARTOON TV',$data);
-print_r($data);
+echo return_url_from_media_title('CARTOON TV',$data);
 
 }
 
-function return_url_from_array($searchterm,$data_array) {
+function return_url_from_media_title($searchterm,$data_array) {
 	$key = array_search('CARTOON TV', array_column($data_array, 'title'));
 	return $data_array[$key]['url'];
 //	return $key.' <br />';
