@@ -432,12 +432,29 @@ function remote_updater(){
 }
 
 function remoteUpdateFunc(){
-include( plugin_dir_path( __FILE__ ) . 'm3u.class.php');
 header('Content-Type: text/html');
 echo 'ok';
 echo $_GET['remotefeed'];
-$m3uParser = new m3uParser($_GET['remotefeed']);
-echo $m3uParser -> prettyOutput("songLength", "desc", true, "100%", 5, 5, 1, "center", "style=\"border: 1px solid #000;border-collapse: collapse;\"");
+$rawData = file($_GET['remotefeed'], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$data = array();
+foreach($rawData as $line) {
+  if(strpos(trim($line), '#EXTM3U') === 0) {
+    continue;
+  }
+  if(strpos(trim($line), '#EXTINF') === 0) {
+    preg_match('/#EXTINF:(\d+),(.*) - (.*)/', $line, $matches);
+  }
+  else {
+    $data[] = array(
+      'artist'       => $matches[2],
+      'title'        => $matches[3],
+      'time_seconds' => $matches[1],
+      'file_path'    => trim($line)
+    );
+  }
+}
+
+print_r($data);
 }
 
 
