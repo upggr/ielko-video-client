@@ -1020,6 +1020,9 @@ function custom_media_item_column( $column, $post_id ) {
 				$act = get_post_meta( $post_id , 'media_active' , true );
             if ( $act == 1 ) {
 							echo 'YES';
+						}
+						else if  ( $act == 0 ) {
+							echo 'NO';
 						};
             break;
 
