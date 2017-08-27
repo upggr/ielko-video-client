@@ -295,13 +295,13 @@ foreach ($cats as $cat) {
           $thecategorydesc = $cat->description;
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
 if ($thecategory != 'Uncategorized') {
-//  echo '<category title="LIVE TV" description="LIVE TV STATIONS" sd_img="http://ielko-video-client.upg.gr/wp-content/uploads/2017/07/19243227-Fist-in-color-national-flag-of-greece-punching-world-map-as-symbol-of-export-economic-growth-power-a-Stock-Photo.jpg" hd_img="http://ielko-video-client.upg.gr/wp-content/uploads/2017/07/19243227-Fist-in-color-national-flag-of-greece-punching-world-map-as-symbol-of-export-economic-growth-power-a-Stock-Photo.jpg">';
 echo '<category title="'.$thecategory.'" description="'.$thecategorydesc.'" sd_img="'.$thecategoryimg.'"  hd_img="'.$thecategoryimg.'"  >';
 
 $categories=get_categories(
 	array( 'parent' => $cat->cat_ID )
 );
 foreach ($categories as $c) {
+	print_r($categories);
 	echo '<categoryLeaf title="'.$c->cat_name.'" description="'.$c->cat_description.'" feed="'.get_site_url().'/?feed=roku_by_cat&amp;cat='.$c->cat_name.'"/>';
 }
 
