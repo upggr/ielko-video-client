@@ -486,12 +486,12 @@ function remote_updater(){
 
 function remoteUpdateFunc(){
 header('Content-Type: text/html');
-
+$data = array();
 $rfeed = $_GET['remotefeed'];
 if (strpos($rfeed, '.m3u') !== false) {
 	echo 'this is m3u<br />';
 $rawData = file($rfeed, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-$data = array();
+
 foreach($rawData as $line) {
   if(strpos(trim($line), '#EXTM3U') === 0) {
     continue;
