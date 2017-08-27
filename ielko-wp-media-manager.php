@@ -433,8 +433,8 @@ function remote_updater(){
 
 function remoteUpdateFunc(){
 header('Content-Type: text/html');
-echo 'ok';
-echo $_GET['remotefeed'];
+//echo 'ok';
+//echo $_GET['remotefeed'];
 
 
 $rawData = file($_GET['remotefeed'], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
