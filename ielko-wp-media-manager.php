@@ -1111,6 +1111,7 @@ add_action('add_meta_boxes_media_item', 'media_meta_box' );
 add_action('init','check_dead_links');
 add_action('init','remote_updater');
 add_action('init', 'rokuXML');
+add_action('init', 'rokuDP');
 add_action('init', 'rokuXMLcats');
 add_action('init', 'rokuXMLbycat');
 add_action('init', 'tvosXML');
