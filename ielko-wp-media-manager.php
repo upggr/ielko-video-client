@@ -367,7 +367,76 @@ echo '</categories>';
 }
 
 
+function rokuDP(){
+        add_feed('roku_dp', 'rokuDP_f');
+}
 
+function rokuDP_f(){
+$postCount = 1000;
+$posts = query_posts('showposts=' . $postCount);
+header('Content-Type: text/xml');
+echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
+echo '<feed>';
+$cats = get_categories();
+foreach ($cats as $cat) {
+          $thecatid = $cat->term_id;
+          $thecategory = $cat->name;
+          $thecategorydesc = $cat->description;
+          $thecategoryimg = z_taxonomy_image_url($cat->term_id);
+if ($thecategory == $_GET['cat']) {
+
+					query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
+
+					if (have_posts()) :
+						$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
+						global $wp_query;
+						$noposts= $wp_query->found_posts;
+						echo '<resultLength>'.$noposts.'</resultLength>';
+						echo '<endIndex>'.$noposts.'</endIndex>';
+					while (have_posts()) : the_post();
+          $thetitle = get_the_title();
+          $theurl = get_post_meta(get_the_ID(), 'media_url', true);
+          $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
+          $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
+					$theimg =  $theimg[0];
+          $thefrmt = 'hls';
+          $thestrg = 'full-adaptation';
+          $thequality = get_post_meta(get_the_ID(), 'media_qty', true);
+          if ($thequality == 1) {
+            $thequality_ = 'SD';
+          }
+          else if ($thequality == 0) {
+            $thequality_ = 'HD';
+          }
+          $thebitrate = '0';
+
+          if (strpos($theurl, 'm3u8') !== false) {
+          echo '<item sdImg="'.$theimg.'" hdImg="'.$theimg.'">
+          <title>'.$thetitle.'</title>
+					<contentId>'.$theimg.'</contentId>
+					<contentType>Live TV</contentType>
+					<contentQuality>'.$thequality_.'</contentQuality>
+          <description>'.$thedescription.'</description>
+          <streamFormat>'.$thefrmt.'</streamFormat>
+          <media>
+          <streamFormat>'.$thefrmt.'</streamFormat>
+          <streamQuality>'.$thequality_.'</streamQuality>
+          <streamBitrate>'.$thebitrate.'</streamBitrate>
+          <streamUrl>'.$theurl.'</streamUrl>
+          </media>
+					<synopsis>'.$thedescription.'</synopsis>
+					<genres>Live TV</genres>
+					<runtime>Live</runtime>
+          </item>';
+          }
+          endwhile;
+          endif;
+
+        }
+         }
+echo '</feed>';
+
+}
 
 function rokuXMLbycat(){
         add_feed('roku_by_cat', 'rokuXMLbycat_f');
@@ -922,7 +991,8 @@ $options = get_option( 'ivc_settings' );
 					<br />
 					<br />
   Your ROKU feed is accessible from <a href="'.get_site_url().'/?feed=roku">'.get_site_url().'/?feed=roku</a><br />
-	Your new ROKU feed is accessible from <a href="'.get_site_url().'/?feed=roku_cats">'.get_site_url().'/?feed=roku_cats</a><br />
+	Your categoryleaf based ROKU feed is accessible from <a href="'.get_site_url().'/?feed=roku_cats">'.get_site_url().'/?feed=roku_cats</a><br />
+	Your direct publisher ROKU feed is accessible from <a href="'.get_site_url().'/?feed=roku_dp">'.get_site_url().'/?feed=roku_dp</a><br />
   Your TVOS feed is accessible from <a href="'.get_site_url().'/?feed=tvos">'.get_site_url().'/?feed=tvos</a><br />
 	Your Android (Variant 1) feed is accessible from <a href="'.get_site_url().'/?feed=android1">'.get_site_url().'/?feed=android1</a><br />
 	The dead link checker is at :  <a href="'.get_site_url().'/?feed=checkdead">'.get_site_url().'/?feed=checkdead</a><br />
