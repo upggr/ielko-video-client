@@ -392,7 +392,7 @@ foreach ($cats as $cat) {
 						"lastUpdated" => "2017-04-30T18:12:32.125Z"
 					);
 
-					
+
 					query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
 					if (have_posts()) :
 						$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
@@ -440,14 +440,14 @@ $theitemarray = array(
 $thecontentarray['videos'] = $thevideoarray;
 $theitemarray['content'] = $thecontentarray;
 $themainarray['tvSpecials'] = $theitemarray;
-print_r($themainarray);
+
           }
           endwhile;
           endif;
 
 
          }
-
+print_r($themainarray);
 }
 
 function rokuXMLbycat(){
