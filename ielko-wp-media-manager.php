@@ -429,8 +429,8 @@ $theitemarray = array(
 	"tags" => "[testtag]",
 	"releaseDate" => "2017-08-27"
 );
-$thecontentarray[] = $thevideoarray;
-$theitemarray[] = $thecontentarray;
+$thecontentarray['videos'] = $thevideoarray;
+$theitemarray['content'] = $thecontentarray;
 
 print_r($theitemarray);
           }
