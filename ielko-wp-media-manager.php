@@ -390,7 +390,7 @@ foreach ($cats as $cat) {
 						"providerName" => "GreekTV",
 						"language" => "en-US",
 						"lastUpdated" => "2017-04-30T18:12:32.125Z",
-						"tvSpecials" => array();
+						"tvSpecials" => array()
 					);
 
 
