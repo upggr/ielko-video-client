@@ -421,6 +421,7 @@ $theitemarray = array(
 );
 $thecontentarray['videos'] = $thevideoarray;
 $theitemarray['content'] = $thecontentarray;
+print_r($theitemarray);
 $themainarray['tvSpecials'][] = $theitemarray;
 
           }
