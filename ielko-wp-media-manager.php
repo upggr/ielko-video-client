@@ -443,7 +443,7 @@ $genres = array("special");
 $tags = array("greek",$thecategory);
 $captions = array();
 if($theimg === null) {
-	$theimg = "http://ielko-video-client.upg.gr/wp-content/uploads/2017/08/800450.png";
+	$theimg = 'http://ielko-video-client.upg.gr/?feed=gen_img&wi=800&he=450&txt='.$thetitle;
 }
 if(!$thedescription) {
 	$thedescription = $thetitle.' ('.$thecategory.')';
