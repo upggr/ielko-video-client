@@ -373,26 +373,22 @@ function genimg(){
 
 
 function genimg_f(){
-$n1 = $_GET['wi'];
-$n2 = $_GET['he'];
+	$your_text = "Helloooo Worldddd";
 
-Header ("Content-type: image/jpeg");
-$image = imageCreateFromJPEG("images/someimage.jpg");
-$color = ImageColorAllocate($image, 255, 255, 255);
-
-// Calculate horizontal alignment for the names.
-$BoundingBox1 = imagettfbbox(13, 0, 'ITCKRIST.TTF', $n1);
-$boyX = ceil((125 - $BoundingBox1[2]) / 2); // lower left X coordinate for text
-$BoundingBox2 = imagettfbbox(13, 0, 'ITCKRIST.TTF', $n2);
-$girlX = ceil((107 - $BoundingBox2[2]) / 2); // lower left X coordinate for text
-
-// Write names.
-imagettftext($image, 13, 0, $boyX+25, 92, $color, 'ITCKRIST.TTF', $n1);
-imagettftext($image, 13, 0, $girlX+310, 92, $color, 'ITCKRIST.TTF', $n2);
-
-// Return output.
-ImageJPEG($image, NULL, 93);
-ImageDestroy($image);
+	 $IMG = imagecreate( 250, 80 );
+	 $background = imagecolorallocate($IMG, 0,0,255);
+	 $text_color = imagecolorallocate($IMG, 255,255,0);
+	 $line_color = imagecolorallocate($IMG, 128,255,0);
+	 imagestring( $IMG, 10, 1, 25, $your_text,  $text_color );
+	 imagesetthickness ( $IMG, 5 );
+	 imageline( $IMG, 30, 45, 165, 45, $line_color );
+	 header( "Content-type: image/png" );
+	 imagepng($IMG);
+	 imagecolordeallocate($IMG, $line_color );
+	 imagecolordeallocate($IMG, $text_color );
+	 imagecolordeallocate($IMG, $background );
+	 imagedestroy($IMG);
+	 exit;   
 }
 
 
