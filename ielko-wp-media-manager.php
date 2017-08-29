@@ -445,8 +445,9 @@ $theitemarray['content'] = $thecontentarray;
           endwhile;
           endif;
 $themainarray['tvSpecials'][] = $theitemarray;
-$json_resp = json_encode($themainarray);
-echo $json_resp;
+//$json_resp = json_encode($themainarray);
+//echo $json_resp;
+print_r ($themainarray);
          }
 
 }
