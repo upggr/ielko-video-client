@@ -444,10 +444,9 @@ $themainarray['tvSpecials'][] = $theitemarray;
           }
           endwhile;
           endif;
-
-
-         }
 print_r($themainarray);
+         }
+
 }
 
 function rokuXMLbycat(){
