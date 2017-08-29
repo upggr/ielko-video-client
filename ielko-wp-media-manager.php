@@ -436,15 +436,15 @@ $theitemarray = array(
 );
 $thecontentarray['videos'] = $thevideoarray;
 $theitemarray['content'] = $thecontentarray;
-
+if (!in_array($theitemarray, $themainarray['tvSpecials']))
+{
+$themainarray['tvSpecials'][] = $theitemarray;
+}
 
           }
           endwhile;
           endif;
-					if (!in_array($theitemarray, $themainarray['tvSpecials']))
-					{
-    			$themainarray['tvSpecials'][] = $theitemarray;
-					}
+
 
 //$json_resp = json_encode($themainarray);
 //echo $json_resp;
