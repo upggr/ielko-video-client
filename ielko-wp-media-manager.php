@@ -417,11 +417,11 @@ $thecontentarray = array (
 	"dateAdded" => "2017-08-27T14:14:54.431Z",
 	"captions" => "[]",
 	"duration" => "2570",
-	"videos" => $thevideoarray = array (
+	"videos" => "[".$thevideoarray = array (
 		"url" => $theurl,
 		"quality" => $thequality_,
 		"videoType" => $thefrmt
-	)
+	)."]"
 
 );
 
