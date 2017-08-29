@@ -383,7 +383,7 @@ foreach ($cats as $cat) {
           $thecategory = $cat->name;
           $thecategorydesc = $cat->description;
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
-if ($thecategory == $_GET['cat']) {
+
 
 					query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
 
@@ -432,7 +432,7 @@ if ($thecategory == $_GET['cat']) {
           endwhile;
           endif;
 
-        }
+
          }
 
 }
