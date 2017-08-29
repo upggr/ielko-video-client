@@ -380,7 +380,7 @@ $your_text = $txt;
  $IMG = imagecreate( $wi, $he );
  $background = imagecolorallocate($IMG, 255,255,255);
  $text_color = imagecolorallocate($IMG, 0,0,200);
- $font = imageloadfont('Arial');
+ $font = imageloadfont('./04b.gdf');
  imagestring( $IMG, $font, 300, 200, $your_text,  $text_color );
  imagesetthickness ( $IMG, 5 );
  header( "Content-type: image/png" );
