@@ -413,13 +413,13 @@ foreach ($cats as $cat) {
           $thebitrate = '0';
 
           if (strpos($theurl, 'm3u8') !== false) {
-
+$genres = '"special"';
 $theitemarray = array(
 	"id" => hash('ripemd160', $thetitle.$theimg),
 	"title" => $thetitle,
 	"shortDescription" => $thedescription,
 	"thumbnail" => $theimg,
-	"genres" =>"[special]",
+	"genres" =>"['.$genres.']",
 	"tags" => "[testtag]",
 	"releaseDate" => "2017-08-27",
 	"content" => array (
