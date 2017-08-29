@@ -381,10 +381,6 @@ header('Content-Type: application/json');
 $cats = get_categories();
 
 foreach ($cats as $cat) {
-          $thecatid = $cat->term_id;
-          $thecategory = $cat->name;
-          $thecategorydesc = $cat->description;
-          $thecategoryimg = z_taxonomy_image_url($cat->term_id);
 
 					$themainarray = array (
 						"providerName" => "GreekTV",
@@ -393,7 +389,7 @@ foreach ($cats as $cat) {
 					);
 
 
-					query_posts("cat=$thecatid&posts_per_page=1&post_type=media_item");
+					query_posts("posts_per_page=1&post_type=media_item");
 					if (have_posts()) :
 					while (have_posts()) : the_post();
           $thetitle = get_the_title();
@@ -413,8 +409,6 @@ foreach ($cats as $cat) {
           $thebitrate = '0';
 
           if (strpos($theurl, 'm3u8') !== false) {
-						echo 'there was m3u8<br />';
-
 $thecontentarray = array (
 	"dateAdded" => "2017-08-27T14:14:54.431Z",
 	"captions" => "[]",
