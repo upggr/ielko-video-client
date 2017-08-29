@@ -389,7 +389,8 @@ foreach ($cats as $cat) {
 					$themainarray = array (
 						"providerName" => "GreekTV",
 						"language" => "en-US",
-						"lastUpdated" => "2017-04-30T18:12:32.125Z"
+						"lastUpdated" => "2017-04-30T18:12:32.125Z",
+						"tvSpecials" => array();
 					);
 
 
