@@ -376,11 +376,11 @@ function genimg_f(){
 	header('Content-Type: image/png');
 $wi = $_GET['wi'];
 $he = $_GET['he'];
-$im = imagecreatetruecolor($wi, $he);
+$im = imagecreatetruecolor(400, 30);
 	$white = imagecolorallocate($im, 255, 255, 255);
 	$grey = imagecolorallocate($im, 128, 128, 128);
 	$black = imagecolorallocate($im, 0, 0, 0);
-	imagefilledrectangle($im, 0, 0, $wi, $he, $white);
+	imagefilledrectangle($im, 0, 0, 400, 30, $white);
 	$text = 'Testing...';
 	$font = 'arial.ttf';
 	imagettftext($im, 20, 0, 10, 20, $black, $font, $text);
