@@ -417,7 +417,7 @@ $genres = array("special");
 $tags = array("greek",$thecategory);
 $captions = array();
 if($theimg === null) {
-	$theimg == "http://ielko-video-client.upg.gr/wp-content/uploads/2017/08/800450.png";
+	$theimg = "http://ielko-video-client.upg.gr/wp-content/uploads/2017/08/800450.png";
 }
 $theitemarray = array(
 	"id" => hash('ripemd160', $thetitle.$theimg),
