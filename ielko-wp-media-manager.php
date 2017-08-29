@@ -428,7 +428,7 @@ $theitemarray = array(
 	"genres" =>"[testgenre]",
 	"tags" => "[testtag]",
 	"releaseDate" => "2017-08-27"
-)
+);
 $thecontentarray[] = $thevideoarray;
 $theitemarray[] = $thecontentarray;
 
