@@ -420,7 +420,7 @@ if($theimg === null) {
 	$theimg = "http://ielko-video-client.upg.gr/wp-content/uploads/2017/08/800450.png";
 }
 $theitemarray = array(
-	"id" => hash('ripemd160', $thetitle.$theimg),
+	"id" => hash('ripemd160', $thetitle.$theimg.$thecatid),
 	"title" => $thetitle,
 	"shortDescription" => $thedescription,
 	"thumbnail" => $theimg,
