@@ -413,6 +413,7 @@ foreach ($cats as $cat) {
           $thebitrate = '0';
 
           if (strpos($theurl, 'm3u8') !== false) {
+						echo 'there was m3u8<br />';
 
 $thecontentarray = array (
 	"dateAdded" => "2017-08-27T14:14:54.431Z",
