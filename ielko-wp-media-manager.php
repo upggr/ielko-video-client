@@ -413,17 +413,6 @@ foreach ($cats as $cat) {
           $thebitrate = '0';
 
           if (strpos($theurl, 'm3u8') !== false) {
-$thecontentarray = array (
-	"dateAdded" => "2017-08-27T14:14:54.431Z",
-	"captions" => "[]",
-	"duration" => "2570",
-	"videos" => "[".$thevideoarray = array (
-		"url" => $theurl,
-		"quality" => $thequality_,
-		"videoType" => $thefrmt
-	)."]"
-
-);
 
 $theitemarray = array(
 	"id" => hash('ripemd160', $thetitle.$theimg),
@@ -432,10 +421,18 @@ $theitemarray = array(
 	"thumbnail" => $theimg,
 	"genres" =>"[".$thecategory."]",
 	"tags" => "[testtag]",
-	"releaseDate" => "2017-08-27"
+	"releaseDate" => "2017-08-27",
+	"content" => array (
+		"dateAdded" => "2017-08-27T14:14:54.431Z",
+		"captions" => "[]",
+		"duration" => "2570",
+		"videos" => $thevideoarray = array (
+			"url" => $theurl,
+			"quality" => $thequality_,
+			"videoType" => $thefrmt
+		)
+	)
 );
-$theitemarray['content'] = $thecontentarray;
-
 
 
           }
