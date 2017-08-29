@@ -414,18 +414,20 @@ foreach ($cats as $cat) {
 
           if (strpos($theurl, 'm3u8') !== false) {
 $genres = array("special");
+$tags = array("greek");
+$captions = array();
 $theitemarray = array(
 	"id" => hash('ripemd160', $thetitle.$theimg),
 	"title" => $thetitle,
 	"shortDescription" => $thedescription,
 	"thumbnail" => $theimg,
 	"genres" => $genres,
-	"tags" => "[testtag]",
+	"tags" => $tags,
 	"releaseDate" => "2017-08-27",
 	"content" => array (
 		"dateAdded" => "2017-08-27T14:14:54.431Z",
-		"captions" => "[]",
-		"duration" => "1",
+		"captions" => $captions,
+		"duration" => 1,
 	)
 );
 
