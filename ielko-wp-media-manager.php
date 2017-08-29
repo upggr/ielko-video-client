@@ -439,7 +439,7 @@ $theitemarray = array(
 );
 $thecontentarray['videos'] = $thevideoarray;
 $theitemarray['content'] = $thecontentarray;
-$themainarray['tvSpecials'] = $theitemarray;
+$themainarray['tvSpecials'][] = $theitemarray;
 
           }
           endwhile;
