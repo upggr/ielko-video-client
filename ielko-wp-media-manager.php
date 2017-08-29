@@ -375,6 +375,7 @@ function rokuDP_f(){
 $postCount = 1000;
 $posts = query_posts('showposts=' . $postCount);
 header('Content-Type: text/json');
+print_r($cats);
 $cats = get_categories();
 foreach ($cats as $cat) {
           $thecatid = $cat->term_id;
