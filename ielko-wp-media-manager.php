@@ -393,9 +393,9 @@ foreach ($cats as $cat) {
 					);
 
 
-					query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
+					query_posts("cat=$thecatid&posts_per_page=1&post_type=media_item");
 					if (have_posts()) :
-						$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
+						$thePosts = query_posts("cat=$thecatid&posts_per_page=1&post_type=media_item");
 						global $wp_query;
 						$noposts= $wp_query->found_posts;
 					while (have_posts()) : the_post();
@@ -439,12 +439,12 @@ $theitemarray = array(
 );
 $thecontentarray['videos'] = $thevideoarray;
 $theitemarray['content'] = $thecontentarray;
-$themainarray['tvSpecials'][] = $theitemarray;
+
 
           }
           endwhile;
           endif;
-
+$themainarray['tvSpecials'][] = $theitemarray;
 $json_resp = json_encode($themainarray);
 echo $json_resp;
          }
