@@ -376,23 +376,20 @@ $postCount = 1000;
 $posts = query_posts('showposts=' . $postCount);
 header('Content-Type: text/json');
 
+
+
 $cats = get_categories();
-print_r($cats);
+
 foreach ($cats as $cat) {
           $thecatid = $cat->term_id;
           $thecategory = $cat->name;
           $thecategorydesc = $cat->description;
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
-
-
 					query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
-
 					if (have_posts()) :
 						$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
 						global $wp_query;
 						$noposts= $wp_query->found_posts;
-						echo '<resultLength>'.$noposts.'</resultLength>';
-						echo '<endIndex>'.$noposts.'</endIndex>';
 					while (have_posts()) : the_post();
           $thetitle = get_the_title();
           $theurl = get_post_meta(get_the_ID(), 'media_url', true);
@@ -411,23 +408,31 @@ foreach ($cats as $cat) {
           $thebitrate = '0';
 
           if (strpos($theurl, 'm3u8') !== false) {
-          echo '<item sdImg="'.$theimg.'" hdImg="'.$theimg.'">
-          <title>'.$thetitle.'</title>
-					<contentId>'.$theimg.'</contentId>
-					<contentType>Live TV</contentType>
-					<contentQuality>'.$thequality_.'</contentQuality>
-          <description>'.$thedescription.'</description>
-          <streamFormat>'.$thefrmt.'</streamFormat>
-          <media>
-          <streamFormat>'.$thefrmt.'</streamFormat>
-          <streamQuality>'.$thequality_.'</streamQuality>
-          <streamBitrate>'.$thebitrate.'</streamBitrate>
-          <streamUrl>'.$theurl.'</streamUrl>
-          </media>
-					<synopsis>'.$thedescription.'</synopsis>
-					<genres>Live TV</genres>
-					<runtime>Live</runtime>
-          </item>';
+
+$thecontentarray = array (
+	"dateAdded" => "2017-08-27T14:14:54.431Z",
+	"captions" => "[]",
+	"duration" => "2570"
+);
+	$thevideoarray = array (
+		"url" => $theurl,
+		"quality" => $thequality_,
+		"videoType" => $thefrmt
+	);
+
+$theitemarray = array(
+	"id" => hash('ripemd160', $thetitle.$theimg),
+	"title" => $thetitle,
+	"shortDescription" => $thedescription,
+	"thumbnail" => $theimg,
+	"genres" =>"[testgenre]",
+	"tags" => "[testtag]",
+	"releaseDate" => "2017-08-27"
+)
+$thecontentarray[] = $thevideoarray;
+$theitemarray[] = $thecontentarray;
+
+print_r($theitemarray);
           }
           endwhile;
           endif;
