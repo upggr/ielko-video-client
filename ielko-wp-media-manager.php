@@ -381,10 +381,6 @@ header('Content-Type: application/json');
 $cats = get_categories();
 
 foreach ($cats as $cat) {
-          $thecatid = $cat->term_id;
-          $thecategory = $cat->name;
-          $thecategorydesc = $cat->description;
-          $thecategoryimg = z_taxonomy_image_url($cat->term_id);
 
 					$themainarray = array (
 						"providerName" => "GreekTV",
@@ -393,11 +389,8 @@ foreach ($cats as $cat) {
 					);
 
 
-					query_posts("cat=$thecatid&posts_per_page=1&post_type=media_item");
+					query_posts("posts_per_page=1&post_type=media_item");
 					if (have_posts()) :
-						$thePosts = query_posts("cat=$thecatid&posts_per_page=1&post_type=media_item");
-						global $wp_query;
-						$noposts= $wp_query->found_posts;
 					while (have_posts()) : the_post();
           $thetitle = get_the_title();
           $theurl = get_post_meta(get_the_ID(), 'media_url', true);
