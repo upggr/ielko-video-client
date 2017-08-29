@@ -367,6 +367,41 @@ echo '</categories>';
 }
 
 
+function genimg(){
+        add_feed('gen_img', 'genimg_f');
+}
+
+
+function genimg_f(){
+	header('Content-Type: image/png');
+$wi = $_GET['wi'];
+$he = $_GET['he'];
+$im = imagecreatetruecolor($wi, $he);
+
+	// Create some colors
+	$white = imagecolorallocate($im, 255, 255, 255);
+	$grey = imagecolorallocate($im, 128, 128, 128);
+	$black = imagecolorallocate($im, 0, 0, 0);
+	imagefilledrectangle($im, 0, 0, 399, 29, $white);
+
+	// The text to draw
+	$text = 'Testing...';
+	// Replace path by your own font path
+	$font = 'arial.ttf';
+
+	// Add some shadow to the text
+	imagettftext($im, 20, 0, 11, 21, $grey, $font, $text);
+
+	// Add the text
+	imagettftext($im, 20, 0, 10, 20, $black, $font, $text);
+
+	// Using imagepng() results in clearer text compared with imagejpeg()
+	imagepng($im);
+	imagedestroy($im);
+}
+
+
+
 function rokuDP(){
         add_feed('roku_dp', 'rokuDP_f');
 }
@@ -455,6 +490,9 @@ $themainarray['tvSpecials'][] = $theitemarray;
 				 $json_resp = json_encode($themainarray);
 				 echo $json_resp;
 }
+
+
+
 
 function rokuXMLbycat(){
         add_feed('roku_by_cat', 'rokuXMLbycat_f');
@@ -1129,6 +1167,7 @@ add_action('add_meta_boxes_media_item', 'media_meta_box' );
 add_action('init','check_dead_links');
 add_action('init','remote_updater');
 add_action('init', 'rokuXML');
+add_action('init', 'genimg');
 add_action('init', 'rokuDP');
 add_action('init', 'rokuXMLcats');
 add_action('init', 'rokuXMLbycat');
