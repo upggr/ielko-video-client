@@ -393,7 +393,7 @@ foreach ($cats as $cat) {
 
 
 
-					query_posts("cat=$thecatid&posts_per_page=1000&post_type=media_item");
+					query_posts("cat=$thecatid&posts_per_page=1&post_type=media_item");
 					if (have_posts()) :
 					while (have_posts()) : the_post();
           $thetitle = get_the_title();
@@ -419,13 +419,13 @@ $theitemarray = array(
 	"title" => $thetitle,
 	"shortDescription" => $thedescription,
 	"thumbnail" => $theimg,
-	"genres" =>"[".$thecategory."]",
+	"genres" =>"[/"special/"]",
 	"tags" => "[testtag]",
 	"releaseDate" => "2017-08-27",
 	"content" => array (
 		"dateAdded" => "2017-08-27T14:14:54.431Z",
 		"captions" => "[]",
-		"duration" => "2570",
+		"duration" => "1",
 	)
 );
 
