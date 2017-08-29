@@ -385,6 +385,14 @@ foreach ($cats as $cat) {
           $thecategory = $cat->name;
           $thecategorydesc = $cat->description;
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
+
+					$themainarray = array (
+						"providerName" => "GreekTV",
+						"language" => "en-US",
+						"lastUpdated" => "2017-04-30T18:12:32.125Z"
+					);
+
+					
 					query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
 					if (have_posts()) :
 						$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
@@ -408,11 +416,7 @@ foreach ($cats as $cat) {
           $thebitrate = '0';
 
           if (strpos($theurl, 'm3u8') !== false) {
-$themainarray = array (
-	"providerName" => "GreekTV",
-	"language" => "en-US",
-	"lastUpdated" => "2017-04-30T18:12:32.125Z"
-);
+
 $thecontentarray = array (
 	"dateAdded" => "2017-08-27T14:14:54.431Z",
 	"captions" => "[]",
