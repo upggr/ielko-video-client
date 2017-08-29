@@ -414,7 +414,7 @@ foreach ($cats as $cat) {
 
           if (strpos($theurl, 'm3u8') !== false) {
 $genres = array("special");
-$tags = array("greek");
+$tags = array("greek",$thecategory);
 $captions = array();
 $theitemarray = array(
 	"id" => hash('ripemd160', $thetitle.$theimg),
