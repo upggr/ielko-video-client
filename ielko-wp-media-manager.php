@@ -372,13 +372,28 @@ function rokuDP(){
 }
 
 function rokuDP_f(){
+$postCount = 1000;
+$posts = query_posts('showposts=' . $postCount);
 header('Content-Type: application/json');
+
+
+
+$cats = get_categories();
+
+foreach ($cats as $cat) {
+          $thecatid = $cat->term_id;
+          $thecategory = $cat->name;
+          $thecategorydesc = $cat->description;
+          $thecategoryimg = z_taxonomy_image_url($cat->term_id);
+
 					$themainarray = array (
 						"providerName" => "GreekTV",
 						"language" => "en-US",
 						"lastUpdated" => "2017-04-30T18:12:32.125Z"
 					);
-					query_posts("posts_per_page=1&post_type=media_item");
+
+
+					query_posts("cat=$thecatid&posts_per_page=1&post_type=media_item");
 					if (have_posts()) :
 					while (have_posts()) : the_post();
           $thetitle = get_the_title();
@@ -421,17 +436,16 @@ $theitemarray = array(
 );
 $thecontentarray['videos'] = $thevideoarray;
 $theitemarray['content'] = $thecontentarray;
-print_r($theitemarray);
-$themainarray['tvSpecials'][] = $theitemarray;
+
 
           }
           endwhile;
           endif;
-
+$themainarray['tvSpecials'][] = $theitemarray;
 //$json_resp = json_encode($themainarray);
 //echo $json_resp;
 print_r ($themainarray);
-
+         }
 
 }
 
