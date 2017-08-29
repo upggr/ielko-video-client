@@ -416,7 +416,7 @@ foreach ($cats as $cat) {
 $genres = array("special");
 $tags = array("greek",$thecategory);
 $captions = array();
-if(!isset($theimg)) {
+if(empty($theimg)) {
 	$theimg == "http://ielko-video-client.upg.gr/wp-content/uploads/2017/08/800450.png";
 }
 $theitemarray = array(
