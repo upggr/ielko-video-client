@@ -408,7 +408,11 @@ foreach ($cats as $cat) {
           $thebitrate = '0';
 
           if (strpos($theurl, 'm3u8') !== false) {
-
+$themainarray = array (
+	"providerName" => "GreekTV",
+	"language" => "en-US",
+	"lastUpdated" => "2017-04-30T18:12:32.125Z"
+);
 $thecontentarray = array (
 	"dateAdded" => "2017-08-27T14:14:54.431Z",
 	"captions" => "[]",
@@ -431,8 +435,8 @@ $theitemarray = array(
 );
 $thecontentarray['videos'] = $thevideoarray;
 $theitemarray['content'] = $thecontentarray;
-
-print_r($theitemarray);
+$themainarray['tvSpecials'] = $theitemarray;
+print_r($themainarray);
           }
           endwhile;
           endif;
