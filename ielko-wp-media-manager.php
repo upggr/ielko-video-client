@@ -436,10 +436,8 @@ $theitemarray = array(
 );
 $thecontentarray['videos'] = $thevideoarray;
 $theitemarray['content'] = $thecontentarray;
-if (!in_array($theitemarray, $themainarray['tvSpecials']))
-{
 $themainarray['tvSpecials'][] = $theitemarray;
-}
+
 
           }
           endwhile;
