@@ -374,7 +374,7 @@ function rokuDP(){
 function rokuDP_f(){
 $postCount = 1000;
 $posts = query_posts('showposts=' . $postCount);
-header('Content-Type: text/json');
+header('Content-Type: application/json');
 
 
 
