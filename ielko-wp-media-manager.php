@@ -441,11 +441,11 @@ $themainarray['tvSpecials'][] = $theitemarray;
           endif;
 
 
-$json_resp = json_encode($themainarray);
-echo $json_resp;
+
 //print_r ($themainarray);
          }
-
+				 $json_resp = json_encode($themainarray);
+				 echo $json_resp;
 }
 
 function rokuXMLbycat(){
