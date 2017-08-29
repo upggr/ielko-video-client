@@ -429,7 +429,7 @@ $theitemarray = array(
 	"title" => $thetitle,
 	"shortDescription" => $thedescription,
 	"thumbnail" => $theimg,
-	"genres" =>"[testgenre]",
+	"genres" =>"[".$thecategory."]",
 	"tags" => "[testtag]",
 	"releaseDate" => "2017-08-27"
 );
