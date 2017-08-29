@@ -416,13 +416,14 @@ foreach ($cats as $cat) {
 $thecontentarray = array (
 	"dateAdded" => "2017-08-27T14:14:54.431Z",
 	"captions" => "[]",
-	"duration" => "2570"
-);
-	$thevideoarray = array (
+	"duration" => "2570",
+	"videos" => $thevideoarray = array (
 		"url" => $theurl,
 		"quality" => $thequality_,
 		"videoType" => $thefrmt
-	);
+	)
+
+);
 
 $theitemarray = array(
 	"id" => hash('ripemd160', $thetitle.$theimg),
@@ -433,7 +434,6 @@ $theitemarray = array(
 	"tags" => "[testtag]",
 	"releaseDate" => "2017-08-27"
 );
-$thecontentarray['videos'] = $thevideoarray;
 $theitemarray['content'] = $thecontentarray;
 
 
