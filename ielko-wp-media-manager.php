@@ -393,7 +393,7 @@ foreach ($cats as $cat) {
 					);
 
 
-					query_posts("cat=$thecatid&posts_per_page=1&post_type=media_item");
+					query_posts("cat=$thecatid&posts_per_page=2&post_type=media_item");
 					if (have_posts()) :
 					while (have_posts()) : the_post();
           $thetitle = get_the_title();
