@@ -434,8 +434,9 @@ $theitemarray['content']['videos'][] = array (
 	"quality" => $thequality_,
 	"videoType" => $thefrmt
 );
+$themainarray['tvSpecials'][] = $theitemarray;
           }
-					$themainarray['tvSpecials'][] = $theitemarray;
+
           endwhile;
           endif;
 
