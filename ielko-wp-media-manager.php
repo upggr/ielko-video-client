@@ -376,7 +376,11 @@ $postCount = 1000;
 $posts = query_posts('showposts=' . $postCount);
 header('Content-Type: application/json');
 
-
+$themainarray = array (
+	"providerName" => "GreekTV",
+	"language" => "en-US",
+	"lastUpdated" => "2017-04-30T18:12:32.125Z"
+);
 
 $cats = get_categories();
 
@@ -386,11 +390,7 @@ foreach ($cats as $cat) {
           $thecategorydesc = $cat->description;
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
 
-					$themainarray = array (
-						"providerName" => "GreekTV",
-						"language" => "en-US",
-						"lastUpdated" => "2017-04-30T18:12:32.125Z"
-					);
+
 
 
 					query_posts("cat=$thecatid&posts_per_page=1000&post_type=media_item");
