@@ -436,12 +436,13 @@ $theitemarray = array(
 );
 $thecontentarray['videos'] = $thevideoarray;
 $theitemarray['content'] = $thecontentarray;
-
+array_push($themainarray['tvSpecials'],$theitemarray);
 
           }
           endwhile;
           endif;
-$themainarray['tvSpecials'][] = $theitemarray;
+
+
 //$json_resp = json_encode($themainarray);
 //echo $json_resp;
 print_r ($themainarray);
