@@ -380,7 +380,7 @@ $txt = $_GET['txt'];
 
 $imagetobewatermark=imagecreatefrompng($orig);
 $watermarktext = $txt;
-$font="../font/century gothic.ttf";
+$font= plugin_dir_path( __FILE__ ) . 'font/cent.ttf';
 $fontsize="15";
 $white = imagecolorallocate($imagetobewatermark, 255, 255, 255);
 imagettftext($imagetobewatermark, $fontsize, 0, 20, 10, $white, $font, $watermarktext);
