@@ -377,6 +377,19 @@ $orig = $_GET['orig'];
 $wi = $_GET['wi'];
 $he = $_GET['he'];
 $txt = $_GET['txt'];
+
+$imagetobewatermark=imagecreatefrompng($orig);
+$watermarktext="$txt";
+$font="../font/century gothic.ttf";
+$fontsize="15";
+$white = imagecolorallocate($imagetobewatermark, 255, 255, 255);
+imagettftext($imagetobewatermark, $fontsize, 0, 20, 10, $white, $font, $watermarktext);
+header("Content-type:image/png");
+imagepng($imagetobewatermark);
+imagedestroy($imagetobewatermark);
+
+
+/*
 $your_text = $txt;
  $IMG = imagecreate( $wi, $he );
  $background = imagecolorallocate($IMG, 255,255,255);
@@ -389,6 +402,7 @@ $your_text = $txt;
  imagecolordeallocate($IMG, $text_color );
  imagecolordeallocate($IMG, $background );
  imagedestroy($IMG);
+ */
  exit;
 }
 
