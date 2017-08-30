@@ -451,7 +451,7 @@ foreach ($cats as $cat) {
             $thequality_ = 'HD';
           }
           $thebitrate = '0';
-
+ if ($thecategory != 'Online Radio') {
           if (strpos($theurl, 'm3u8') !== false) {
 $genres = array("special");
 $tags = array("greek",$thecategory);
@@ -485,7 +485,7 @@ $theitemarray['content']['videos'][] = array (
 );
 $themainarray['tvSpecials'][] = $theitemarray;
           }
-
+}
           endwhile;
           endif;
 
