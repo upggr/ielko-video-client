@@ -457,7 +457,7 @@ $genres = array("special");
 $tags = array("greek",$thecategory);
 $captions = array();
 if($theimg === null) {
-	$theimg = 'http://ielko-video-client.upg.gr/?feed=gen_img&wi=800&orig=http://greektv.upg.gr/default.png&he=450&fontsize=60&txt='.$thetitle;
+	$theimg = 'http://ielko-video-client.upg.gr/?feed=gen_img&wi=800&orig=&he=450&fontsize=60&txt='.$thetitle;
 //	$theimg = 'http://ielko-video-client.upg.gr/wp-content/uploads/2017/08/default.png';
 }
 if(!$thedescription) {
