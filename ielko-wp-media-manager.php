@@ -377,11 +377,11 @@ $orig = $_GET['orig'];
 $wi = $_GET['wi'];
 $he = $_GET['he'];
 $txt = $_GET['txt'];
-
+$fontisize = $_GET['fontsize'];
 $imagetobewatermark=imagecreatefrompng($orig);
 $watermarktext = $txt;
 $font= plugin_dir_path( __FILE__ ) . 'font/cent.ttf';
-$fontsize="60";
+$fontsize=$fontisize;
 $white = imagecolorallocate($imagetobewatermark, 255, 0, 0);
 imagettftext($imagetobewatermark, $fontsize, 0, 150, 250, $white, $font, $watermarktext);
 header("Content-type:image/png");
