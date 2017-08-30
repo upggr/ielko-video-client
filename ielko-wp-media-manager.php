@@ -385,7 +385,7 @@ $imagetobewatermark=imagecreatefrompng($orig);
 $watermarktext = $txt;
 $font= plugin_dir_path( __FILE__ ) . 'font/cent.ttf';
 $white = imagecolorallocate($imagetobewatermark, 255, 0, 0);
-imagettftext($imagetobewatermark, $fontsize, 0, 150, 250, $white, $font, $watermarktext);
+imagettftext($imagetobewatermark, $fontsize, 0, 160, 250, $white, $font, $watermarktext);
 header("Content-type:image/png");
 imagepng($imagetobewatermark);
 imagedestroy($imagetobewatermark);
