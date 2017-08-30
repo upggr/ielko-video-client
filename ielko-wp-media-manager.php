@@ -429,7 +429,7 @@ foreach ($cats as $cat) {
           $thecategory = $cat->name;
           $thecategorydesc = $cat->description;
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
- if ($thecategory != 'Live Radio') {
+ if ($thecategory != 'Live Radio' & $thecategory != 'Online Radio') {
 					query_posts("cat=$thecatid&posts_per_page=1000&post_type=media_item");
 					if (have_posts()) :
 					while (have_posts()) : the_post();
