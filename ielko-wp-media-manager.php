@@ -429,10 +429,7 @@ foreach ($cats as $cat) {
           $thecategory = $cat->name;
           $thecategorydesc = $cat->description;
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
-
-
-
-
+ if ($thecategory != 'Live Radio') {
 					query_posts("cat=$thecatid&posts_per_page=1000&post_type=media_item");
 					if (have_posts()) :
 					while (have_posts()) : the_post();
@@ -451,7 +448,7 @@ foreach ($cats as $cat) {
             $thequality_ = 'HD';
           }
           $thebitrate = '0';
- if ($thecategory != 'Online Radio') {
+
           if (strpos($theurl, 'm3u8') !== false) {
 $genres = array("special");
 $tags = array("greek",$thecategory);
@@ -485,7 +482,7 @@ $theitemarray['content']['videos'][] = array (
 );
 $themainarray['tvSpecials'][] = $theitemarray;
           }
-}
+
           endwhile;
           endif;
 
@@ -493,6 +490,7 @@ $themainarray['tvSpecials'][] = $theitemarray;
 
 //print_r ($themainarray);
          }
+			 }
 				 $json_resp = json_encode($themainarray);
 				 echo $json_resp;
 }
