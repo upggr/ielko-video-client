@@ -383,7 +383,7 @@ $watermarktext = $txt;
 $font= plugin_dir_path( __FILE__ ) . 'font/cent.ttf';
 $fontsize="60";
 $white = imagecolorallocate($imagetobewatermark, 255, 0, 0);
-imagettftext($imagetobewatermark, $fontsize, 0, 200, 250, $white, $font, $watermarktext);
+imagettftext($imagetobewatermark, $fontsize, 0, 150, 250, $white, $font, $watermarktext);
 header("Content-type:image/png");
 imagepng($imagetobewatermark);
 imagedestroy($imagetobewatermark);
