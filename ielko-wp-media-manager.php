@@ -379,7 +379,7 @@ $he = $_GET['he'];
 $txt = $_GET['txt'];
 
 $imagetobewatermark=imagecreatefrompng($orig);
-$watermarktext="$txt";
+$watermarktext = $txt;
 $font="../font/century gothic.ttf";
 $fontsize="15";
 $white = imagecolorallocate($imagetobewatermark, 255, 255, 255);
