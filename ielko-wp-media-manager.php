@@ -373,6 +373,7 @@ function genimg(){
 
 
 function genimg_f(){
+$orig = $_GET['orig'];
 $wi = $_GET['wi'];
 $he = $_GET['he'];
 $txt = $_GET['txt'];
@@ -443,8 +444,8 @@ $genres = array("special");
 $tags = array("greek",$thecategory);
 $captions = array();
 if($theimg === null) {
-	//$theimg = 'http://ielko-video-client.upg.gr/?feed=gen_img&wi=800&he=450&txt='.$thetitle;
-	$theimg = 'http://ielko-video-client.upg.gr/wp-content/uploads/2017/08/default.png';
+	$theimg = 'http://ielko-video-client.upg.gr/?feed=gen_img&wi=800&orig=http://ielko-video-client.upg.gr/wp-content/uploads/2017/08/default.png&he=450&txt='.$thetitle;
+//	$theimg = 'http://ielko-video-client.upg.gr/wp-content/uploads/2017/08/default.png';
 }
 if(!$thedescription) {
 	$thedescription = $thetitle.' ('.$thecategory.')';
