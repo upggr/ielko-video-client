@@ -454,7 +454,7 @@ if(!$thedescription) {
 $theitemarray = array(
 	"id" => hash('ripemd160', $thetitle.$theimg.$thecatid),
 	"title" => $thetitle,
-	"shortDescription" => $thedescription,
+	"shortDescription" => $thedescription.' Source : '.$theurl,
 	"thumbnail" => $theimg,
 	"genres" => $genres,
 	"tags" => $tags,
