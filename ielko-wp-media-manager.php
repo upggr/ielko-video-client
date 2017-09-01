@@ -379,7 +379,8 @@ $he = $_GET['he'];
 $txt = $_GET['txt'];
 $txt = preg_replace('/\s+/', '_', $txt);
 if($orig=="") {
-	$orig = plugin_dir_path( __FILE__ ) . 'img/default.png';
+	$options = get_option( 'ivc_settings' );
+	$orig = $options['ivc_image_field_5'];
 }
 $fontsize = $_GET['fontsize'];
 $imagetobewatermark=imagecreatefrompng($orig);
@@ -882,6 +883,14 @@ __( 'ROKU Overhang (234 x 104)', 'wordpress' ),
 	);
 
 	add_settings_field(
+		'ivc_image_field_5',
+		__( 'ROKU default placeholder image (800 x 450)', 'wordpress' ),
+		'ivc_image_field_5_render',
+		'pluginPage',
+		'ivc_pluginPage_section'
+	);
+
+	add_settings_field(
 		'ivc_checkbox_field_0',
 		__( 'Enable media checker (BETA) - Will check every 10 minutes for dead media and mark them as inactive', 'wordpress' ),
 		'ivc_checkbox_field_0_render',
@@ -992,7 +1001,15 @@ function ivc_image_field_4_render(  ) {
 
 }
 
+function ivc_image_field_5_render(  ) {
 
+	$options = get_option( 'ivc_settings' );
+	?>
+	 <input type="text" name="ivc_settings[ivc_image_field_5]" id="image_url5" class="regular-text" value="<?php echo $options['ivc_image_field_5']; ?>">
+	 <input type="button" name="upload-btn5" id="upload-btn5" class="button-secondary" value="Upload Image">
+	<?php
+
+}
 
 function ivc_settings_section_intro(  ) {
 $options = get_option( 'ivc_settings' );
@@ -1173,16 +1190,16 @@ add_action('admin_init', 'ivc_settings_init' );
 add_filter( 'manage_media_item_posts_columns', 'set_custom_edit_media_item_columns' );
 add_action( 'manage_media_item_posts_custom_column' , 'custom_media_item_column', 10, 2 );
 add_theme_support( 'post-thumbnails' );
-add_image_size( 'ielko_focus_hd', 336, 210, false );
-add_image_size( 'ielko_focus_sd', 248, 140, false );
-add_image_size( 'ielko_side_hd', 108, 69, false );
-add_image_size( 'ielko_side_sd', 80, 46, false );
-add_image_size( 'ielko_overhang_hd', 234, 104, false );
-add_image_size( 'ielko_overhang_sd', 131, 58, false );
-add_image_size( 'ielko_splash_hd', 1280, 720, false );
-add_image_size( 'ielko_splash_sd', 740, 480, false );
-add_image_size( 'ielko_store_sd', 290, 218, false );
-add_image_size( 'ielko_store_sd', 214, 144, false );
+//add_image_size( 'ielko_focus_hd', 336, 210, false );
+//add_image_size( 'ielko_focus_sd', 248, 140, false );
+//add_image_size( 'ielko_side_hd', 108, 69, false );
+//add_image_size( 'ielko_side_sd', 80, 46, false );
+//add_image_size( 'ielko_overhang_hd', 234, 104, false );
+//add_image_size( 'ielko_overhang_sd', 131, 58, false );
+//add_image_size( 'ielko_splash_hd', 1280, 720, false );
+//add_image_size( 'ielko_splash_sd', 740, 480, false );
+//add_image_size( 'ielko_store_sd', 290, 218, false );
+//add_image_size( 'ielko_store_sd', 214, 144, false );
 
 add_action( 'admin_enqueue_scripts', 'load_wp_media_files' );
 
