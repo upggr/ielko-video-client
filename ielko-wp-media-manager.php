@@ -388,7 +388,8 @@ if($orig=="") {
 	$orig = str_replace(get_site_url(),"",$orig);
 	echo $orig;
 	echo '<br />';
-	$orig = str_replace('/wp-content',wp_upload_dir(),$orig);
+	$upload_dir = wp_upload_dir();
+	$orig = str_replace('/wp-content',$upload_dir,$orig);
 	echo $orig;
 	echo '<br />';
 
