@@ -383,7 +383,18 @@ if($orig=="") {
 	$orig = $options['ivc_image_field_5'];
 }
 $fontsize = $_GET['fontsize'];
-$imagetobewatermark=imagecreatefrompng($orig);
+$context = [
+    'ssl' => [
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+    ],
+];
+
+$url = $orig;
+$response = file_get_contents($url, false, stream_context_create($context));
+$img = imagecreatefromstring($response);
+
+$imagetobewatermark=imagecreatefrompng($img);
 $watermarktext = $txt;
 $font= plugin_dir_path( __FILE__ ) . 'font/cent.ttf';
 $white = imagecolorallocate($imagetobewatermark, 255, 0, 0);
