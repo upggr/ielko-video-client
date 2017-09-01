@@ -122,4 +122,18 @@
         });
     });
 
+    $('#upload-btn5').click(function(e) {
+      e.preventDefault();
+      var image5 = wp.media({
+          title: 'Upload Image',
+          multiple: false
+        }).open()
+        .on('select', function(e) {
+          var uploaded_image = image5.state().get('selection').first();
+          console.log(uploaded_image);
+          var image_url = uploaded_image.toJSON().url;
+          $('#image_url5').val(image_url);
+        });
+    });
+
   }); //last line
