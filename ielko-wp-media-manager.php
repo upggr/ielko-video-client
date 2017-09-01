@@ -385,7 +385,11 @@ if($orig=="") {
 	echo '<br />';
 	echo  get_site_url();
 	echo '<br />';
-	echo str_replace(get_site_url(),"",$orig);
+	$orig = str_replace(get_site_url(),"",$orig);
+	echo $orig;
+	echo '<br />';
+	$orig = str_replace('/wp_content/',"..\\..\\",$orig);
+	echo $orig;
 	echo '<br />';
 }
 $fontsize = $_GET['fontsize'];
