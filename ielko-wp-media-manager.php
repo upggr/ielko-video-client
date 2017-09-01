@@ -381,12 +381,13 @@ $txt = preg_replace('/\s+/', '_', $txt);
 if($orig=="") {
 	$options = get_option( 'ivc_settings' );
 	$orig = $options['ivc_image_field_5'];
+	echo $orig;
 }
 $fontsize = $_GET['fontsize'];
 $context = [
     'ssl' => [
         'verify_peer' => false,
-        'verify_peer_name' => true,
+        'verify_peer_name' => false,
     ],
 ];
 
