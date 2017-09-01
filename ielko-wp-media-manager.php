@@ -391,22 +391,7 @@ imagettftext($imagetobewatermark, $fontsize, 0, 170, 250, $white, $font, $waterm
 imagepng($imagetobewatermark);
 imagedestroy($imagetobewatermark);
 
-
-/*
-$your_text = $txt;
- $IMG = imagecreate( $wi, $he );
- $background = imagecolorallocate($IMG, 255,255,255);
- $text_color = imagecolorallocate($IMG, 0,0,200);
- imagestring( $IMG, 5, 300, 200, $your_text,  $text_color );
- imagesetthickness ( $IMG, 5 );
- header( "Content-type: image/png" );
- imagepng($IMG);
- imagecolordeallocate($IMG, $line_color );
- imagecolordeallocate($IMG, $text_color );
- imagecolordeallocate($IMG, $background );
- imagedestroy($IMG);
- */
- exit;
+// exit;
 }
 
 
