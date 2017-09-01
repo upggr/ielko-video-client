@@ -377,22 +377,22 @@ $orig = $_GET['orig'];
 $wi = $_GET['wi'];
 $he = $_GET['he'];
 $txt = $_GET['txt'];
+$txt = preg_replace('/\s+/', '+', $txt);
 if($orig=="") {
 	$orig = plugin_dir_path( __FILE__ ) . 'img/default.png';
 }
-echo $orig.'<br />';
-//$fontsize = $_GET['fontsize'];
-//$imagetobewatermark=imagecreatefrompng($orig);
-//$watermarktext = $txt;
-//$font= plugin_dir_path( __FILE__ ) . 'font/cent.ttf';
-//$white = imagecolorallocate($imagetobewatermark, 255, 0, 0);
-//imagettftext($imagetobewatermark, $fontsize, 0, 170, 250, $white, $font, $watermarktext);
-//header("Content-type:image/png");
-header("Content-type:text/html");
-//imagepng($imagetobewatermark);
-//imagedestroy($imagetobewatermark);
+$fontsize = $_GET['fontsize'];
+$imagetobewatermark=imagecreatefrompng($orig);
+$watermarktext = $txt;
+$font= plugin_dir_path( __FILE__ ) . 'font/cent.ttf';
+$white = imagecolorallocate($imagetobewatermark, 255, 0, 0);
+imagettftext($imagetobewatermark, $fontsize, 0, 170, 250, $white, $font, $watermarktext);
+header("Content-type:image/png");
 
-// exit;
+imagepng($imagetobewatermark);
+imagedestroy($imagetobewatermark);
+
+ exit;
 }
 
 
