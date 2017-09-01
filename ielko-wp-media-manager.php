@@ -385,7 +385,7 @@ if($orig=="") {
 $fontsize = $_GET['fontsize'];
 $context = [
     'ssl' => [
-        'verify_peer' => true,
+        'verify_peer' => false,
         'verify_peer_name' => true,
     ],
 ];
