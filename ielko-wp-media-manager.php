@@ -382,7 +382,11 @@ if($orig=="") {
 	$options = get_option( 'ivc_settings' );
 	$orig = $options['ivc_image_field_5'];
 	echo $orig;
+	echo '<br />';
 	echo  get_site_url();
+	echo '<br />';
+	echo str_replace(get_site_url(),"",$orig);
+	echo '<br />';
 }
 $fontsize = $_GET['fontsize'];
 $context = [
