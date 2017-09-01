@@ -391,6 +391,9 @@ if($orig=="") {
 	$orig = str_replace('/wp-content',"../..",$orig);
 	echo $orig;
 	echo '<br />';
+	$orig = str_replace('/',"\",$orig);
+	echo $orig;
+	echo '<br />';
 }
 $fontsize = $_GET['fontsize'];
 $context = [
