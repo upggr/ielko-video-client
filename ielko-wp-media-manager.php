@@ -385,8 +385,8 @@ if($orig=="") {
 $fontsize = $_GET['fontsize'];
 $context = [
     'ssl' => [
-        'verify_peer' => false,
-        'verify_peer_name' => false,
+        'verify_peer' => true,
+        'verify_peer_name' => true,
     ],
 ];
 
@@ -457,8 +457,7 @@ $tags = array("greek",$thecategory);
 $captions = array();
 if($theimg === null) {
 	$thetitle_ = preg_replace('/\s+/', '_', $thetitle);
-	$theimg = 'http://ielko-video-client.upg.gr/?feed=gen_img&wi=800&orig=&he=450&fontsize=50&txt='.$thetitle_;
-//	$theimg = 'http://ielko-video-client.upg.gr/wp-content/uploads/2017/08/default.png';
+	$theimg = get_site_url().'/?feed=gen_img&wi=800&orig=&he=450&fontsize=50&txt='.$thetitle_;
 }
 if(!$thedescription) {
 	$thedescription = $thetitle.' ('.$thecategory.')';
