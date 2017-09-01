@@ -387,18 +387,7 @@ if($orig=="") {
 	$orig = str_replace('/wp-content/uploads',$upload_dir,$orig);
 }
 $fontsize = $_GET['fontsize'];
-$context = [
-    'ssl' => [
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-    ],
-];
-
-$url = $orig;
-$response = file_get_contents($url, false, stream_context_create($context));
-$img = imagecreatefromstring($response);
-
-$imagetobewatermark=imagecreatefrompng($img);
+$imagetobewatermark=imagecreatefrompng($orig);
 $watermarktext = $txt;
 $font= plugin_dir_path( __FILE__ ) . 'font/cent.ttf';
 $white = imagecolorallocate($imagetobewatermark, 255, 0, 0);
