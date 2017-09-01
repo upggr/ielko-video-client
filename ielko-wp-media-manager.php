@@ -373,6 +373,8 @@ function genimg(){
 
 
 function genimg_f(){
+	error_reporting(E_ALL);
+ini_set('display_errors', 1);
 $orig = $_GET['orig'];
 $wi = $_GET['wi'];
 $he = $_GET['he'];
