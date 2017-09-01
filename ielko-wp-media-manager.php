@@ -389,6 +389,7 @@ if($orig=="") {
 	echo $orig;
 	echo '<br />';
 	$upload_dir = wp_upload_dir();
+	$upload_dir = $upload_dir['basedir'];
 	$orig = str_replace('/wp-content',$upload_dir,$orig);
 	echo $orig;
 	echo '<br />';
