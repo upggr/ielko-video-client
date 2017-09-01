@@ -377,7 +377,7 @@ $orig = $_GET['orig'];
 $wi = $_GET['wi'];
 $he = $_GET['he'];
 $txt = $_GET['txt'];
-$txt = preg_replace('/\s+/', '+', $txt);
+$txt = preg_replace('/\s+/', '_', $txt);
 if($orig=="") {
 	$orig = plugin_dir_path( __FILE__ ) . 'img/default.png';
 }
