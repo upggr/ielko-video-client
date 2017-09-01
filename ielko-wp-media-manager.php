@@ -381,19 +381,10 @@ $txt = preg_replace('/\s+/', '_', $txt);
 if($orig=="") {
 	$options = get_option( 'ivc_settings' );
 	$orig = $options['ivc_image_field_5'];
-	echo $orig;
-	echo '<br />';
-	echo  get_site_url();
-	echo '<br />';
 	$orig = str_replace(get_site_url(),"",$orig);
-	echo $orig;
-	echo '<br />';
 	$upload_dir = wp_upload_dir();
 	$upload_dir = $upload_dir['basedir'];
 	$orig = str_replace('/wp-content/uploads',$upload_dir,$orig);
-	echo $orig;
-	echo '<br />';
-
 }
 $fontsize = $_GET['fontsize'];
 $context = [
