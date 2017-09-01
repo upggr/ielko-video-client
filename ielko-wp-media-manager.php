@@ -380,6 +380,7 @@ $txt = $_GET['txt'];
 if($orig=="") {
 	$orig = plugin_dir_path( __FILE__ ) . 'img/default.png';
 }
+echo $orig.'<br />';
 $fontsize = $_GET['fontsize'];
 $imagetobewatermark=imagecreatefrompng($orig);
 $watermarktext = $txt;
