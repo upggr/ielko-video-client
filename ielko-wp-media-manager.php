@@ -667,7 +667,7 @@ if ($r_url) {
 	}
 }
 else {
-	echo 'there was no match found in the remote file, skipping ('.$thetitle.')<br />';
+	echo '<span style="color:blue;">there was no match found in the remote file, skipping ('.$thetitle.')</span><br />';
 }
 
 }
