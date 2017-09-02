@@ -416,7 +416,7 @@ $themainarray = array (
         'Y-m-d\TH:i:s\Z',
         get_lastpostmodified('GMT'),
         false
-    ); 
+    )
 );
 
 $cats = get_categories();
