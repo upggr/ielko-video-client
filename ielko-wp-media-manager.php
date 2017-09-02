@@ -460,12 +460,12 @@ foreach ($cats as $cat) {
 
           if (strpos($theurl, 'm3u8') !== false) {
 						if ($ispremium == 1) {
-							$theurl_checked	= ;
+							$theurl_checked	= 'http://non.disclosed.com';
 						}
 						else {
 							$theurl_checked = $theurl;
 						}
-	
+
 $genres = array("special");
 $tags = array("greek",$thecategory);
 $captions = array();
