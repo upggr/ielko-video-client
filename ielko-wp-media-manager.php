@@ -373,8 +373,6 @@ function genimg(){
 
 
 function genimg_f(){
-	error_reporting(E_ALL);
-ini_set('display_errors', 1);
 $orig = $_GET['orig'];
 $wi = $_GET['wi'];
 $he = $_GET['he'];
@@ -424,7 +422,6 @@ foreach ($cats as $cat) {
           $thecategory = $cat->name;
           $thecategorydesc = $cat->description;
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
- if ($thecategory != 'Live Radio' & $thecategory != 'Online Radio') {
 					query_posts("cat=$thecatid&posts_per_page=1000&post_type=media_item");
 					if (have_posts()) :
 					while (have_posts()) : the_post();
@@ -482,9 +479,6 @@ $themainarray['tvSpecials'][] = $theitemarray;
           endif;
 
 
-
-//print_r ($themainarray);
-         }
 			 }
 				 $json_resp = json_encode($themainarray);
 				 echo $json_resp;
@@ -659,14 +653,14 @@ if ($r_url) {
 	echo 'found one match for '.$thetitle.'<br />';
 	echo 'comparing our url ('.$theurl.') with remote url ('.$r_url.') for '.$thetitle.'<br />';
 	if ($theurl == $r_url) {
-		echo 'url is the same, exiting ('.$r_url.' vs '.$theurl.')<br />';
+		echo '<span style="color:green;">url is the same, exiting ('.$r_url.' vs '.$theurl.')</span><br />';
 	}
 	else {
 		if ($isexcluded == 1) {
-			echo 'I am not updating this as it is excluded<br />';
+			echo '<span style="color:blue;">I am not updating this as it is excluded</span><br />';
 		}
 		else {
-				echo 'I am updating this ('.$r_url.' vs '.$theurl.')<br />';
+				echo '<span style="color:red;">I am updating this ('.$r_url.' vs '.$theurl.')</span><br />';
 				update_post_meta(get_the_ID(), 'media_url',$r_url, $theurl);
 		}
 
