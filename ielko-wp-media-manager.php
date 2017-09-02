@@ -474,12 +474,12 @@ if($theimg === null) {
 	$theimg = get_site_url().'/?feed=gen_img&wi=800&orig=&he=450&fontsize=50&txt='.$thetitle_;
 }
 if(!$thedescription) {
-	$thedescription = $thetitle.' ('.$thecategory.')';
+	$thedescription = 'Enjoy '.$thetitle.' from the '.$thecategory.' category. You may also view it on your computer using VLC or any other hls compatible video player from : '.$theurl_checked;
 }
 $theitemarray = array(
 	"id" => hash('ripemd160', $thetitle.$theimg.$thecatid),
 	"title" => $thetitle,
-	"shortDescription" => $thedescription.' Source : '.$theurl_checked,
+	"shortDescription" => $thedescription,
 	"thumbnail" => $theimg,
 	"genres" => $genres,
 	"tags" => $tags,
