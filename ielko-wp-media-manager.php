@@ -449,6 +449,7 @@ foreach ($cats as $cat) {
           $thefrmt = 'hls';
           $thestrg = 'full-adaptation';
           $thequality = get_post_meta(get_the_ID(), 'media_qty', true);
+					$ispremium = get_post_meta(get_the_ID(), 'media_excl_premium', true);
           if ($thequality == 1) {
             $thequality_ = 'SD';
           }
@@ -458,6 +459,13 @@ foreach ($cats as $cat) {
           $thebitrate = '0';
 
           if (strpos($theurl, 'm3u8') !== false) {
+						if ($ispremium == 1) {
+							$theurl_checked	= ;
+						}
+						else {
+							$theurl_checked = $theurl;
+						}
+	
 $genres = array("special");
 $tags = array("greek",$thecategory);
 $captions = array();
@@ -471,7 +479,7 @@ if(!$thedescription) {
 $theitemarray = array(
 	"id" => hash('ripemd160', $thetitle.$theimg.$thecatid),
 	"title" => $thetitle,
-	"shortDescription" => $thedescription.' Source : '.$theurl,
+	"shortDescription" => $thedescription.' Source : '.$theurl_checked,
 	"thumbnail" => $theimg,
 	"genres" => $genres,
 	"tags" => $tags,
@@ -479,7 +487,7 @@ $theitemarray = array(
 	"content" => array (
 		"dateAdded" => get_the_modified_date('Y-m-d\TH:i:s\Z'),
 		"captions" => $captions,
-		"duration" => 1,
+		"duration" => 999,
 	)
 );
 
