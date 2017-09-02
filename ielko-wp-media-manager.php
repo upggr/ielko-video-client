@@ -458,7 +458,7 @@ foreach ($cats as $cat) {
           }
           $thebitrate = '0';
 
-          if (strpos($theurl, 'm3u8') !== false) {
+          if (strpos($theurl, 'm3u8') !== false || strpos($theurl, 'mp4') !== false) {
 						if ($ispremium == 1) {
 							$theurl_checked	= 'http://non.disclosed.com';
 						}
