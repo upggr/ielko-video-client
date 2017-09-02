@@ -410,7 +410,7 @@ $posts = query_posts('showposts=' . $postCount);
 header('Content-Type: application/json');
 
 $themainarray = array (
-	"providerName" => "GreekTV",
+	"providerName" =>  get_bloginfo('name'),
 	"language" => "en-US",
 	"lastUpdated" => "2017-04-30T18:12:32.125Z"
 );
