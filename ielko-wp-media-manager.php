@@ -412,7 +412,11 @@ header('Content-Type: application/json');
 $themainarray = array (
 	"providerName" =>  get_bloginfo('name'),
 	"language" => "en-US",
-	"lastUpdated" => "2017-04-30T18:12:32.125Z"
+	"lastUpdated" => mysql2date(
+        'Y-m-d\TH:i:s\Z',
+        get_lastpostmodified('GMT'),
+        false
+    ); 
 );
 
 $cats = get_categories();
