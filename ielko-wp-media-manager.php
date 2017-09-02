@@ -465,7 +465,7 @@ $theitemarray = array(
 	"tags" => $tags,
 	"releaseDate" => get_the_modified_date('Y-m-d'),
 	"content" => array (
-		"dateAdded" => "2017-08-27T14:14:54.431Z",
+		"dateAdded" => get_the_modified_date('Y-m-d\TH:i:s\Z'),
 		"captions" => $captions,
 		"duration" => 1,
 	)
