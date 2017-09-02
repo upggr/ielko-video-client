@@ -139,6 +139,7 @@ function create_work_meta( $post ){
 		$media_excl_check = get_post_meta( $post->ID, 'media_excl_check', true );
 		$media_excl_lists = get_post_meta( $post->ID, 'media_excl_lists', true );
 		$media_excl_general = get_post_meta( $post->ID, 'media_excl_general', true );
+		$media_excl_premium = get_post_meta( $post->ID, 'media_excl_premium', true );
     echo '<div>
         <p>
             <label for=\'media_url\'>Media URL (could be the url of a  video you uploaded in the media library, a youtube link, an m3u8 link etc..):</label>
@@ -192,6 +193,14 @@ function create_work_meta( $post ){
 						<input type=\'radio\' name=\'media_excl_general\' value=\'0\' '.checkactive($media_excl_general,0).'> No <br>
 				</p>
 
+				<p>
+						<label for=\'media_excl_premium\'>Premium (hide url on feeds) :</label>
+						<br />
+						<input type=\'radio\' name=\'media_excl_premium\' value=\'1\' '.checkactive($media_excl_premium,1).'> Yes <br>
+						<input type=\'radio\' name=\'media_excl_premium\' value=\'0\' '.checkactive($media_excl_premium,0).'> No <br>
+				</p>
+
+
     </div>';
 }
 
@@ -234,6 +243,9 @@ function save_media_meta( $post_id ){
 		}
 		if( isset( $_REQUEST['media_excl_general'] ) ){
 				update_post_meta( $post_id, 'media_excl_general', sanitize_text_field( $_POST['media_excl_general'] ) );
+		}
+		if( isset( $_REQUEST['media_excl_premium'] ) ){
+				update_post_meta( $post_id, 'media_excl_premium', sanitize_text_field( $_POST['media_excl_premium'] ) );
 		}
 }
 
