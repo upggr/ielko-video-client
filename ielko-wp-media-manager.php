@@ -1019,7 +1019,7 @@ $options = get_option( 'ivc_settings' );
 		</p>
 		<br />
 		  <br />
-  <b>STEP 1</b> : Add media sources using the Ielko Media menu in the menu, as if you were creating a new wordpress post. Complete the title of the media (for example "my awesome video"), and at least the source (for example http://mydomain.com/my_awesome_video.mp4). You will need to define a category for each item you create, and you can upload an image for the categories using the interface.
+  <b>STEP 1</b> : Add media sources using the Ielko Media menu in the menu, as if you were creating a new wordpress post. Complete the title of the media (for example "my awesome video"), and at least the source (for example http://mydomain.com/my_awesome_video.mp4). You will need to define a category for each item you create, and you can upload an image for the categories using the interface. You will need to have a top category (for example Live Video) and then under this the subcategories. for the direct publisher it doesnt matter but for the others it does!.
     <br />
     <br />
 		<b>STEP 2</b> : Complete the fields bellow on this page.
