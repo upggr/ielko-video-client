@@ -6,27 +6,30 @@ Manage remote or local media from a wordpress installation and provide xml feeds
 
 Installation instructions :
 
-Just copy the plugin in the plugins folder and activate it from the wordpress menu. There is another plugin dependency not included with the plugin "category images". You will receive notice if you do not have it and be prompted to install it from the wordpress menu.
+Just copy the plugin in the plugins folder and activate it from the wordpress menu (or download this repo as a zip and upload it using the wp interface). There is another plugin dependency not included with the plugin "category images". You will receive notice if you do not have it and be prompted to install it from the wordpress menu.
 
 Usage :
 
 Assuming your wordpress installation is at : http://mywordpress.com/
 
-STEP 1 : Add media sources using the Ielko Media menu on the left, as if you were creating a new wordpress post. Complete the title of the media (for example "my awesome video"), and at least the source (for example http://mydomain.com/my_awesome_video.mp4). The source could be on your local wordpress installation or anywhere else (For example remote m3u8 files).
+STEP 1 : Add media sources using the Ielko Media menu in the menu, as if you were creating a new wordpress post. Complete the title of the media (for example "my awesome video"), and at least the source (for example http://mydomain.com/my_awesome_video.mp4). You will need to define a category for each item you create, and you can upload an image for the categories using the interface. You will need to have a top category (for example Live Video) and then under this the subcategories. for the direct publisher it doesnt matter but for the others it does!.
 
-You will NEED to define a category for each item you create, and you can upload an image for the categories using the interface. (That is where the extra plugin is needed)
+STEP 2 : Complete the fields bellow on this page.
 
-STEP 2 : Complete the fields on the plugin's setting page found just after the custom type. Those fields are mainly images and titles of your generated application.
+STEP 3 : Download your ROKU app by clicking here (Watch out for your popup blocker).
 
-STEP 3 : Download your ROKU app by clicking the link in the settings page (make sure pop up blockers are disabled)
-
-STEP 4 : Download your TVOS app by clicking the link in the settings page (make sure pop up blockers are disabled)
+STEP 4 : Download your TVOS app by clicking here (Watch out for your popup blocker).
 
 STEP 5 : Feeds :
 
-Your ROKU feed is accessible from http://mywordpress.com/?feed=roku
+Your ROKU feed is accessible from http://your_domain.com/?feed=roku
+Your categoryleaf based ROKU feed is accessible from http://your_domain.com/?feed=roku_cats
+Your direct publisher ROKU feed is accessible from http://your_domain.com/?feed=roku_dp
+Your TVOS feed is accessible from http://your_domain.com/?feed=tvos
+Your Android (Variant 1) feed is accessible from http://your_domain.com/?feed=android1
+The dead link checker is at : http://your_domain.com/?feed=checkdead
+The remote updater is at : http://your_domain.com/?feed=remoteupdate&remotefeed=http://THEREMOTEFEEDTOCOMPARE
 
-Your TVOS feed is accessible from http://mywordpress.com/?feed=tvos
 
 Notes :
 

@@ -450,6 +450,7 @@ foreach ($cats as $cat) {
           $thestrg = 'full-adaptation';
           $thequality = get_post_meta(get_the_ID(), 'media_qty', true);
 					$ispremium = get_post_meta(get_the_ID(), 'media_excl_premium', true);
+					$isactive = get_post_meta(get_the_ID(), 'media_active', true);
           if ($thequality == 1) {
             $thequality_ = 'SD';
           }
@@ -458,7 +459,7 @@ foreach ($cats as $cat) {
           }
           $thebitrate = '0';
 
-          if (strpos($theurl, 'm3u8') !== false || strpos($theurl, 'mp4') !== false) {
+          if (strpos($theurl, 'm3u8') !== false & $isactive == 1) {
 						if ($ispremium == 1) {
 							$theurl_checked	= 'http://non.disclosed.com';
 						}
@@ -467,11 +468,11 @@ foreach ($cats as $cat) {
 						}
 
 $genres = array("special");
-$tags = array("greek",$thecategory);
+$tags = array($thecategory);
 $captions = array();
 if($theimg === null) {
 	$thetitle_ = preg_replace('/\s+/', '_', $thetitle);
-	$theimg = get_site_url().'/?feed=gen_img&wi=800&orig=&he=450&fontsize=50&txt='.$thetitle_;
+	$theimg = get_site_url().'/?feed=gen_img&wi=800&orig=&he=450&fontsize=30&txt='.$thetitle_;
 }
 if(!$thedescription) {
 	$thedescription = 'Enjoy '.$thetitle.' from the '.$thecategory.' category. You may also view it on your computer using VLC or any other hls compatible video player from : '.$theurl_checked;
@@ -1171,7 +1172,13 @@ function custom_media_item_column( $column, $post_id ) {
 
 				}
 				else if ( $typ == 0 ) {
+$ur = get_post_meta( $post_id , 'media_url' , true );
+					if (strpos($ur, 'm3u8') !== false) {
+								echo 'M3U8 RADIO';
+						}
+else {
 					echo 'RADIO';
+}
 				};
 				break;
 
