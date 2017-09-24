@@ -571,7 +571,7 @@ if ($thecategory == $_GET['cat']) {
 
           echo '<item sdImg="'.$theimg.'" hdImg="'.$theimg.'">
           <title>'.$thetitle.'</title>
-					<contentId>'.$theimg.'</contentId>
+					<contentId>'.hash('ripemd160', $theurl).'</contentId>
 					<contentType>Live TV</contentType>
 					<contentQuality>'.$thequality_.'</contentQuality>
           <description>'.$thedescription.'</description>
