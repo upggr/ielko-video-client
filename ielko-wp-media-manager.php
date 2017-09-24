@@ -558,6 +558,11 @@ if ($thecategory == $_GET['cat']) {
 					}
           $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
 					$theimg =  $theimg[0];
+					if($theimg === null) {
+						$thetitle_ = preg_replace('/\s+/', '_', $thetitle);
+						$theimg = get_site_url().'/?feed=gen_img&wi=800&orig=&he=450&fontsize=30&txt='.$thetitle_;
+					}
+					
           $thefrmt = 'hls';
           $thestrg = 'full-adaptation';
           $thequality = get_post_meta(get_the_ID(), 'media_qty', true);
