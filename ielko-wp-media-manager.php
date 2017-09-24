@@ -552,7 +552,6 @@ if ($thecatid == $_GET['cat']) {
 					$theurl =  htmlspecialchars($theurl);
 					$ispremium = get_post_meta(get_the_ID(), 'media_excl_premium', true);
 					$isactive = get_post_meta(get_the_ID(), 'media_active', true);
-					echo $theurl;
 					if (strpos($theurl, 'm3u8') !== false & $isactive == 1) {
 						if ($ispremium == 1) {
 							$theurl_checked	= 'http://non.disclosed.com';
