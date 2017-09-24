@@ -541,6 +541,7 @@ if ($thecategory == $_GET['cat']) {
 					while (have_posts()) : the_post();
           $thetitle = get_the_title();
           $theurl = get_post_meta(get_the_ID(), 'media_url', true);
+					$theurl =  htmlspecialchars($theurl);
           $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
           $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
 					$theimg =  $theimg[0];
