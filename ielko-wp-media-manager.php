@@ -481,7 +481,7 @@ if($theimg === null) {
 	$theimg = get_site_url().'/?feed=gen_img&wi=800&orig=&he=450&fontsize=30&txt='.$thetitle_;
 }
 if(!$thedescription) {
-	$thedescription = 'Enjoy '.$thetitle.' from the '.$thecategory.' category. You may also view it on your computer using VLC or any other hls compatible video player from : '.$theurl_checked;
+	$thedescription = 'Enjoy '.$thetitle.' from the '.$thecategory.' category. You may also view it on your computer using VLC or any other hls compatible audio/video player from : '.$theurl_checked;
 }
 $theitemarray = array(
 	"id" => hash('ripemd160', $thetitle.$theimg.$thecatid),
@@ -561,7 +561,7 @@ if ($thecatid == $_GET['cat']) {
 
           $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
 					if(!$thedescription) {
-						$thedescription = 'Enjoy '.$thetitle.' from the '.$thecategory.' category. You may also view it on your computer using VLC or any other hls compatible video player from : '.$theurl_checked;
+						$thedescription = 'Enjoy '.$thetitle.' from the '.$thecategory.' category. You may also view it on your computer using VLC or any other hls compatible audio/video player from : '.$theurl_checked;
 					}
           $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
 					$theimg =  $theimg[0];
