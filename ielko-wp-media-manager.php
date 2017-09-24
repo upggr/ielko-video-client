@@ -62,7 +62,7 @@ function ielko_wp_media_manager() {
 		'capability_type'       => 'page',
 	);
 	register_post_type( 'media_item', $args );
- 
+
 }
 
 function replace_featured_image_box()
@@ -1101,7 +1101,7 @@ function ivc_options_page(  ) {
 	?>
 	<form action='options.php' method='post'>
 
-		<h2>Ielko Instructions and basic settings</h2>
+		<h2>Instructions and basic settings</h2>
 
 		<?php
 		settings_fields( 'pluginPage' );
