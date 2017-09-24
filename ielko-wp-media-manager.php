@@ -355,6 +355,7 @@ $categories = get_categories( $args );
 $first = true;
 
   foreach ($categories as $category) {
+		if ($category->cat_name != 'Uncategorized') {
 			echo '<category title="'.$category->cat_name.'" description="'.$category->description.'" sd_img="'.z_taxonomy_image_url($category->term_id).'"  hd_img="'.z_taxonomy_image_url($category->term_id).'"  >';
     $theid = $category->term_id;
     $children = $wpdb->get_results( "SELECT term_id FROM $wpdb->term_taxonomy WHERE parent=$theid" );
@@ -377,6 +378,7 @@ $first = true;
   //  echo '</category>';
     }
 echo '</category>';
+}
   }
 echo '</categories>';
 
