@@ -381,7 +381,7 @@ echo '</category>';
 echo '<category title="Design" description="TED Talks on Design" sd_img="https://devtools.web.roku.com/videoplayer/images/TED_Design.png" hd_img="https://devtools.web.roku.com/videoplayer/images/TED_Design.png">
 		<categoryLeaf title="Creativity" description="" feed="https://devtools.web.roku.com/videoplayer/xml/creativity.xml"/>
 		<categoryLeaf title="Design" description="" feed="https://devtools.web.roku.com/videoplayer/xml/design.xml" />
-	</category>'
+	</category>';
 
 }
   }
