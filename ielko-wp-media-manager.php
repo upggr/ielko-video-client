@@ -542,6 +542,8 @@ if ($thecategory == $_GET['cat']) {
           $thetitle = get_the_title();
           $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 					$theurl =  htmlspecialchars($theurl);
+					$ispremium = get_post_meta(get_the_ID(), 'media_excl_premium', true);
+					$isactive = get_post_meta(get_the_ID(), 'media_active', true);
 					if (strpos($theurl, 'm3u8') !== false & $isactive == 1) {
 						if ($ispremium == 1) {
 							$theurl_checked	= 'http://non.disclosed.com';
@@ -549,7 +551,7 @@ if ($thecategory == $_GET['cat']) {
 						else {
 							$theurl_checked = $theurl;
 						}
-						
+
           $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
 					if(!$thedescription) {
 						$thedescription = 'Enjoy '.$thetitle.' from the '.$thecategory.' category. You may also view it on your computer using VLC or any other hls compatible video player from : '.$theurl_checked;
