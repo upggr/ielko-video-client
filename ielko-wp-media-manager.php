@@ -527,6 +527,7 @@ header('Content-Type: text/xml');
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 echo '<feed>';
 $cats = get_categories();
+print_r($cats);
 foreach ($cats as $cat) {
           $thecatid = $cat->term_id;
           $thecategory = $cat->name;
