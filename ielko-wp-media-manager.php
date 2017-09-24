@@ -569,7 +569,7 @@ if ($thecatid == $_GET['cat']) {
 						$thetitle_ = preg_replace('/\s+/', '_', $thetitle);
 						$theimg = get_site_url().'/?feed=gen_img&wi=800&orig=&he=450&fontsize=30&txt='.$thetitle_;
 						$theimg = htmlspecialchars($theimg);
-						print_r($theimg);
+						echo $theimg;
 					}
 
           $thefrmt = 'hls';
