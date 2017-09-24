@@ -562,7 +562,7 @@ if ($thecategory == $_GET['cat']) {
 						$thetitle_ = preg_replace('/\s+/', '_', $thetitle);
 						$theimg = get_site_url().'/?feed=gen_img&wi=800&orig=&he=450&fontsize=30&txt='.$thetitle_;
 					}
-					
+
           $thefrmt = 'hls';
           $thestrg = 'full-adaptation';
           $thequality = get_post_meta(get_the_ID(), 'media_qty', true);
@@ -577,17 +577,17 @@ if ($thecategory == $_GET['cat']) {
           echo '<item sdImg="'.$theimg.'" hdImg="'.$theimg.'">
           <title>'.$thetitle.'</title>
 					<contentId>'.hash('ripemd160', $theurl).'</contentId>
-					<contentType>special</contentType>
+					<contentType>Talk</contentType>
 					<contentQuality>'.$thequality_.'</contentQuality>
           <streamFormat>'.$thefrmt.'</streamFormat>
           <media>
+					<streamQuality>'.$thequality_.'</streamQuality>
           <streamFormat>'.$thefrmt.'</streamFormat>
-          <streamQuality>'.$thequality_.'</streamQuality>
           <streamBitrate>'.$thebitrate.'</streamBitrate>
           <streamUrl>'.$theurl.'</streamUrl>
           </media>
 					<synopsis>'.$thedescription.'</synopsis>
-					<genres>special</genres>
+					<genres>Creativity</genres>
 					<runtime>99</runtime>
           </item>';
           }
