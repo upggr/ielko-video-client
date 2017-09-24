@@ -62,7 +62,7 @@ function ielko_wp_media_manager() {
 		'capability_type'       => 'page',
 	);
 	register_post_type( 'media_item', $args );
-
+ 
 }
 
 function replace_featured_image_box()
