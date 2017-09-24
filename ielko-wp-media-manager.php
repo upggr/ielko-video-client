@@ -367,7 +367,10 @@ $first = true;
         $args2["parent"]=$category->term_id;
         $categories2 = get_categories( $args2 );
          foreach ($categories2 as $category2) {
-	echo '<categoryLeaf title="'.$category2->cat_name.'" description="'.$category2->cat_description.'" feed="'.htmlspecialchars(    get_site_url().'/?feed=roku_by_cat&cat='.$category2->cat_name).'"/>';
+					 $thesiteurl = get_site_url();
+					 $the_cat_name = $category2->cat_name;
+				$theurlforthecatfeed = htmlspecialchars($thesiteurl.'/?feed=roku_by_cat&cat='.$the_cat_name);
+	echo '<categoryLeaf title="'.$category2->cat_name.'" description="'.$category2->cat_description.'" feed="'.$theurlforthecatfeed.'"/>';
         }
     } else {
   //  echo '</category>';
