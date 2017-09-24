@@ -584,9 +584,9 @@ if ($thecatid == $_GET['cat']) {
 					<contentId>'.hash('ripemd160', $theurl).'</contentId>
 					<contentType>Talk</contentType>
 					<contentQuality>'.$thequality_.'</contentQuality>
+					<streamFormat>'.$thefrmt.'</streamFormat>
           <media>
 					<streamQuality>'.$thequality_.'</streamQuality>
-          <streamFormat>'.$thefrmt.'</streamFormat>
           <streamBitrate>'.$thebitrate.'</streamBitrate>
           <streamUrl>'.$theurl.'</streamUrl>
           </media>
