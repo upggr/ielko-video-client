@@ -355,7 +355,6 @@ $categories = get_categories( $args );
 $first = true;
 
   foreach ($categories as $category) {
-		print_r($category);
 			echo '<category title="'.$category->cat_name.'" description="'.$category->description.'" sd_img="'.z_taxonomy_image_url($category->term_id).'"  hd_img="'.z_taxonomy_image_url($category->term_id).'"  >';
     $theid = $category->term_id;
     $children = $wpdb->get_results( "SELECT term_id FROM $wpdb->term_taxonomy WHERE parent=$theid" );
@@ -370,7 +369,8 @@ $first = true;
          foreach ($categories2 as $category2) {
 					 $thesiteurl = get_site_url();
 					 $the_cat_name = $category2->cat_name;
-				$theurlforthecatfeed = htmlspecialchars($thesiteurl.'/?feed=roku_by_cat&cat='.$the_cat_name);
+					 $the_cat_id = $category2->cat_ID;
+				$theurlforthecatfeed = htmlspecialchars($thesiteurl.'/?feed=roku_by_cat&cat='.$the_cat_id);
 	echo '<categoryLeaf title="'.$category2->cat_name.'" description="'.$category2->cat_description.'" feed="'.$theurlforthecatfeed.'"/>';
         }
     } else {
