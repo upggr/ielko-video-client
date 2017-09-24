@@ -581,8 +581,8 @@ if ($thecatid == $_GET['cat']) {
           }
           $thebitrate = '0';
 
-      //    echo '<item sdImg="'.htmlspecialchars($theimg).'" hdImg="'.htmlspecialchars($theimg).'">
-					echo '<item sdImg="'.$theimg.'" hdImg="'.$theimg.'">
+          echo '<item sdImg="'.htmlspecialchars($theimg).'" hdImg="'.htmlspecialchars($theimg).'">
+			//	echo '<item sdImg="'.$theimg.'" hdImg="'.$theimg.'">
           <title>'.$thetitle.'</title>
 					<contentId>'.hash('ripemd160', $theurl).'</contentId>
 					<contentType>Talk</contentType>
