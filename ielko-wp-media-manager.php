@@ -585,7 +585,7 @@ if ($thecatid == $_GET['cat']) {
           echo '<item sdImg="'.htmlspecialchars($theimg).'" hdImg="'.htmlspecialchars($theimg).'">
           <title>'.$thetitle.'</title>
 					<contentId>'.hash('ripemd160', $theurl).'</contentId>
-					<contentType>Talk</contentType>
+					<contentType>TV Specials</contentType>
 					<contentQuality>'.$thequality_.'</contentQuality>
 					<streamFormat>'.$thefrmt.'</streamFormat>
           <media>
@@ -594,7 +594,7 @@ if ($thecatid == $_GET['cat']) {
           <streamUrl>'.$theurl.'</streamUrl>
           </media>
 					<synopsis>'.$thedescription.'</synopsis>
-					<genres>Creativity</genres>
+					<genres>special</genres>
 					<runtime>99</runtime>
           </item>';
           }
