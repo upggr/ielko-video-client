@@ -572,7 +572,7 @@ if ($thecategory == $_GET['cat']) {
           echo '<item sdImg="'.$theimg.'" hdImg="'.$theimg.'">
           <title>'.$thetitle.'</title>
 					<contentId>'.hash('ripemd160', $theurl).'</contentId>
-					<contentType>Live TV</contentType>
+					<contentType>special</contentType>
 					<contentQuality>'.$thequality_.'</contentQuality>
           <description>'.$thedescription.'</description>
           <streamFormat>'.$thefrmt.'</streamFormat>
@@ -583,8 +583,8 @@ if ($thecategory == $_GET['cat']) {
           <streamUrl>'.$theurl.'</streamUrl>
           </media>
 					<synopsis>'.$thedescription.'</synopsis>
-					<genres>Live TV</genres>
-					<runtime>Live</runtime>
+					<genres>special</genres>
+					<runtime>99</runtime>
           </item>';
           }
           endwhile;
