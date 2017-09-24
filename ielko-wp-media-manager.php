@@ -542,7 +542,18 @@ if ($thecategory == $_GET['cat']) {
           $thetitle = get_the_title();
           $theurl = get_post_meta(get_the_ID(), 'media_url', true);
 					$theurl =  htmlspecialchars($theurl);
+					if (strpos($theurl, 'm3u8') !== false & $isactive == 1) {
+						if ($ispremium == 1) {
+							$theurl_checked	= 'http://non.disclosed.com';
+						}
+						else {
+							$theurl_checked = $theurl;
+						}
+						
           $thedescription = get_post_meta(get_the_ID(), 'media_description', true);
+					if(!$thedescription) {
+						$thedescription = 'Enjoy '.$thetitle.' from the '.$thecategory.' category. You may also view it on your computer using VLC or any other hls compatible video player from : '.$theurl_checked;
+					}
           $theimg =  wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'single-post-thumbnail' );
 					$theimg =  $theimg[0];
           $thefrmt = 'hls';
@@ -556,7 +567,6 @@ if ($thecategory == $_GET['cat']) {
           }
           $thebitrate = '0';
 
-          if (strpos($theurl, 'm3u8') !== false) {
           echo '<item sdImg="'.$theimg.'" hdImg="'.$theimg.'">
           <title>'.$thetitle.'</title>
 					<contentId>'.$theimg.'</contentId>
