@@ -543,6 +543,7 @@ if ($thecatid == $_GET['cat']) {
 						$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
 						global $wp_query;
 						$noposts= $wp_query->found_posts;
+						$noposts= 1;
 						echo '<resultLength>'.$noposts.'</resultLength>';
 						echo '<endIndex>'.$noposts.'</endIndex>';
 					while (have_posts()) : the_post();
