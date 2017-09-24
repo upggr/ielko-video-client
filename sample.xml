@@ -1,2 +1,110 @@
-
-<?xml version="1.0" encoding="UTF-8"?><categories><category title="Live Radio" description="" sd_img="https://greektvlite.x-mad.com/wp-content/uploads/2017/09/liveradio.png"  hd_img="https://greektvlite.x-mad.com/wp-content/uploads/2017/09/liveradio.png"  ><categoryLeaf title="Online Radio" description="" feed="https://greektvlite.x-mad.com/?feed=roku_by_cat&amp;cat=Online Radio"/></category><category title="Live Video" description="Live video" sd_img="https://greektvlite.x-mad.com/wp-content/uploads/2017/09/livevideo.png"  hd_img="https://greektvlite.x-mad.com/wp-content/uploads/2017/09/livevideo.png"  ><categoryLeaf title="Cyprus TV" description="" feed="https://greektvlite.x-mad.com/?feed=roku_by_cat&amp;cat=Cyprus TV"/><categoryLeaf title="Greek Movies" description="" feed="https://greektvlite.x-mad.com/?feed=roku_by_cat&amp;cat=Greek Movies"/><categoryLeaf title="Greek TV from abroad" description="" feed="https://greektvlite.x-mad.com/?feed=roku_by_cat&amp;cat=Greek TV from abroad"/><categoryLeaf title="Kids TV" description="" feed="https://greektvlite.x-mad.com/?feed=roku_by_cat&amp;cat=Kids TV"/><categoryLeaf title="Local TV Channels" description="" feed="https://greektvlite.x-mad.com/?feed=roku_by_cat&amp;cat=Local TV Channels"/><categoryLeaf title="Nationwide TV Channels" description="" feed="https://greektvlite.x-mad.com/?feed=roku_by_cat&amp;cat=Nationwide TV Channels"/><categoryLeaf title="Web TV" description="" feed="https://greektvlite.x-mad.com/?feed=roku_by_cat&amp;cat=Web TV"/></category><category title="Uncategorized" description="" sd_img=""  hd_img=""  ></category></categories>
+<?xml version="1.0" encoding="UTF-8"?>
+<feed>
+  <resultLength>7</resultLength>
+  <endIndex>7</endIndex>
+  <item sdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=FREE_101.1" hdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=FREE_101.1">
+    <title>FREE 101.1</title>
+    <contentId>4d65136d413bfb569a035be6a488081112d995c5</contentId>
+    <contentType>Talk</contentType>
+    <contentQuality>SD</contentQuality>
+    <streamFormat>hls</streamFormat>
+    <media>
+      <streamQuality>SD</streamQuality>
+      <streamBitrate>0</streamBitrate>
+      <streamUrl>http://playstathmos-lh.akamaihd.net/z/event_1@119298/manifest.m3u8</streamUrl>
+    </media>
+    <synopsis>Enjoy FREE 101.1 from the Online Radio category. You may also view it on your computer using VLC or any other hls compatible audio/video player from : http://playstathmos-lh.akamaihd.net/z/event_1@119298/manifest.m3u8</synopsis>
+    <genres>Creativity</genres>
+    <runtime>99</runtime>
+  </item>
+  <item sdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=LOVE_FM_100.7" hdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=LOVE_FM_100.7">
+    <title>LOVE FM 100.7</title>
+    <contentId>ebbf4da148eb8cc5d6941f5bf68ad958cc1c62c5</contentId>
+    <contentType>Talk</contentType>
+    <contentQuality>SD</contentQuality>
+    <streamFormat>hls</streamFormat>
+    <media>
+      <streamQuality>SD</streamQuality>
+      <streamBitrate>0</streamBitrate>
+      <streamUrl>http://eradio.networksolutions.com.cy:1935/LoveRadio/Loveradio.stream/playlist.m3u8</streamUrl>
+    </media>
+    <synopsis>Enjoy LOVE FM 100.7 from the Online Radio category. You may also view it on your computer using VLC or any other hls compatible audio/video player from : http://eradio.networksolutions.com.cy:1935/LoveRadio/Loveradio.stream/playlist.m3u8</synopsis>
+    <genres>Creativity</genres>
+    <runtime>99</runtime>
+  </item>
+  <item sdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=DEEJAY_RADIO_93.5" hdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=DEEJAY_RADIO_93.5">
+    <title>DEEJAY RADIO 93.5</title>
+    <contentId>d12788778bdcf7329497fb411d2903fcb0804d9b</contentId>
+    <contentType>Talk</contentType>
+    <contentQuality>SD</contentQuality>
+    <streamFormat>hls</streamFormat>
+    <media>
+      <streamQuality>SD</streamQuality>
+      <streamBitrate>0</streamBitrate>
+      <streamUrl>http://eradio.networksolutions.com.cy:1935/DeeJay/DeeJay.stream/playlist.m3u8</streamUrl>
+    </media>
+    <synopsis>Enjoy DEEJAY RADIO 93.5 from the Online Radio category. You may also view it on your computer using VLC or any other hls compatible audio/video player from : http://eradio.networksolutions.com.cy:1935/DeeJay/DeeJay.stream/playlist.m3u8</synopsis>
+    <genres>Creativity</genres>
+    <runtime>99</runtime>
+  </item>
+  <item sdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=ATHINA_984_98.4" hdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=ATHINA_984_98.4">
+    <title>ATHINA 984 98.4</title>
+    <contentId>f03e2c5dc45d72e7d035cc55bbd379668c6a3d21</contentId>
+    <contentType>Talk</contentType>
+    <contentQuality>SD</contentQuality>
+    <streamFormat>hls</streamFormat>
+    <media>
+      <streamQuality>SD</streamQuality>
+      <streamBitrate>0</streamBitrate>
+      <streamUrl>http://athenshdlive-lh.akamaihd.net/i/athina984fmlive_2@88331/master.m3u8</streamUrl>
+    </media>
+    <synopsis>Enjoy ATHINA 984 98.4 from the Online Radio category. You may also view it on your computer using VLC or any other hls compatible audio/video player from : http://athenshdlive-lh.akamaihd.net/i/athina984fmlive_2@88331/master.m3u8</synopsis>
+    <genres>Creativity</genres>
+    <runtime>99</runtime>
+  </item>
+  <item sdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=ROCK_FM_96.9" hdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=ROCK_FM_96.9">
+    <title>ROCK FM 96.9</title>
+    <contentId>f86a777da1624a682736fb3574ca81b438922c3e</contentId>
+    <contentType>Talk</contentType>
+    <contentQuality>SD</contentQuality>
+    <streamFormat>hls</streamFormat>
+    <media>
+      <streamQuality>SD</streamQuality>
+      <streamBitrate>0</streamBitrate>
+      <streamUrl>http://rockfm-lh.akamaihd.net/i/live_1@324559/master.m3u8</streamUrl>
+    </media>
+    <synopsis>Enjoy ROCK FM 96.9 from the Online Radio category. You may also view it on your computer using VLC or any other hls compatible audio/video player from : http://rockfm-lh.akamaihd.net/i/live_1@324559/master.m3u8</synopsis>
+    <genres>Creativity</genres>
+    <runtime>99</runtime>
+  </item>
+  <item sdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=ATHENS_DJ_95.2" hdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=ATHENS_DJ_95.2">
+    <title>ATHENS DJ 95.2</title>
+    <contentId>a34970c5fdffa7064653e662f751616fc1526e28</contentId>
+    <contentType>Talk</contentType>
+    <contentQuality>SD</contentQuality>
+    <streamFormat>hls</streamFormat>
+    <media>
+      <streamQuality>SD</streamQuality>
+      <streamBitrate>0</streamBitrate>
+      <streamUrl>http://rdj-lh.akamaihd.net/i/live_1@324558/master.m3u8</streamUrl>
+    </media>
+    <synopsis>Enjoy ATHENS DJ 95.2 from the Online Radio category. You may also view it on your computer using VLC or any other hls compatible audio/video player from : http://rdj-lh.akamaihd.net/i/live_1@324558/master.m3u8</synopsis>
+    <genres>Creativity</genres>
+    <runtime>99</runtime>
+  </item>
+  <item sdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=LAMPSI_FM_92.3" hdImg="https://greektvlite.x-mad.com/?feed=gen_img&amp;wi=800&amp;orig=&amp;he=450&amp;fontsize=30&amp;txt=LAMPSI_FM_92.3">
+    <title>LAMPSI FM 92.3</title>
+    <contentId>f3c040c1f0206e3adfe9d6c640d54f53c247869d</contentId>
+    <contentType>Talk</contentType>
+    <contentQuality>SD</contentQuality>
+    <streamFormat>hls</streamFormat>
+    <media>
+      <streamQuality>SD</streamQuality>
+      <streamBitrate>0</streamBitrate>
+      <streamUrl>http://lampsi2-lh.akamaihd.net/i/live_1@324565/master.m3u8</streamUrl>
+    </media>
+    <synopsis>Enjoy LAMPSI FM 92.3 from the Online Radio category. You may also view it on your computer using VLC or any other hls compatible audio/video player from : http://lampsi2-lh.akamaihd.net/i/live_1@324565/master.m3u8</synopsis>
+    <genres>Creativity</genres>
+    <runtime>99</runtime>
+  </item>
+</feed>

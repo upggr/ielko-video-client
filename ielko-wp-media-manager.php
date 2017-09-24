@@ -531,7 +531,7 @@ function rokuXMLbycat_f(){
 $postCount = 1000;
 $posts = query_posts('showposts=' . $postCount);
 header('Content-Type: text/xml');
-echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"standalone="yes"?'.'>';
+echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'" standalone="yes"?'.'>';
 echo '<feed>';
 $cats = get_categories();
 
