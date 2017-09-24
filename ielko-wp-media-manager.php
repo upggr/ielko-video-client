@@ -524,16 +524,16 @@ function rokuXMLbycat_f(){
 $postCount = 1000;
 $posts = query_posts('showposts=' . $postCount);
 header('Content-Type: text/xml');
-echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
+echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"standalone="yes"?'.'>';
 echo '<feed>';
 $cats = get_categories();
-print_r($cats);
+
 foreach ($cats as $cat) {
-          $thecatid = $cat->term_id;
+          $thecatid = $cat->cat_ID;
           $thecategory = $cat->name;
           $thecategorydesc = $cat->description;
           $thecategoryimg = z_taxonomy_image_url($cat->term_id);
-if ($thecategory == $_GET['cat']) {
+if ($thecatid == $_GET['cat']) {
 
 					query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
 
@@ -584,7 +584,6 @@ if ($thecategory == $_GET['cat']) {
 					<contentId>'.hash('ripemd160', $theurl).'</contentId>
 					<contentType>Talk</contentType>
 					<contentQuality>'.$thequality_.'</contentQuality>
-          <streamFormat>'.$thefrmt.'</streamFormat>
           <media>
 					<streamQuality>'.$thequality_.'</streamQuality>
           <streamFormat>'.$thefrmt.'</streamFormat>
