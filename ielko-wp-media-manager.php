@@ -536,8 +536,8 @@ if ($thecategory == $_GET['cat']) {
 						$thePosts = query_posts("cat=$thecatid&posts_per_page=100&post_type=media_item");
 						global $wp_query;
 						$noposts= $wp_query->found_posts;
-						echo '<resultLength>3</resultLength>';
-						echo '<endIndex>3</endIndex>';
+						echo '<resultLength>'.$noposts.'</resultLength>';
+						echo '<endIndex>'.$noposts.'</endIndex>';
 					while (have_posts()) : the_post();
           $thetitle = get_the_title();
           $theurl = get_post_meta(get_the_ID(), 'media_url', true);
@@ -574,7 +574,6 @@ if ($thecategory == $_GET['cat']) {
 					<contentId>'.hash('ripemd160', $theurl).'</contentId>
 					<contentType>special</contentType>
 					<contentQuality>'.$thequality_.'</contentQuality>
-          <description>'.$thedescription.'</description>
           <streamFormat>'.$thefrmt.'</streamFormat>
           <media>
           <streamFormat>'.$thefrmt.'</streamFormat>
