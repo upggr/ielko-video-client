@@ -784,20 +784,20 @@ endif;
 }
 
 function checkurl($url) {
-	$output = '';
-	$result = '';
+	//$output = '';
+	//$result = '';
    echo exec('/usr/bin/ffprobe -show_format '.$url, $output, $result);
-	 return $output;
-	//$headers = @get_headers( $url);
-	//$headers = (is_array($headers)) ? implode( "\n ", $headers) : $headers;
-	//return (bool)preg_match('#^HTTP/.*\s+[(200|301|302)]+\s#i', $headers);
+	// return $output;
+	$headers = @get_headers( $url);
+	$headers = (is_array($headers)) ? implode( "\n ", $headers) : $headers;
+	return (bool)preg_match('#^HTTP/.*\s+[(200|301|302)]+\s#i', $headers);
 }
 
 function checkurl_($url) {
-	if (checkurl($url) === 1){
+	if (checkurl($url)){
 	   return "1";
 	 }
-	else if (checkurl($url) === 0){
+	else {
 	   return "0";
 	 }
 }
