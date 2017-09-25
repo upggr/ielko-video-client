@@ -480,7 +480,7 @@ $tags = array($thecategory);
 $captions = array();
 if($theimg === null) {
 	$thetitle_ = preg_replace('/\s+/', '_', $thetitle);
-	$theimg = get_site_url().'/?feed=gen_img&wi=800&orig=&he=450&fontsize=30&txt='.$thetitle_;
+	$theimg = get_site_url().'?feed=gen_img&wi=800&orig=&he=450&fontsize=30&txt='.$thetitle_;
 }
 if(!$thedescription) {
 	$thedescription = 'Enjoy '.$thetitle.' from the '.$thecategory.' category. You may also view it on your computer using VLC or any other hls compatible audio/video player from : '.$theurl_checked;
