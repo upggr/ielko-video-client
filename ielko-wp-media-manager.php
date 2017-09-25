@@ -398,8 +398,9 @@ $he = $_GET['he'];
 $txt = $_GET['txt'];
 header("Content-type:image/png");
 //header("Content-disposition: attachment; filename=".$txt.".png");
+$txt = substr_replace($txt ,"",-4);
 $txt = preg_replace('/\s+/', '_', $txt);
-$txt = preg_replace('.png', '', $txt);
+
 if($orig=="") {
 	$options = get_option( 'ivc_settings' );
 	$orig = str_replace(get_site_url(),"",$options['ivc_image_field_5']);
