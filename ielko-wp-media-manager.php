@@ -784,10 +784,6 @@ endif;
 }
 
 function checkurl($url) {
-	//$output = '';
-	//$result = '';
-   echo exec('/usr/bin/ffprobe -show_format '.$url, $output, $result);
-	// return $output;
 	ini_set('default_socket_timeout', 2);
 	$headers = @get_headers( $url);
 	$headers = (is_array($headers)) ? implode( "\n ", $headers) : $headers;
