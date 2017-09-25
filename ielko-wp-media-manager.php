@@ -784,16 +784,14 @@ endif;
 }
 
 function checkurl($url) {
-	$outputfile = "dl.html";
-	$cmd = "wget --spider \"$url\" -O $outputfile";
-	return (bool)preg_match('#^HTTP/.*\s+[(200|301|302)]+\s#i', file_get_contents($outputfile));
+	return ($ch = curl_init($url)) ? @curl_close($ch) || true : false;
 	//$headers = @get_headers( $url);
 	//$headers = (is_array($headers)) ? implode( "\n ", $headers) : $headers;
 	//return (bool)preg_match('#^HTTP/.*\s+[(200|301|302)]+\s#i', $headers);
 }
 
 function checkurl_($url) {
-	if (checkurl($url))
+	if (checkurl($url) == true)
 	   return "1";
 	else
 	   return "0";
