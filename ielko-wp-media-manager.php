@@ -397,7 +397,7 @@ $wi = $_GET['wi'];
 $he = $_GET['he'];
 $txt = $_GET['txt'];
 header("Content-type:image/png");
-header("Content-disposition: attachment; filename=".$txt.".png");
+//header("Content-disposition: attachment; filename=".$txt.".png");
 $txt = preg_replace('/\s+/', '_', $txt);
 if($orig=="") {
 	$options = get_option( 'ivc_settings' );
