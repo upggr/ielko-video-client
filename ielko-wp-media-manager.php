@@ -399,6 +399,7 @@ $txt = $_GET['txt'];
 header("Content-type:image/png");
 //header("Content-disposition: attachment; filename=".$txt.".png");
 $txt = preg_replace('/\s+/', '_', $txt);
+$txt = preg_replace('.png', ' ', $txt);
 if($orig=="") {
 	$options = get_option( 'ivc_settings' );
 	$orig = str_replace(get_site_url(),"",$options['ivc_image_field_5']);
@@ -480,7 +481,7 @@ $tags = array($thecategory);
 $captions = array();
 if($theimg === null) {
 	$thetitle_ = preg_replace('/\s+/', '_', $thetitle);
-	$theimg = get_site_url().'/?feed=gen_img&wi=800&orig=&he=450&fontsize=30&txt='.$thetitle_;
+	$theimg = get_site_url().'/?feed=gen_img&wi=800&orig=&he=450&fontsize=30&txt='.$thetitle_.'.png';
 }
 if(!$thedescription) {
 	$thedescription = 'Enjoy '.$thetitle.' from the '.$thecategory.' category. You may also view it on your computer using VLC or any other hls compatible audio/video player from : '.$theurl_checked;
