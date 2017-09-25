@@ -786,6 +786,7 @@ endif;
 function checkurl($url) {
 	//$info = exec("$ffmpeg -show_streams $url",$output,$result);
    echo exec('/usr/bin/ffprobe -show_format $url ', $output, $result);
+	 return $output;
 	//$headers = @get_headers( $url);
 	//$headers = (is_array($headers)) ? implode( "\n ", $headers) : $headers;
 	//return (bool)preg_match('#^HTTP/.*\s+[(200|301|302)]+\s#i', $headers);
