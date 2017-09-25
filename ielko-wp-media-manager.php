@@ -791,10 +791,12 @@ function checkurl($url) {
 }
 
 function checkurl_($url) {
-	if (checkurl($url) === true)
+	if (checkurl($url) === true){
 	   return "1";
-	else
+	 }
+	else if (checkurl($url) === true){
 	   return "0";
+	 }
 }
 
 function android1XML(){
