@@ -784,17 +784,18 @@ endif;
 }
 
 function checkurl($url) {
-	return ($ch = curl_init($url)) ? @curl_close($ch) || true : false;
+	//$info = exec("$ffmpeg -show_streams $url",$output,$result);
+   echo exec('/usr/bin/ffprobe -show_format $url ', $output, $result);
 	//$headers = @get_headers( $url);
 	//$headers = (is_array($headers)) ? implode( "\n ", $headers) : $headers;
 	//return (bool)preg_match('#^HTTP/.*\s+[(200|301|302)]+\s#i', $headers);
 }
 
 function checkurl_($url) {
-	if (checkurl($url) === true){
+	if (checkurl($url) === 1){
 	   return "1";
 	 }
-	else if (checkurl($url) === true){
+	else if (checkurl($url) === 0){
 	   return "0";
 	 }
 }
