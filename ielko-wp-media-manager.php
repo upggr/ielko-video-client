@@ -785,7 +785,7 @@ endif;
 
 function checkurl($url) {
 	$outputfile = "dl.html";
-	$cmd = "wget --spider ".$url -O $outputfile;
+	$cmd = "wget --spider \"$url\" -O $outputfile";
 	return (bool)preg_match('#^HTTP/.*\s+[(200|301|302)]+\s#i', file_get_contents($outputfile));
 	//$headers = @get_headers( $url);
 	//$headers = (is_array($headers)) ? implode( "\n ", $headers) : $headers;
