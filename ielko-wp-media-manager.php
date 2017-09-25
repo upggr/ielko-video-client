@@ -391,6 +391,7 @@ function genimg(){
 
 
 function genimg_f(){
+header("Content-type:image/png");
 $orig = $_GET['orig'];
 $wi = $_GET['wi'];
 $he = $_GET['he'];
@@ -409,7 +410,6 @@ $watermarktext = $txt;
 $font= plugin_dir_path( __FILE__ ) . 'font/cent.ttf';
 $white = imagecolorallocate($imagetobewatermark, 255, 0, 0);
 imagettftext($imagetobewatermark, $fontsize, 0, 170, 250, $white, $font, $watermarktext);
-header("Content-type:image/png");
 imagepng($imagetobewatermark);
 imagedestroy($imagetobewatermark);
 
