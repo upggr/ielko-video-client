@@ -9,7 +9,7 @@ Installation instructions :
 Just copy the plugin in the plugins folder and activate it from the wordpress menu (or download this repo as a zip and upload it using the wp interface). There is another plugin dependency not included with the plugin "category images". You will receive notice if you do not have it and be prompted to install it from the wordpress menu.
 
 Usage :
-
+ 
 Assuming your wordpress installation is at : http://mywordpress.com/
 
 STEP 1 : Add media sources using the Ielko Media menu in the menu, as if you were creating a new wordpress post. Complete the title of the media (for example "my awesome video"), and at least the source (for example http://mydomain.com/my_awesome_video.mp4). You will need to define a category for each item you create, and you can upload an image for the categories using the interface. You will need to have a top category (for example Live Video) and then under this the subcategories. for the direct publisher it doesnt matter but for the others it does!.
