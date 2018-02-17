@@ -621,9 +621,10 @@ function tvosXML(){
 function tvosXMLFunc(){
 $postCount = 1000;
 $posts = query_posts('showposts=' . $postCount);
+$thetitle = get_the_title();
 header('Content-Type: text');
 echo 'var Template = function() { return `<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
-echo '<document><catalogTemplate><banner><title>Greek TV by UPG.GR</title></banner><list>';
+echo '<document><catalogTemplate><banner><title>'.$thetitle.'</title></banner><list>';
 
 $cats = get_categories();
 foreach ($cats as $cat) {
@@ -782,7 +783,7 @@ endwhile;
 endif;
 
 }
- 
+
 function checkurl($url) {
 	ini_set('default_socket_timeout', 2);
 	$headers = @get_headers( $url);
