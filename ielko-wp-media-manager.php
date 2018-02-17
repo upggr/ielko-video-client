@@ -621,7 +621,8 @@ function tvosXML(){
 function tvosXMLFunc(){
 $postCount = 1000;
 $posts = query_posts('showposts=' . $postCount);
-$thetitle = get_the_title();
+	$options = get_option( 'ivc_settings' );
+	$thetitle = $options['ivc_text_field_1'];
 header('Content-Type: text');
 echo 'var Template = function() { return `<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 echo '<document><catalogTemplate><banner><title>'.$thetitle.'</title></banner><list>';
